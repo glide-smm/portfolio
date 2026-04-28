@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: Галина Сорочан — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif Display',serif;font-size:22px;color:var(--bordo);letter-spacing:0.02em;text-decoration:none}
+.logo span{font-style:italic}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.case-hero{background:var(--bordo);padding:80px 60px;color:var(--white)}
+.case-hero-inner{max-width:1100px;margin:0 auto}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+.case-hero h1{font-family:'Noto Serif Display',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.case-hero h1 em{font-style:italic;color:var(--pink)}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.metrics-bar{background:var(--ink);padding:0 60px}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Noto Serif Display',serif;font-size:32px;color:var(--white);font-weight:600;line-height:1}
+.metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
+.case-body{max-width:1100px;margin:0 auto;padding:80px 60px}
+.section-block{margin-bottom:64px}
+.block-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.block-label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--bordo)}
+.section-block h2{font-family:'Noto Serif Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
+.section-block h2 em{font-style:italic;color:var(--bordo)}
+.body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
+.body-text strong{color:var(--ink);font-weight:600}
+.insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
+.insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
+.insight-box p strong{color:var(--bordo);font-weight:600}
+.steps-list{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:740px}
+.step-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Noto Serif Display',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
+.step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
+.result-card{background:var(--white);padding:28px}
+.result-card.accent{background:var(--bordo)}
+.result-num{font-family:'Noto Serif Display',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
+.result-card.accent .result-num{color:var(--white)}
+.result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
+.result-card.accent .result-label{color:rgba(255,255,255,0.7)}
+.divider-line{width:100%;height:1px;background:var(--line);margin:64px 0}
+.phase-badge{display:inline-block;background:var(--bordo);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;margin-bottom:28px}
+.case-nav{background:var(--cream2);padding:56px 60px}
+.case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
+.case-nav-link:hover{color:var(--bordo)}
+.case-nav-link.next::after{content:' →'}
+.case-nav-link.prev::before{content:'← '}
+.case-nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);font-weight:600;display:block;margin-bottom:4px}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Noto Serif Display',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.case-hero{padding:60px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="glide_portfolio.html" class="logo"><span>G</span>lide SMM STUDIO</a>
+  <a href="glide_portfolio.html" class="back-link">Всі кейси</a>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Кейс 01 · Особистий бренд · Медицина</div>
+    <h1>Галина Сорочан — <em>від мертвого акаунту до стабільних продажів при мінімальних вкладеннях у рекламу</em></h1>
+    <p class="case-hero-sub">Лікар-гастроентеролог, хелс-коуч з України, яка живе в Данії. Два окремі етапи роботи — і обидва з результатом. Ключ — системний підхід, точний таргет на Європу і контентні воронки, які продають без тиску.</p>
+  </div>
+</div>
+
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-cell">
+      <div class="metric-big">ROI 400%</div>
+      <div class="metric-sub">Окупність реклами</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">$1500+</div>
+      <div class="metric-sub">Продажів щомісяця</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">23%</div>
+      <div class="metric-sub">Конверсія у воронці</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">681K</div>
+      <div class="metric-sub">Охоплення в TikTok</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+
+  <div class="section-block">
+    <div class="phase-badge">Етап 1</div>
+    <div class="block-label">Запит</div>
+    <h2>Акаунт з 17 000 підписників, <em>які не купують</em></h2>
+    <p class="body-text">До нас прийшов акаунт з великою аудиторією на папері — 17 000 підписників. Але насправді це була <strong>мертва аудиторія</strong>: більшість набрана ще до повномасштабного вторгнення, переважно з Росії. Після лютого 2022-го їм відключили Instagram — вони не бачили контент, не реагували, і алгоритм справедливо знижував охоплення до мінімуму.</p>
+    <p class="body-text">Запит клієнтки був чітким: хочу продавати консультації через Instagram. Але продавати було нікому.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Рішення</div>
+    <h2>Почати <em>з нуля</em> — але правильно</h2>
+    <p class="body-text">Ми спробували реанімувати старий акаунт — пів місяця тестували пости, сторіс, рекламу. Результат підтвердив підозри. Тоді запропонували рішення: <strong>перелити аудиторію на новий акаунт</strong> і перевірити, хто насправді активний. З 17 000 перейшло 3 000 — ця цифра сказала нам все. Стартували з якісної бази.</p>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Розпаковка особистості та стратегія</h3>
+          <p>Визначили позицію Галини як експерта і що хочуть чути її майбутні клієнти — українки в Європі, які шукають лікаря, що розуміє їхній контекст.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Упаковка акаунту</h3>
+          <p>Фірмовий стиль, шапка профілю, актуальні сторіс, візуальна концепція — акаунт продавав ще до першого поста.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Навчання зйомці та підготовці до контенту</h3>
+          <p>Галина була готова знімати — але треба було перетворити бажання на якість. Пропрацювали підготовку до зйомки, поведінку перед камерою, технічні налаштування, освітлення, звук.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>TikTok як основний канал трафіку</h3>
+          <p>На той момент таргет ще не давав потрібних результатів — пішли через TikTok. Знайшли формати, що «залітають» на нову аудиторію. Одне відео — 681 000 переглядів і 20–30 прямих запитів на консультацію.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Telegram-канал для утримання аудиторії</h3>
+          <p>Запустили паралельний Telegram-канал. За 3 місяці — 596 підписників, які продовжували стежити і конвертувались у клієнтів.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Труднощі</div>
+    <h2>Занадто багато ідей — <em>занадто мало структури</em></h2>
+    <p class="body-text">Головна складність: не відсутність контенту, а його надлишок. Галина мала десятки тем і хотіла говорити про все. <strong>Наше завдання — впорядкувати цей потік</strong> так, щоб аудиторія поступово прогрівалась до покупки. Перший етап тривав 9 місяців. Ми майже вийшли на стабільні продажі — але у клієнтки виникли особисті обставини. Через рік вона сама написала нам і сказала, що хоче повернутись саме до нашої команди.</p>
+    <div class="insight-box">
+      <p><strong>Найкращий відгук</strong> — коли клієнт повертається через рік і каже: «Хочу працювати тільки з вами».</p>
+    </div>
+  </div>
+
+  <div class="divider-line"></div>
+
+  <div class="section-block">
+    <div class="phase-badge">Етап 2</div>
+    <div class="block-label">Новий запуск</div>
+    <h2>Стабільні продажі — <em>через систему, а не удачу</em></h2>
+    <p class="body-text">Другого разу стартували інакше. Таргет в Instagram покращився — і ми змінили стратегію. <strong>Новий рекламний кабінет, орієнтований виключно на Європу:</strong> українки, які живуть у Нідерландах, Данії, Німеччині, Польщі. Бюджет — $200–500 на місяць, при цьому окупність досягала 400%: вклали $200 — заробили $1000.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Система</div>
+    <h2>Воронка, яка <em>продає без тиску</em></h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Контентні воронки в акаунті</h3>
+          <p>Рилз на тему болю аудиторії → актуальне → лід-магніт (гайд) → чат-бот → анкета на розбір. Жодного «купи зараз» в лоб.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Таргетована реклама</h3>
+          <p>Теми: здуття, феритин, випадіння волосся, сигнали організму. CTR до 4,9% при нормі ринку 1–2%. Окупність реклами — ROI 400%.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Чат-бот з автоматичними розсилками</h3>
+          <p>Кожен новий підписник отримував прогріваючу послідовність повідомлень без ручної роботи з кожним.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Щомісячна аналітика і оптимізація</h3>
+          <p>Детальний звіт після кожного місяця: що спрацювало, що ні, що масштабуємо, від чого відмовляємось.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Результати</div>
+    <h2>Цифри, які <em>говорять самі за себе</em></h2>
+    <div class="results-grid">
+      <div class="result-card accent">
+        <div class="result-num">ROI 400%</div>
+        <div class="result-label">Окупність реклами — вклали $200, заробили $1000</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">$1500+</div>
+        <div class="result-label">Стабільні продажі консультацій і супроводу щомісяця</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">1092</div>
+        <div class="result-label">Переходи у чат-бот (ліди) з основної воронки</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">23%</div>
+        <div class="result-label">Конверсія у заявку на розбір — 252 анкети</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">4,9%</div>
+        <div class="result-label">CTR реклами при нормі ринку 1–2%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">€0,26</div>
+        <div class="result-label">Ціна нового підписника з реклами</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <a href="glide_portfolio.html" class="case-nav-link prev">Всі кейси</a>
+    <a href="case-jaya.html" class="case-nav-link next">
+      <span class="case-nav-label">Наступний кейс</span>
+      Джая Берник
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+</body>
+</html>

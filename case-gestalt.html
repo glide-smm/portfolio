@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: Інститут гештальт-терапії — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12);--teal:#1A5C5C;--teal-light:#E0EFEF}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif Display',serif;font-size:22px;color:var(--bordo);letter-spacing:0.02em;text-decoration:none}
+.logo span{font-style:italic}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.case-hero{background:var(--teal);padding:80px 60px;color:var(--white)}
+.case-hero-inner{max-width:1100px;margin:0 auto}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal-light);margin-bottom:20px}
+.case-hero h1{font-family:'Noto Serif Display',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.case-hero h1 em{font-style:italic;color:rgba(224,239,239,0.9)}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.metrics-bar{background:var(--ink);padding:0 60px}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Noto Serif Display',serif;font-size:34px;color:var(--white);font-weight:600;line-height:1}
+.metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
+.case-body{max-width:1100px;margin:0 auto;padding:80px 60px}
+.section-block{margin-bottom:64px}
+.block-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.block-label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--bordo)}
+.section-block h2{font-family:'Noto Serif Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
+.section-block h2 em{font-style:italic;color:var(--bordo)}
+.body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
+.body-text strong{color:var(--ink);font-weight:600}
+.insight-box{background:var(--teal-light);border-left:3px solid var(--teal);padding:22px 28px;margin:28px 0;max-width:740px}
+.insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
+.insight-box p strong{color:var(--teal);font-weight:600}
+.insight-box.pink{background:var(--pink-light);border-left-color:var(--bordo)}
+.insight-box.pink p strong{color:var(--bordo)}
+.steps-list{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:740px}
+.step-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Noto Serif Display',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
+.step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
+.funnel-visual{background:var(--white);padding:36px;margin:32px 0;max-width:740px}
+.funnel-visual h3{font-size:14px;font-weight:600;color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:24px}
+.funnel-steps{display:flex;flex-direction:column;gap:0}
+.funnel-step{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.funnel-step:last-child{border-bottom:none}
+.funnel-arrow{color:var(--ink3);font-size:18px;display:none}
+.funnel-step + .funnel-step .funnel-arrow{display:block}
+.funnel-icon{width:36px;height:36px;background:var(--teal-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.funnel-text strong{font-size:15px;color:var(--ink);display:block;margin-bottom:2px}
+.funnel-text span{font-size:13px;color:var(--ink3);font-weight:300}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
+.result-card{background:var(--white);padding:28px}
+.result-num{font-family:'Noto Serif Display',serif;font-size:38px;color:var(--teal);font-weight:600;line-height:1;margin-bottom:6px}
+.result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
+.case-nav{background:var(--cream2);padding:56px 60px}
+.case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
+.case-nav-link:hover{color:var(--bordo)}
+.case-nav-link.next::after{content:' →'}
+.case-nav-link.prev::before{content:'← '}
+.case-nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);font-weight:600;display:block;margin-bottom:4px}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Noto Serif Display',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.case-hero{padding:60px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="glide_portfolio.html" class="logo"><span>G</span>lide SMM STUDIO</a>
+  <a href="glide_portfolio.html" class="back-link">Всі кейси</a>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Кейс 04 · Освіта · Психологія · Вебінарна воронка</div>
+    <h1>Інститут гештальт-терапії — <em>100+ людей на вебінар через чат-бот</em></h1>
+    <p class="case-hero-sub">Освітній заклик з нуля в соцмережах і складним продуктом. Ми побудували повноцінну вебінарну воронку — і навчили команду інституту говорити на камеру.</p>
+  </div>
+</div>
+
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-cell">
+      <div class="metric-big">100+</div>
+      <div class="metric-sub">Людей на вебінар</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">З нуля</div>
+      <div class="metric-sub">Старт акаунту і присутності</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">Авто</div>
+      <div class="metric-sub">Воронка продажів через чат-бот</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+
+  <div class="section-block">
+    <div class="block-label">Запит</div>
+    <h2>Розвивати соцмережі і <em>отримувати продажі</em></h2>
+    <p class="body-text">До нас звернувся інститут гештальт-терапії — освітній заклад, який готує психологів і терапевтів. <strong>Запит: збудувати присутність у соцмережах і отримувати продажі курсів і навчальних заходів через них.</strong> Акаунту не було взагалі — починали з чистого аркуша.</p>
+    <p class="body-text">Завдання здавалось стандартним. Але вже в перші тижні виявились дві суттєві складності.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Труднощі</div>
+    <h2>Складна ніша і люди, <em>які не хочуть знімати</em></h2>
+    <p class="body-text">По-перше, гештальт-терапія — <strong>не найпопулярніший напрямок навіть серед психологів</strong>. Широка аудиторія майже не знає що це і кому потрібно. Контент мав не просто продавати — він мав пояснювати і будувати довіру з нуля.</p>
+    <p class="body-text">По-друге, люди, які працюють в інституті — терапевти і викладачі — <strong>не були готові знімати відео</strong>. Камера викликала опір. Це класична ситуація для освітніх і терапевтичних закладів: люди глибоко компетентні, але не звикли «виставляти себе».</p>
+
+    <div class="insight-box pink">
+      <p><strong>Наше рішення:</strong> Ми не тиснули і не змушували. Ми поступово, крок за кроком, показували команді як знімати, допомагали з підготовкою, відпрацьовували формати де можна говорити природно. Результат — люди почали зніматись і це дало акаунту живий, автентичний контент.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Як ми будували систему</div>
+    <h2>Від упаковки — <em>до вебінарної воронки</em></h2>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Стратегія і розпаковка бренду</h3>
+          <p>Визначили позиціонування інституту: кому потрібна гештальт-терапія, яка аудиторія, як говорити про складний продукт простою мовою.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Упаковка акаунту з нуля</h3>
+          <p>Фірмовий стиль, шапка профілю, актуальні сторіс, контент-план, візуальна концепція — все створювали з чистого аркуша.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Навчання команди зйомці</h3>
+          <p>Детально пропрацювали з терапевтами і викладачами як готуватись до зйомки, як триматись перед камерою природно, технічні налаштування.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Регулярний контент і прогрів</h3>
+          <p>Пости, сторіс, Reels від фахівців інституту — живий, автентичний контент, що будує довіру до закладу і до гештальт-підходу.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Таргетована реклама</h3>
+          <p>Запускали рекламу на підписку, на конкретні заходи та до продажів курсів. Лід-магніти у вигляді чек-листів для залучення нової аудиторії.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h3>Вебінарна воронка через чат-бот</h3>
+          <p>Для продажу курсу побудували повноцінну автоматичну воронку: реклама → підписка на бота → реєстрація на вебінар → нагадування → допродаж після вебінару.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Вебінарна воронка</div>
+    <h2>Як ми зібрали <em>100+ людей автоматично</em></h2>
+    <p class="body-text">Ключовий інструмент цього кейсу — вебінарна воронка через Telegram чат-бот. Вона дозволила зібрати учасників на вебінар і провести їх до покупки курсу без ручної роботи з кожним.</p>
+
+    <div class="funnel-visual">
+      <h3>Схема воронки</h3>
+      <div class="funnel-steps">
+        <div class="funnel-step">
+          <div class="funnel-icon">📣</div>
+          <div class="funnel-text">
+            <strong>Таргетована реклама</strong>
+            <span>Залучення аудиторії за інтересами: психологія, особистий розвиток, терапія</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-icon">🤖</div>
+          <div class="funnel-text">
+            <strong>Telegram чат-бот</strong>
+            <span>Автоматична реєстрація на вебінар, збір контактів</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-icon">🔔</div>
+          <div class="funnel-text">
+            <strong>Серія нагадувань</strong>
+            <span>Автоматичні повідомлення за 24 год, 2 год і 15 хв до початку — підвищували доходженість</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-icon">🎓</div>
+          <div class="funnel-text">
+            <strong>Вебінар</strong>
+            <span>100+ учасників. Наприкінці — пропозиція курсу з обмеженням місць</span>
+          </div>
+        </div>
+        <div class="funnel-step">
+          <div class="funnel-icon">💬</div>
+          <div class="funnel-text">
+            <strong>Допродаж через особистий контакт</strong>
+            <span>Після вебінару — персональна робота з кожним учасником для конвертації у продаж</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <p><strong>Чому це працює:</strong> Вебінарна воронка через чат-бот знімає основну проблему освітніх продуктів — «люди зацікавились, але забули купити». Автоматичні нагадування і послідовна комунікація ведуть людину до рішення крок за кроком.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Результати</div>
+    <h2>Від нульового акаунту — <em>до системних продажів</em></h2>
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-num">100+</div>
+        <div class="result-label">Учасників вебінару зібрано через чат-бот</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">З нуля</div>
+        <div class="result-label">До упакованого акаунту і автоматичної воронки</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">Авто</div>
+        <div class="result-label">Воронка продажів працює без ручного втручання</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">Регулярно</div>
+        <div class="result-label">Заявки на курси і навчальні заходи через соцмережі</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <a href="case-alona.html" class="case-nav-link prev">
+      <span class="case-nav-label">Попередній кейс</span>
+      Альона Масина
+    </a>
+    <a href="glide_portfolio.html" class="case-nav-link next">
+      <span class="case-nav-label">Назад</span>
+      Всі кейси
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: Альона Масина — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Noto Serif Display',serif;font-size:22px;color:var(--bordo);letter-spacing:0.02em;text-decoration:none}
+.logo span{font-style:italic}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.case-hero{background:var(--green);padding:80px 60px;color:var(--white)}
+.case-hero-inner{max-width:1100px;margin:0 auto}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--green-light);margin-bottom:20px}
+.case-hero h1{font-family:'Noto Serif Display',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.case-hero h1 em{font-style:italic;color:var(--green-light)}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.metrics-bar{background:var(--ink);padding:0 60px}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Noto Serif Display',serif;font-size:34px;color:var(--white);font-weight:600;line-height:1}
+.metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
+.case-body{max-width:1100px;margin:0 auto;padding:80px 60px}
+.section-block{margin-bottom:64px}
+.block-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.block-label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--bordo)}
+.section-block h2{font-family:'Noto Serif Display',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
+.section-block h2 em{font-style:italic;color:var(--bordo)}
+.body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
+.body-text strong{color:var(--ink);font-weight:600}
+.insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
+.insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
+.insight-box p strong{color:var(--bordo);font-weight:600}
+.insight-box.green{background:#EDF4F0;border-left-color:var(--green)}
+.insight-box.green p strong{color:var(--green)}
+.steps-list{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:740px}
+.step-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Noto Serif Display',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
+.step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
+.result-card{background:var(--white);padding:28px}
+.result-num{font-family:'Noto Serif Display',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
+.result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
+.table-wrap{overflow-x:auto;margin-top:32px;max-width:740px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{background:var(--green);color:var(--white);padding:12px 16px;text-align:left;font-weight:500;letter-spacing:0.04em;font-size:12px;text-transform:uppercase}
+td{padding:12px 16px;border-bottom:1px solid var(--line);color:var(--ink2);vertical-align:top}
+tr:nth-child(even) td{background:var(--cream2)}
+.td-accent{font-weight:600;color:var(--green)}
+.case-nav{background:var(--cream2);padding:56px 60px}
+.case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
+.case-nav-link:hover{color:var(--bordo)}
+.case-nav-link.next::after{content:' →'}
+.case-nav-link.prev::before{content:'← '}
+.case-nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);font-weight:600;display:block;margin-bottom:4px}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Noto Serif Display',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.case-hero{padding:60px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="glide_portfolio.html" class="logo"><span>G</span>lide SMM STUDIO</a>
+  <a href="glide_portfolio.html" class="back-link">Всі кейси</a>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Кейс 03 · Особистий бренд · Медицина</div>
+    <h1>Альона Масина — <em>кейс, де головною перешкодою стали особисті страхи і упередження експертки</em></h1>
+    <p class="case-hero-sub">Лікар-дерматолог, хелс-коуч, генетик з 15-річним досвідом. Переїхала в Данію і хотіла відновити практику через особистий бренд. Головний висновок: психологічна готовність клієнта — це фундамент, без якого жодна стратегія не працює.</p>
+  </div>
+</div>
+
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-cell">
+      <div class="metric-big">36</div>
+      <div class="metric-sub">Запитів на консультацію за місяць</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">11,1%</div>
+      <div class="metric-sub">Конверсія у консультацію</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">$0,77</div>
+      <div class="metric-sub">Ціна за ліда</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">+157%</div>
+      <div class="metric-sub">Зростання запитів за місяць</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+
+  <div class="section-block">
+    <div class="block-label">Запит</div>
+    <h2>Заявити про себе як експерт — <em>і отримати клієнтів онлайн</em></h2>
+    <p class="body-text">Альона — лікар-дерматолог, хелс-коуч і генетик з великим досвідом. Вийшовши заміж, переїхала в Данію і не практикувала за спеціальністю. <strong>Запит: розвивати особистий бренд в Instagram, залучати клієнтів на консультації і заявляти про себе як фахівця.</strong></p>
+    <p class="body-text">Запит видавався стандартним. Але вже на старті стало зрозуміло: головна перешкода — не відсутність стратегії, а внутрішній стан самої клієнтки.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Ключова проблема</div>
+    <h2>Перфекціонізм і страх камери як <em>бар'єр для розвитку бренду</em></h2>
+    <p class="body-text">Альона уникала відеозйомки. Вона прагнула до ідеального результату на виході — і через це не робила нічого. Паралельно існував страх говорити про себе, свої досягнення і свою роботу відкрито.</p>
+    <p class="body-text">Це <strong>поширена ситуація в особистому бренді</strong>: людина має глибоку експертизу, але не може транслювати її назовні через психологічні обмеження. В такому стані навіть найкраща SMM-стратегія не дасть результату — тому що контент не буде зніматись, а продажі не будуть відбуватись.</p>
+
+    <div class="insight-box">
+      <p><strong>Підхід студії:</strong> В особистому бренді стан власника визначає все. Ми розуміємо це і враховуємо з першого дня роботи — паралельно з упаковкою і стратегією ведемо клієнта до готовності відкрито говорити про свою роботу.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Як ми працювали</div>
+    <h2>Паралельна робота: <em>зовнішнє і внутрішнє</em></h2>
+    <p class="body-text">З першого тижня ми вели дві лінії роботи одночасно: побудова акаунту і підготовка самої Альони до ролі публічного експерта. Це вимагало більше часу і уваги, ніж стандартний SMM-проєкт — але саме це дало результат.</p>
+
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Розпаковка особистості і позиціонування</h3>
+          <p>Провели глибоку роботу з тим, ким є Альона як експерт, яка її унікальна точка зору і чим вона відрізняється від інших. Допомогли чітко сформулювати свою цінність — і почати говорити про неї впевнено.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Покрокове подолання бар'єру зйомки</h3>
+          <p>Розробили поступовий підхід до зйомки: від голосових повідомлень і простих сторіс — до повноцінних рилзів. Детально пропрацювали підготовку до зйомки, налаштування і поведінку перед камерою.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Упаковка акаунту</h3>
+          <p>Паралельно з психологічною роботою — фірмовий стиль, шапка профілю, структура актуальних, перші публікації. Акаунт набував форму і ставав готовим до просування.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Постановка продуктової лінійки</h3>
+          <p>Розробили структуру продуктів і послуг: від безкоштовного лід-магніту до консультацій. Навчали клієнтку продавати через контент — через цінність і довіру, без тиску.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Таргетована реклама</h3>
+          <p>Запустили рекламні кампанії на теми, що резонують аудиторії: вітаміни і їх форми, аналізи, кортизол, АІТ, болючі менструації, інсулінорезистентність. Показники — нижче середнього по ринку.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h3>Щомісячна аналітика і оптимізація</h3>
+          <p>Детальні звіти після кожного місяця: які рекламні теми і формати контенту дають найбільше запитів, що коригуємо, що масштабуємо.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-box green">
+      <p><strong>Ключове досягнення:</strong> За 3 місяці Альона вільно записувала рилзи, голосові, знімала регулярний контент. Вона подолала головний бар'єр — і це відкрило шлях до системного розвитку бренду.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Результати реклами</div>
+    <h2>Показники рекламних кампаній — <em>стабільно вище норми ринку</em></h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Показник</th>
+            <th>Вересень</th>
+            <th>Жовтень</th>
+            <th>Листопад</th>
+            <th>Норма ринку</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Ціна за підписника</td><td class="td-accent">$0,50</td><td>$0,72</td><td>$0,74</td><td>$0,4–$0,8</td></tr>
+          <tr><td>Ціна за ліда</td><td>$0,90</td><td class="td-accent">$0,77</td><td>$0,92</td><td>$0,8–$1,5</td></tr>
+          <tr><td>Конверсія у консультацію</td><td>6,9%</td><td>7,4%</td><td class="td-accent">11,1%</td><td>5–10%</td></tr>
+          <tr><td>Запити на консультацію</td><td>15</td><td>14</td><td class="td-accent">36</td><td>—</td></tr>
+          <tr><td>Нових підписників</td><td>395</td><td>202</td><td class="td-accent">397</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Підсумок</div>
+    <h2>Що цей кейс <em>демонструє</em></h2>
+    <p class="body-text">Кейс Альони — це приклад того, що в особистому бренді <strong>SMM-робота нерозривно пов'язана зі станом і готовністю самого експерта</strong>. Ми знаємо про цю залежність і враховуємо її з першого дня — незалежно від того, чи клієнт приходить з цим запитом свідомо.</p>
+
+    <div class="results-grid">
+      <div class="result-card">
+        <div class="result-num">11,1%</div>
+        <div class="result-label">Конверсія у консультацію — вище норми ринку 5–10%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">+157%</div>
+        <div class="result-label">Зростання запитів на консультацію за листопад</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">36</div>
+        <div class="result-label">Запитів на консультацію за один місяць</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">$0,50</div>
+        <div class="result-label">Найкраща ціна за підписника з реклами</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <a href="case-jaya.html" class="case-nav-link prev">
+      <span class="case-nav-label">Попередній кейс</span>
+      Джая Берник
+    </a>
+    <a href="case-gestalt.html" class="case-nav-link next">
+      <span class="case-nav-label">Наступний кейс</span>
+      Інститут гештальт-терапії
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+</body>
+</html>
