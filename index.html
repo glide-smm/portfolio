@@ -18,7 +18,8 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .nav-links a:hover{color:var(--bordo)}
 .nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;cursor:pointer;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
 .nav-cta:hover{background:var(--bordo-light)}
-.hero{padding:100px 60px 80px;max-width:1200px;margin:0 auto}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1200px;margin:0 auto;padding:80px 60px}
+.hero-photo{width:100%;border-radius:8px;display:block}
 .hero-tag{display:inline-block;background:var(--pink-light);color:var(--bordo);font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;padding:6px 16px;margin-bottom:32px}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,68px);font-weight:400;line-height:1.1;color:var(--ink);max-width:820px;margin-bottom:28px}
 .hero h1 em{font-style:italic;color:var(--bordo)}
@@ -94,13 +95,16 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 </nav>
 
 <div class="hero">
-  <div class="hero-tag">Glide SMM Studio</div>
-  <h1>Комплексний стратегічний SMM з <em>акцентом на результат</em></h1>
-  <p class="hero-sub">Команда для вашого бізнесу. Від розпаковки особистості та упаковки акаунту — до системних продажів через соціальні мережі.</p>
-  <div class="hero-actions">
-    <a href="#cases" class="btn-primary">Подивитись кейси</a>
-    <a href="#contact" class="btn-ghost">Написати нам</a>
+  <div class="hero-text">
+    <div class="hero-tag">Glide SMM Studio</div>
+    <h1>Комплексний стратегічний SMM з <em>акцентом на результат</em></h1>
+    <p class="hero-sub">Команда для вашого бізнесу. Від розпаковки особистості та упаковки акаунту — до системних продажів через соціальні мережі.</p>
+    <div class="hero-actions">
+      <a href="#cases" class="btn-primary">Подивитись кейси</a>
+      <a href="#contact" class="btn-ghost">Написати нам</a>
+    </div>
   </div>
+  <img src="hero.jpg" alt="Команда Glide SMM Studio" class="hero-photo">
 </div>
 
 <div class="divider"></div>
