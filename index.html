@@ -11,8 +11,8 @@
 html{scroll-behavior:smooth}
 body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
 nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bordo);letter-spacing:0.02em}
-.logo span{font-style:italic}
+.logo{display:flex;align-items:center}
+.logo img{height:40px;width:auto;display:block}
 .nav-links{display:flex;gap:36px}
 .nav-links a{text-decoration:none;color:var(--ink2);font-size:14px;font-weight:500;letter-spacing:0.03em;transition:color .2s}
 .nav-links a:hover{color:var(--bordo)}
@@ -83,7 +83,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <body>
 
 <nav>
-  <div class="logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></div>
   <div class="nav-links">
     <a href="#about">Про нас</a>
     <a href="#cases">Кейси</a>
