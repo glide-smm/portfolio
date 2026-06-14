@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: Spanish Life — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bordo);letter-spacing:0.02em;text-decoration:none}
+.logo span{font-style:italic}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.case-hero{background:var(--bordo);padding:80px 60px;color:var(--white)}
+.case-hero-inner{max-width:1100px;margin:0 auto}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+.case-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.case-hero h1 em{font-style:italic;color:var(--pink)}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.metrics-bar{background:var(--ink);padding:0 60px}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--white);font-weight:600;line-height:1}
+.metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
+.case-body{max-width:1100px;margin:0 auto;padding:80px 60px}
+.section-block{margin-bottom:64px}
+.block-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.block-label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--bordo)}
+.section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
+.section-block h2 em{font-style:italic;color:var(--bordo)}
+.body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
+.body-text strong{color:var(--ink);font-weight:600}
+.insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
+.insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
+.insight-box p strong{color:var(--bordo);font-weight:600}
+.steps-list{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:740px}
+.step-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
+.step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
+.result-card{background:var(--white);padding:28px}
+.result-card.accent{background:var(--bordo)}
+.result-num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
+.result-card.accent .result-num{color:var(--white)}
+.result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
+.result-card.accent .result-label{color:rgba(255,255,255,0.7)}
+.divider-line{width:100%;height:1px;background:var(--line);margin:64px 0}
+.phase-badge{display:inline-block;background:var(--bordo);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;margin-bottom:28px}
+.case-nav{background:var(--cream2);padding:56px 60px}
+.case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
+.case-nav-link:hover{color:var(--bordo)}
+.case-nav-link.next::after{content:' →'}
+.case-nav-link.prev::before{content:'← '}
+.case-nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);font-weight:600;display:block;margin-bottom:4px}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.case-hero{padding:60px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span>G</span>lide SMM STUDIO</a>
+  <a href="index.html" class="back-link">Всі кейси</a>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Кейс · Комерція · Нерухомість</div>
+    <h1>Spanish Life — <em>з нерегулярного акаунту до медіапростору про Іспанію, який продає нерухомість</em></h1>
+    <p class="case-hero-sub">Агенція нерухомості, яка допомагає українцям купувати житло в Іспанії. До нас — інколи пост про квартиру, інколи про Іспанію, без системи. За пів року роботи — лідери ніші за залученістю і конверсія в контакт, що зросла більш ніж удвічі.</p>
+  </div>
+</div>
+
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-cell">
+      <div class="metric-big">22 → 58%</div>
+      <div class="metric-sub">Конверсія в контакт</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">×2,5</div>
+      <div class="metric-sub">Зростання Telegram</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">88%</div>
+      <div class="metric-sub">Додивленість сториз</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">8000+</div>
+      <div class="metric-sub">Переглядів топ-поста</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+
+  <div class="section-block">
+    <div class="block-label">Запит</div>
+    <h2>Сильний бізнес — <em>і акаунт без системи</em></h2>
+    <p class="body-text">Spanish Life — агенція нерухомості, яка допомагає українцям купувати житло в Іспанії. До нас акаунт жив нерегулярно: інколи пост про квартиру, інколи щось про Іспанію, без єдиної лінії і без стабільного ведення.</p>
+    <p class="body-text">Запит клієнта був масштабним: <strong>якісне і системне ведення Instagram та Telegram плюс організація контент-роботи всередині великої команди.</strong> Головна мета — виділитись серед конкурентів на ринку і стати lovemark-брендом, у який закохуються ще до першого дзвінка.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Рішення</div>
+    <h2>Не «ще одне агентство», <em>а медіа про Іспанію</em></h2>
+    <p class="body-text">Ми вирішили будувати не черговий акаунт нерухомості, а <strong>медіапростір про Іспанію</strong>. Акаунт, який не просто показує об'єкти, а закохує в країну, відповідає на питання і закриває заперечення — щоб людина пройшла з нами весь шлях від «а як це — жити в Іспанії?» до купівлі квартири.</p>
+    <p class="body-text">Звідси й контент: новини, важливі для українців в Іспанії; огляди районів, міст і узбережжя; поради та живі історії агентів; регулярні огляди конкретних об'єктів. Паралельно ми вибудовували контент-систему всередині команди клієнта — щоб агенти й експерти стабільно з'являлися в кадрі, а зйомки готувалися заздалегідь під прописані сценарії.</p>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Труднощі</div>
+    <h2>Велика команда — <em>і складна організація</em></h2>
+    <p class="body-text">Найбільший виклик був не в контенті, а в організації. Spanish Life — це велика команда: керівники, агенти в різних регіонах, дизайнери. Щоб акаунт став живим, потрібно було <strong>вибудувати роботу так, щоб десятки людей системно віддавали матеріал</strong> — зйомки квартир, кружечки, участь у сториз і рилз, новини з місць.</p>
+    <p class="body-text">Ми налаштували процеси: збір і анкетування агентів, попередні зідзвони перед зйомками, заздалегідь прописані завдання з хуками й форматами, чіткий розподіл — хто і що знімає. Поступово команда з пасивного джерела фактури перетворилась на повноцінних учасників контенту.</p>
+    <div class="insight-box">
+      <p><strong>Саме поява реальних людей</strong> — агентів і керівників у кадрі — дала найбільший приріст довіри й залученості аудиторії.</p>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Система</div>
+    <h2>Контент, який <em>працює на довіру</em></h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Новинна рубрика</h3>
+          <p>Швидке реагування на новини, важливі для українців в Іспанії. Найрезультативніший формат: один новинний пост зібрав понад 8 000 переглядів і 128 збережень.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Експерти в кадрі</h3>
+          <p>Агенти й керівники в сториз, рилз і дописах. Контент із реальними людьми стабільно давав найкращі охоплення і нових підписників.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Авторські рубрики</h3>
+          <p>«5 міст біля…», добірки об'єктів, огляди квартир. Рубрику «5 міст біля…» згодом скопіювали навіть конкуренти.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Чат-бот у директі</h3>
+          <p>Автоматичні відповіді та швидша обробка звернень — це напряму підняло конверсію в контакт.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Щомісячна аналітика</h3>
+          <p>Розбір кожного формату, сториз і поста — і коригування стратегії під те, що реально працює.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-block">
+    <div class="block-label">Результати</div>
+    <h2>Цифри за <em>перші пів року роботи</em></h2>
+    <div class="results-grid">
+      <div class="result-card accent">
+        <div class="result-num">22 → 58%</div>
+        <div class="result-label">Конверсія в контакт у директі — люди, які залишили контакти й перейшли до менеджерів</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">×2,5</div>
+        <div class="result-label">Зростання Telegram-каналу — з 287 до 710 підписників, органічно</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">88%</div>
+        <div class="result-label">Додивленість сториз — зросла з 56%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">1,49%</div>
+        <div class="result-label">ERR (залученість) — майже вдвічі більше за стартові 0,83%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">+1300</div>
+        <div class="result-label">Нових підписників в Instagram — стабільний органічний приріст щомісяця</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">21</div>
+        <div class="result-label">Запит на вакансію — акаунт почав працювати ще й на HR-бренд</div>
+      </div>
+    </div>
+    <p class="body-text" style="margin-top:32px">І головне — <strong>продажі квартир, що приходять напряму з акаунту.</strong> У цій ніші навіть одна угода окуповує роботу команди за місяці. Окремий результат — оновлене позиціонування: разом із командою клієнта ми перетворили «типове агентство нерухомості» на живий медіапростір про Іспанію, у який аудиторія повертається не за квартирою, а за країною.</p>
+  </div>
+
+</div>
+
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <a href="index.html" class="case-nav-link prev">Всі кейси</a>
+    <a href="case-sun-haven.html" class="case-nav-link next">
+      <span class="case-nav-label">Наступний кейс</span>
+      Sun Haven
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+</body>
+</html>
