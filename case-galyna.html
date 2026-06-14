@@ -11,26 +11,30 @@
 html{scroll-behavior:smooth}
 body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
 nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--bordo);letter-spacing:0.02em;text-decoration:none}
-.logo span{font-style:italic}
+.logo{display:flex;align-items:center}
+.logo img{height:60px;width:auto;display:block;margin-left:100px}
+.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--bordo-light)}
+.nav-right{display:flex;align-items:center;gap:40px}
 .back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
 .back-link:hover{color:var(--bordo)}
 .back-link::before{content:'← '}
-.case-hero{background:var(--bordo);padding:80px 60px;color:var(--white)}
+.case-hero{background-image:linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)),url('galyna.jpg');background-size:cover;background-position:center;padding:72px 60px 56px;color:var(--white)}
 .case-hero-inner{max-width:1100px;margin:0 auto}
 .case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
 .case-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
-.case-hero h1 em{font-style:italic;color:var(--pink)}
+.case-hero h1 em{font-style:italic;color:var(--white)}
 .case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
 .metrics-bar{background:var(--ink);padding:0 60px}
 .metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
 .metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
-.metric-big{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--white);font-weight:600;line-height:1}
+.metric-big{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--white);font-weight:600;line-height:1}
 .metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
-.case-body{max-width:1100px;margin:0 auto;padding:80px 60px}
-.section-block{margin-bottom:64px}
-.block-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
-.block-label::before{content:'';display:inline-block;width:24px;height:1px;background:var(--bordo)}
+.case-section{padding:48px 60px}.case-section:nth-of-type(even){background:var(--cream2)}.case-section-inner{max-width:1100px;margin:0 auto}
+.case-body{max-width:1100px;margin:0 auto;padding:0}
+.section-block{margin-bottom:0}
+.block-label{display:inline-flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+
 .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
 .section-block h2 em{font-style:italic;color:var(--bordo)}
 .body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
@@ -64,14 +68,17 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
 .footer-logo span{font-style:italic}
 .footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
-@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.case-hero{padding:60px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}.logo img{margin-left:0;height:44px}.nav-right{gap:20px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="glide_portfolio.html" class="logo"><span>G</span>lide SMM STUDIO</a>
-  <a href="glide_portfolio.html" class="back-link">Всі кейси</a>
+  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a>
+  <div class="nav-right">
+    <a href="index.html" class="back-link">Всі кейси</a>
+    <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
+  </div>
 </nav>
 
 <div class="case-hero">
@@ -104,6 +111,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 </div>
 
 <div class="case-body">
+<div class="case-section"><div class="case-section-inner">
 
   <div class="section-block">
     <div class="phase-badge">Етап 1</div>
@@ -113,6 +121,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <p class="body-text">Запит клієнтки був чітким: хочу продавати консультації через Instagram. Але продавати було нікому.</p>
   </div>
 
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Рішення</div>
     <h2>Почати <em>з нуля</em> — але правильно</h2>
@@ -157,6 +167,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     </div>
   </div>
 
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Труднощі</div>
     <h2>Занадто багато ідей — <em>занадто мало структури</em></h2>
@@ -166,8 +178,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     </div>
   </div>
 
-  <div class="divider-line"></div>
-
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="phase-badge">Етап 2</div>
     <div class="block-label">Новий запуск</div>
@@ -175,6 +187,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <p class="body-text">Другого разу стартували інакше. Таргет в Instagram покращився — і ми змінили стратегію. <strong>Новий рекламний кабінет, орієнтований виключно на Європу:</strong> українки, які живуть у Нідерландах, Данії, Німеччині, Польщі. Бюджет — $200–500 на місяць, при цьому окупність досягала 400%: вклали $200 — заробили $1000.</p>
   </div>
 
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Система</div>
     <h2>Воронка, яка <em>продає без тиску</em></h2>
@@ -210,6 +224,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     </div>
   </div>
 
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Результати</div>
     <h2>Цифри, які <em>говорять самі за себе</em></h2>
@@ -241,11 +257,11 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     </div>
   </div>
 
-</div>
+</div></div></div>
 
 <div class="case-nav">
   <div class="case-nav-inner">
-    <a href="glide_portfolio.html" class="case-nav-link prev">Всі кейси</a>
+    <a href="index.html" class="case-nav-link prev">Всі кейси</a>
     <a href="case-jaya.html" class="case-nav-link next">
       <span class="case-nav-label">Наступний кейс</span>
       Джая Берник
