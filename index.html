@@ -257,7 +257,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <button class="logos-arrow" id="logosPrev" aria-label="Назад">‹</button>
       <div class="logos-viewport">
         <div class="logos-track" id="logosTrack">
-          <div class="logo-item"><img src="logo_ak_school.png" alt="AK School"></div>
+          <div class="logo-item"><img src="logo_ak_school.PNG" alt="AK School"></div>
           <div class="logo-item"><img src="logo_spanish_life.png" alt="Spanish Life"></div>
           <div class="logo-item"><img src="logo_sun_haven.png" alt="Sun Haven Developers"></div>
           <div class="logo-item"><img src="logo_g-bar.png" alt="G-Bar"></div>
@@ -317,16 +317,37 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 (function(){
   var track=document.getElementById('logosTrack');
   if(!track) return;
-  var total=track.children.length;
-  var page=0, timer;
-  function perView(){ return window.matchMedia('(max-width:900px)').matches ? 2 : 4; }
-  function pages(){ return Math.ceil(total/perView()); }
-  function go(p){ var n=pages(); page=(p+n)%n; track.style.transform='translateX(-'+(page*100)+'%)'; }
-  function start(){ timer=setInterval(function(){ go(page+1); }, 6000); }
+  var timer, animating=false;
+  function step(){ return track.children[0].getBoundingClientRect().width; }
+  function next(){
+    if(animating) return; animating=true;
+    track.style.transition='transform .6s cubic-bezier(.4,0,.2,1)';
+    track.style.transform='translateX(-'+step()+'px)';
+    track.addEventListener('transitionend',function h(){
+      track.removeEventListener('transitionend',h);
+      track.style.transition='none';
+      track.appendChild(track.children[0]);   // перше лого → в кінець
+      track.style.transform='translateX(0)';
+      void track.offsetWidth;                  // примусовий reflow, щоб скидання було миттєвим
+      animating=false;
+    });
+  }
+  function prev(){
+    if(animating) return; animating=true;
+    track.style.transition='none';
+    track.insertBefore(track.children[track.children.length-1],track.children[0]); // останнє → на початок
+    track.style.transform='translateX(-'+step()+'px)';
+    void track.offsetWidth;
+    track.style.transition='transform .6s cubic-bezier(.4,0,.2,1)';
+    track.style.transform='translateX(0)';
+    track.addEventListener('transitionend',function h(){
+      track.removeEventListener('transitionend',h); animating=false;
+    });
+  }
+  function start(){ timer=setInterval(next, 3000); }
   function reset(){ clearInterval(timer); start(); }
-  document.getElementById('logosNext').onclick=function(){ go(page+1); reset(); };
-  document.getElementById('logosPrev').onclick=function(){ go(page-1); reset(); };
-  window.addEventListener('resize', function(){ go(page); });
+  document.getElementById('logosNext').onclick=function(){ next(); reset(); };
+  document.getElementById('logosPrev').onclick=function(){ prev(); reset(); };
   start();
 })();
 </script>
