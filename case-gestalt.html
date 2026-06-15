@@ -75,7 +75,23 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
 .footer-logo span{font-style:italic}
 .footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
-@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+.gallery-section{background:var(--cream2);padding:56px 60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gallery-inner{max-width:1100px;margin:0 auto}
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:24px;flex-wrap:wrap}
+.gallery-head-text{flex:1;min-width:240px}
+.gallery-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:14px}
+.gallery-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25}
+.gallery-head h2 em{font-style:italic;color:var(--bordo)}
+.gallery-arrows{display:flex;gap:12px;flex:none}
+.gallery-arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.gallery-arrow:hover{background:var(--bordo);color:var(--white);border-color:var(--bordo)}
+.gallery-track{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-bottom:8px;-ms-overflow-style:none;scrollbar-width:none}
+.gallery-track::-webkit-scrollbar{display:none}
+.gallery-item{flex:0 0 auto;width:240px;scroll-snap-align:start}
+.gallery-item img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.08)}
+.gallery-caption{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
+.funnel-img{width:100%;max-width:740px;margin:28px 0 0;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,0.1);display:block}
+@media(max-width:900px){.gallery-section{padding:44px 24px}.gallery-item{width:185px}.gallery-arrow{width:40px;height:40px;font-size:16px}}
 </style>
 </head>
 <body>
@@ -189,11 +205,46 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   </div>
 
   </div></div>
+
+<div class="gallery-section">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="gallery-head-text">
+        <span class="gallery-label">Як це виглядало</span>
+        <h2>Фірмовий стиль, сторіс і макети, <em>зроблені для інституту</em></h2>
+      </div>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" id="galPrev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" id="galNext" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="galTrack">
+      <div class="gallery-item"><img src="IMG_5162.png" alt="Профіль"><div class="gallery-caption">Стрічка профілю</div></div>
+      <div class="gallery-item"><img src="IMG_5163.png" alt="Профіль"><div class="gallery-caption">Стрічка профілю</div></div>
+      <div class="gallery-item"><img src="IMG_0062.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0063.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0064.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0065.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0066.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0067.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0068.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0069.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0070.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="IMG_0071.jpg" alt="Сторіс"><div class="gallery-caption">Оформлення сторіс</div></div>
+      <div class="gallery-item"><img src="target1.png" alt="Макет для таргету"><div class="gallery-caption">Макет для таргету</div></div>
+      <div class="gallery-item"><img src="target2.png" alt="Макет для таргету"><div class="gallery-caption">Макет для таргету</div></div>
+      <div class="gallery-item"><img src="tsrget3.png" alt="Макет для таргету"><div class="gallery-caption">Макет для таргету</div></div>
+      <div class="gallery-item"><img src="target4.png" alt="Макет для таргету"><div class="gallery-caption">Макет для таргету</div></div>
+    </div>
+  </div>
+</div>
+
   <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Вебінарна воронка</div>
     <h2>Як ми зібрали <em>100+ людей автоматично</em></h2>
     <p class="body-text">Ключовий інструмент цього кейсу — вебінарна воронка через Telegram чат-бот. Вона дозволила зібрати учасників на вебінар і провести їх до покупки курсу без ручної роботи з кожним.</p>
+    <img src="gestalt-bot.png" alt="Схема вебінарної воронки в чат-боті" class="funnel-img">
 
     <div class="funnel-visual">
       <h3>Схема воронки</h3>
@@ -286,5 +337,14 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
   <div class="footer-copy">© 2025 Glide SMM Studio</div>
 </footer>
+<script>
+(function(){
+  var track=document.getElementById('galTrack');
+  if(!track) return;
+  function step(){ var it=track.querySelector('.gallery-item'); return it ? it.getBoundingClientRect().width+18 : 260; }
+  document.getElementById('galNext').onclick=function(){ track.scrollBy({left:step()*2,behavior:'smooth'}); };
+  document.getElementById('galPrev').onclick=function(){ track.scrollBy({left:-step()*2,behavior:'smooth'}); };
+})();
+</script>
 </body>
 </html>
