@@ -50,9 +50,15 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .step-num{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
 .step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
 .step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
-.funnel-visual{background:var(--white);padding:36px;margin:32px 0;max-width:740px}
+.funnel-row{display:grid;grid-template-columns:0.85fr 1.15fr;gap:24px;align-items:start;margin:32px 0}
+.funnel-visual{background:var(--white);padding:36px;margin:0;max-width:none}
 .funnel-visual h3{font-size:14px;font-weight:600;color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:24px}
 .funnel-steps{display:flex;flex-direction:column;gap:0}
+.funnel-shot{margin:0}
+.funnel-shot a{display:block;position:relative}
+.funnel-shot img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,0.1);display:block}
+.funnel-shot-cap{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
+@media(max-width:860px){.funnel-row{grid-template-columns:1fr}}
 .funnel-step{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
 .funnel-step:last-child{border-bottom:none}
 .funnel-arrow{color:var(--ink3);font-size:18px;display:none}
@@ -242,11 +248,11 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <div class="block-label">Вебінарна воронка</div>
     <h2>Як ми зібрали <em>100+ людей автоматично</em></h2>
     <p class="body-text">Ключовий інструмент цього кейсу — вебінарна воронка через Telegram чат-бот. Вона дозволила зібрати учасників на вебінар і провести їх до покупки курсу без ручної роботи з кожним.</p>
-    <img src="gestalt-bot.png" alt="Схема вебінарної воронки в чат-боті" class="funnel-img">
 
-    <div class="funnel-visual">
-      <h3>Схема воронки</h3>
-      <div class="funnel-steps">
+    <div class="funnel-row">
+      <div class="funnel-visual">
+        <h3>Схема воронки</h3>
+        <div class="funnel-steps">
         <div class="funnel-step">
           <div class="funnel-icon">📣</div>
           <div class="funnel-text">
@@ -282,6 +288,13 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
             <span>Після вебінару — персональна робота з кожним учасником для конвертації у продаж</span>
           </div>
         </div>
+      </div>
+    </div>
+      <div class="funnel-shot">
+        <a href="gestalt-bot.png" target="_blank" rel="noopener">
+          <img src="gestalt-bot.png" alt="Реальна схема воронки в чат-боті">
+        </a>
+        <div class="funnel-shot-cap">Реальна воронка в боті — натисніть, щоб роздивитись</div>
       </div>
     </div>
 
