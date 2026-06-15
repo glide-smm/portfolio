@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: AK School — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}.logo img{height:60px;width:auto;display:block;margin-left:100px}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--bordo-light)}
+.nav-right{display:flex;align-items:center;gap:40px}.case-hero{background-image:linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)),url('ak-school.jpg');background-size:cover;background-position:center;padding:72px 60px 56px;color:var(--white)}
+.case-hero-inner{max-width:1100px;margin:0 auto}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+.case-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.case-hero h1 em{font-style:italic;color:var(--white)}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.metrics-bar{background:var(--ink);padding:0 60px}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--white);font-weight:600;line-height:1}
+.metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
+.case-section{padding:48px 60px}.case-section:nth-of-type(even){background:var(--cream2)}.case-section-inner{max-width:1100px;margin:0 auto}.case-body{padding:0}
+.section-block{margin-bottom:0px}
+.block-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
+.section-block h2 em{font-style:italic;color:var(--bordo)}
+.body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
+.body-text strong{color:var(--ink);font-weight:600}
+.insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
+.insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
+.insight-box p strong{color:var(--bordo);font-weight:600}
+.steps-list{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:740px}
+.step-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
+.step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
+.result-card{background:var(--white);padding:28px}
+.result-card.accent{background:var(--bordo)}
+.result-num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
+.result-card.accent .result-num{color:var(--white)}
+.result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
+.result-card.accent .result-label{color:rgba(255,255,255,0.7)}
+.divider-line{width:100%;height:1px;background:var(--line);margin:64px 0}
+.phase-badge{display:inline-block;background:var(--bordo);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;margin-bottom:28px}
+.case-nav{background:var(--cream2);padding:56px 60px}
+.case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
+.case-nav-link:hover{color:var(--bordo)}
+.case-nav-link.next::after{content:' →'}
+.case-nav-link.prev::before{content:'← '}
+.case-nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);font-weight:600;display:block;margin-bottom:4px}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a>
+  <div class="nav-right">
+    <a href="index.html" class="back-link">Всі кейси</a>
+    <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
+  </div>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Кейс · Особистий бренд · Освіта</div>
+    <h1>AK School — <em>4 роки разом: від вірального TikTok до системного бренду школи англійської</em></h1>
+  </div>
+</div>
+
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-cell">
+      <div class="metric-big">5 млн</div>
+      <div class="metric-sub">Переглядів на топ-відео в TikTok</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">+12K</div>
+      <div class="metric-sub">Підписників за перший рік</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">1,8 млн</div>
+      <div class="metric-sub">Органічних переглядів за пів року</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">923K</div>
+      <div class="metric-sub">Охоплених акаунтів</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-section"><div class="case-section-inner">
+
+  <div class="section-block">
+    <div class="block-label">Запит</div>
+    <h2>Школа з контентом — <em>але без системи просування</em></h2>
+    <p class="body-text">AK School — школа англійської мови та особистий бренд її власниці Анастасії. Коли ми починали співпрацю, акаунт уже жив: була гарна аватарка, впізнаваний нікнейм і стабільне ведення контенту. Але <strong>не вистачало системи</strong> — шапка профілю була без УТП і заклику, в акаунті не було рубрикатора, а контент не працював на конкретні цілі бізнесу.</p>
+    <p class="body-text">Запит був комплексним: <strong>збільшити впізнаваність школи, підняти лояльність до бренду, залучати лідів — потенційних студентів — і перетворювати інтерес у реальних клієнтів.</strong> Не косметичні правки, а повна стратегічна перебудова просування.</p>
+    <p class="body-text">З цим проєктом ми працюємо вже <strong>понад 4 роки</strong> — тож тут показуємо не все, а найяскравіше: ранній віральний прорив у TikTok і те, як сьогодні працює доросла контент-система школи.</p>
+  </div>
+
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Рішення</div>
+    <h2>Спочатку — <em>упакувати, потім масштабувати</em></h2>
+    <p class="body-text">Ми почали з фундаменту: розробили контент-стратегію та контент-план із чітким рубрикатором, сформували позиціонування й УТП школи, виправили шапку профілю та допрацювали фірмовий стиль — оновили візуал, оформлення сторіс і актуальні. Профіль підготували до просування таргетованою рекламою.</p>
+    <p class="body-text">Основою акаунту став <strong>відеоконтент</strong>, який показує школу з найкращого боку — реальні шматочки уроків, життя викладачів, корисна англійська для щодення. А щоб отримати додатковий безкоштовний трафік, ми <strong>підключили нову соцмережу — TikTok.</strong></p>
+    <div class="insight-box">
+      <p><strong>Сторіс ДО:</strong> охоплення ≈150–330, без оформлення і діалогу з аудиторією. <strong>Сторіс ПІСЛЯ:</strong> ≈3000–7000 — за рахунок впізнаваного стилю та постійного діалогу з підписниками.</p>
+    </div>
+  </div>
+
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">TikTok-прорив</div>
+    <h2>5 мільйонів переглядів <em>і потік теплої аудиторії</em></h2>
+    <p class="body-text">TikTok став головним відкриттям проєкту. Завдяки правильній контент-стратегії він перетворився на потужне джерело безкоштовного трафіку: майже після кожного відео відбувався <strong>«перегін» аудиторії в Instagram</strong> — і ці люди не просто заходили подивитись, а лишались і продовжували стежити за школою.</p>
+    <p class="body-text">Рекорд — <strong>5 мільйонів переглядів на одне відео.</strong> Акаунт швидко виріс до 45 тисяч+ підписників. Почали приходити перші запити на співпрацю та заняття — у тому числі від популярних блогерів.</p>
+    <div class="insight-box">
+      <p><strong>Найкращі заявки в директі</strong> пішли саме після активного постингу в TikTok — віральне відео працювало як вершина воронки, а Instagram утримував і прогрівав аудиторію.</p>
+    </div>
+  </div>
+
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Труднощі</div>
+    <h2>Зростити особистий бренд <em>у бренд цілої команди</em></h2>
+    <p class="body-text">На старті все трималося на особистості Анастасії. Але школа — це команда викладачів, і аудиторії важливо було побачити, що за навчанням стоїть не одна людина. Виникала навіть характерна проблема: <strong>«я не знаю свого викладача, хочу до Анастасії».</strong></p>
+    <p class="body-text">Ми поступово й плавно розширювали акцент з особистого бренду на всю команду — вводили нові обличчя, візитівки викладачів, EGC-контент. Завдяки м'якому переходу активність не просто збереглась, а зросла: аудиторія сприйняла школу як <strong>системний проєкт, а не сольну сторінку.</strong></p>
+  </div>
+
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Система</div>
+    <h2>Контент-машина, <em>що працює на ліди й довіру</em></h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Упаковка та позиціонування</h3>
+          <p>Контент-стратегія з чітким рубрикатором, УТП школи, виправлена шапка профілю, оновлений фірмовий стиль і оформлення акаунту.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>TikTok як джерело безкоштовного трафіку</h3>
+          <p>Окрема контент-стратегія під TikTok із віральними форматами та постійним перегоном теплої аудиторії в Instagram.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Корисний контент про щоденну англійську</h3>
+          <p>Daily English, незвичні асоціації, пояснення правил, тести на перевірку рівня — формати, які найкраще конвертують у підписки й зберігання.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Тригерні шматочки уроків</h3>
+          <p>Реальні фрагменти занять з Анастасією та викладачами — найкраще показують процес навчання й стабільно дають віральні охоплення.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Команда у контенті</h3>
+          <p>Візитівки викладачів, EGC-контент, кейси й відгуки студентів — будують довіру до школи як до системного проєкту.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h3>Воронки та щомісячна аналітика</h3>
+          <p>Лід-магніти, автоматичні воронки, таргет і потижнева статистика — розбір кожного формату й масштабування того, що працює.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div></div>
+  <div class="case-section"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Результати</div>
+    <h2>Цифри за <em>останній звітний період</em></h2>
+    <div class="results-grid">
+      <div class="result-card accent">
+        <div class="result-num">5 млн</div>
+        <div class="result-label">Переглядів на топ-відео в TikTok — рекорд проєкту, потужне джерело безкоштовного трафіку</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">+12K</div>
+        <div class="result-label">Підписників за перший рік роботи — і співпраця триває вже понад 4 роки</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">1,8 млн</div>
+        <div class="result-label">Органічних переглядів акаунту за пів року — без ставки на платне просування</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">923K</div>
+        <div class="result-label">Охоплених акаунтів за період — переважно органіка</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">+43%</div>
+        <div class="result-label">Зростання медіанних охоплень сториз за 5 місяців, ERR піднявся до ~10%</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">211K</div>
+        <div class="result-label">Переглядів на топ-рилз періоду — ситуативний контент із ERR майже 14%</div>
+      </div>
+    </div>
+    <p class="body-text" style="margin-top:32px">І головне — <strong>школа отримала живу, керовану систему просування.</strong> Віральний TikTok дав вибуховий старт, а за роки роботи ми вибудували дорослу контент-машину: стабільна органіка, впізнаваний бренд команди й постійний потік заявок на заняття. Робота над проєктом триває — і кожен етап додає школі впізнаваності та довіри.</p>
+  </div>
+
+</div></div>
+
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <a href="index.html" class="case-nav-link prev">Всі кейси</a>
+    <a href="case-galyna.html" class="case-nav-link next">
+      <span class="case-nav-label">Наступний кейс</span>
+      Галина Сорочан
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+</body>
+</html>
