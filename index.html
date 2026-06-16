@@ -403,6 +403,14 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .gl-field input,.gl-field textarea{width:100%;font-family:'Manrope',sans-serif;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:13px 15px;transition:border-color .2s;outline:none}
 .gl-field input:focus,.gl-field textarea:focus{border-color:var(--bordo)}
 .gl-field textarea{resize:vertical;min-height:62px}
+.gl-field input.gl-invalid,.gl-field textarea.gl-invalid,.gl-phone.gl-invalid{border-color:var(--bordo);background:#fdf6f8}
+.gl-label{display:block;font-size:12px;font-weight:500;color:var(--ink3);margin-bottom:5px;letter-spacing:.02em}
+.gl-label .gl-star{color:var(--bordo);margin-left:2px}
+.gl-phone{display:flex;border:1px solid var(--line);background:#fff;transition:border-color .2s}
+.gl-phone:focus-within{border-color:var(--bordo)}
+.gl-phone select{flex:none;border:none;border-right:1px solid var(--line);background:#fff;font-family:'Manrope',sans-serif;font-size:15px;color:var(--ink);padding:13px 8px 13px 13px;outline:none;cursor:pointer;max-width:112px}
+.gl-phone input{flex:1;border:none!important;background:transparent}
+.gl-phone input:focus{border:none!important}
 .gl-submit{width:100%;background:var(--bordo);color:#fff;border:none;padding:16px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:background .2s;margin-top:6px}
 .gl-submit:hover{background:var(--bordo-light)}
 .gl-submit:disabled{opacity:.6;cursor:default}
@@ -426,10 +434,40 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <h3>Обговоримо <em>проєкт</em></h3>
       <p class="gl-sub">Залиште контакти — і ми зв'яжемося з вами, щоб обговорити ваш проєкт. Зазвичай відповідаємо протягом робочого дня.</p>
 
-      <div class="gl-field"><input type="text" id="glName" placeholder="Ваше ім'я" autocomplete="name"></div>
-      <div class="gl-field"><textarea id="glNiche" placeholder="Ніша бізнесу або коротко про запит"></textarea></div>
-      <div class="gl-field"><input type="tel" id="glPhone" placeholder="Номер телефону" autocomplete="tel"></div>
-      <div class="gl-field"><input type="text" id="glTg" placeholder="Нік у Telegram (напр. @glide)"></div>
+      <div class="gl-field">
+        <label class="gl-label" for="glName">Ваше ім'я<span class="gl-star">*</span></label>
+        <input type="text" id="glName" placeholder="Як до вас звертатися" autocomplete="name">
+      </div>
+      <div class="gl-field">
+        <label class="gl-label" for="glNiche">Ніша бізнесу або запит<span class="gl-star">*</span></label>
+        <textarea id="glNiche" placeholder="Коротко про ваш бізнес або задачу"></textarea>
+      </div>
+      <div class="gl-field">
+        <label class="gl-label" for="glPhone">Номер телефону<span class="gl-star">*</span></label>
+        <div class="gl-phone" id="glPhoneWrap">
+          <select id="glCode" aria-label="Код країни">
+            <option value="+380" selected>🇺🇦 +380</option>
+            <option value="+48">🇵🇱 +48</option>
+            <option value="+49">🇩🇪 +49</option>
+            <option value="+44">🇬🇧 +44</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="+34">🇪🇸 +34</option>
+            <option value="+39">🇮🇹 +39</option>
+            <option value="+33">🇫🇷 +33</option>
+            <option value="+420">🇨🇿 +420</option>
+            <option value="+40">🇷🇴 +40</option>
+            <option value="+995">🇬🇪 +995</option>
+            <option value="+971">🇦🇪 +971</option>
+            <option value="+90">🇹🇷 +90</option>
+            <option value="+7">🇰🇿 +7</option>
+          </select>
+          <input type="tel" id="glPhone" placeholder="00 000 00 00" autocomplete="tel">
+        </div>
+      </div>
+      <div class="gl-field">
+        <label class="gl-label" for="glTg">Нік у Telegram<span class="gl-star">*</span></label>
+        <input type="text" id="glTg" placeholder="напр. @glide" autocomplete="off">
+      </div>
       <!-- приховане поле-пастка для ботів -->
       <input type="text" class="gl-hp" id="glHp" tabindex="-1" autocomplete="off">
 
@@ -473,13 +511,32 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('open')) closeForm(); });
 
   submitBtn.addEventListener('click', function(){
-    var name = document.getElementById('glName').value.trim();
-    var niche = document.getElementById('glNiche').value.trim();
-    var phone = document.getElementById('glPhone').value.trim();
-    var tg = document.getElementById('glTg').value.trim();
+    var nameEl = document.getElementById('glName');
+    var nicheEl = document.getElementById('glNiche');
+    var phoneEl = document.getElementById('glPhone');
+    var tgEl = document.getElementById('glTg');
+    var phoneWrap = document.getElementById('glPhoneWrap');
+    var code = document.getElementById('glCode').value;
+
+    var name = nameEl.value.trim();
+    var niche = nicheEl.value.trim();
+    var phoneRaw = phoneEl.value.trim();
+    var tg = tgEl.value.trim();
     var hp = document.getElementById('glHp').value.trim();
 
-    if(!name || !niche || !phone || !tg){ errBox.style.display='block'; return; }
+    // скидаємо підсвітку
+    [nameEl, nicheEl, tgEl].forEach(function(el){ el.classList.remove('gl-invalid'); });
+    phoneWrap.classList.remove('gl-invalid');
+
+    // перевірка обов'язкових полів — підсвічуємо порожні
+    var ok = true;
+    if(!name){ nameEl.classList.add('gl-invalid'); ok=false; }
+    if(!niche){ nicheEl.classList.add('gl-invalid'); ok=false; }
+    if(!phoneRaw){ phoneWrap.classList.add('gl-invalid'); ok=false; }
+    if(!tg){ tgEl.classList.add('gl-invalid'); ok=false; }
+    if(!ok){ errBox.textContent='Заповніть, будь ласка, всі поля.'; errBox.style.display='block'; return; }
+
+    var phone = code + ' ' + phoneRaw;
     errBox.style.display='none';
     submitBtn.disabled = true;
     submitBtn.textContent = 'Надсилаємо...';
