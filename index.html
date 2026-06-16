@@ -123,7 +123,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <a href="#approach">Підхід</a>
     <a href="#contact">Контакти</a>
   </div>
-  <a href="javascript:void(0)" class="nav-cta sp_popup_3b525137-6bb1-4b33-af5a-ab4c5590ebaa">Обговорити проєкт</a>
+  <a href="javascript:void(0)" class="nav-cta js-open-form">Обговорити проєкт</a>
 </nav>
 
 <div class="hero">
@@ -134,7 +134,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <p class="hero-sub">Команда для вашого бізнесу. Від розпаковки особистості та упаковки акаунту — до системних продажів через соціальні мережі.</p>
       <div class="hero-actions">
         <a href="#cases" class="btn-primary">Подивитись кейси</a>
-        <a href="javascript:void(0)" class="btn-ghost sp_popup_3b525137-6bb1-4b33-af5a-ab4c5590ebaa">Написати нам</a>
+        <a href="javascript:void(0)" class="btn-ghost js-open-form">Написати нам</a>
       </div>
     </div>
   </div>
@@ -340,7 +340,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="cta-section" id="contact">
   <h2>Готові до <em>результату</em>?</h2>
   <p>Розкажіть про свій проєкт — обговоримо, як ми можемо посилити ваш бренд</p>
-  <a href="javascript:void(0)" class="btn-white sp_popup_3b525137-6bb1-4b33-af5a-ab4c5590ebaa">Написати нам</a>
+  <a href="javascript:void(0)" class="btn-white js-open-form">Написати нам</a>
 </div>
 
 <footer>
@@ -386,7 +386,127 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   start();
 })();
 </script>
-<!-- SendPulse попап -->
-<script async src="https://static.sppopups.com/assets/loader.js" data-chats-widget-id="53e25426-a63e-4345-91b7-d9642a48c51f"></script>
+<!-- ===== Форма-попап (власна, без зовнішніх скриптів) ===== -->
+<style>
+.gl-overlay{position:fixed;inset:0;background:rgba(26,18,16,.55);backdrop-filter:blur(2px);z-index:9998;display:none;align-items:center;justify-content:center;padding:20px}
+.gl-overlay.open{display:flex;animation:glfade .25s ease}
+@keyframes glfade{from{opacity:0}to{opacity:1}}
+.gl-modal{background:var(--cream);max-width:440px;width:100%;padding:40px 36px 32px;position:relative;animation:glrise .3s cubic-bezier(.22,.61,.36,1) both;box-shadow:0 24px 70px rgba(26,18,16,.28);max-height:92vh;overflow-y:auto}
+@keyframes glrise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.gl-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border:none;background:transparent;color:var(--ink3);font-size:26px;line-height:1;cursor:pointer;transition:color .2s}
+.gl-close:hover{color:var(--bordo)}
+.gl-tag{display:inline-block;background:var(--pink-light);color:var(--bordo);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;margin-bottom:16px}
+.gl-modal h3{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:10px}
+.gl-modal h3 em{font-style:italic;color:var(--bordo)}
+.gl-sub{font-size:14px;color:var(--ink2);line-height:1.55;margin-bottom:24px}
+.gl-field{margin-bottom:14px}
+.gl-field input,.gl-field textarea{width:100%;font-family:'Manrope',sans-serif;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:13px 15px;transition:border-color .2s;outline:none}
+.gl-field input:focus,.gl-field textarea:focus{border-color:var(--bordo)}
+.gl-field textarea{resize:vertical;min-height:62px}
+.gl-submit{width:100%;background:var(--bordo);color:#fff;border:none;padding:16px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:background .2s;margin-top:6px}
+.gl-submit:hover{background:var(--bordo-light)}
+.gl-submit:disabled{opacity:.6;cursor:default}
+.gl-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.gl-err{color:var(--bordo);font-size:13px;margin-top:10px;display:none}
+.gl-thanks{display:none;text-align:center;padding:14px 0}
+.gl-thanks .gl-check{width:72px;height:72px;border-radius:50%;background:var(--bordo);display:flex;align-items:center;justify-content:center;margin:0 auto 22px}
+.gl-thanks .gl-check svg{width:34px;height:34px}
+.gl-thanks h3{margin-bottom:12px}
+.gl-thanks p{font-size:15px;color:var(--ink2);line-height:1.6;max-width:320px;margin:0 auto}
+@media(max-width:480px){.gl-modal{padding:34px 22px 26px}.gl-modal h3{font-size:30px}}
+</style>
+
+<div class="gl-overlay" id="glOverlay">
+  <div class="gl-modal">
+    <button class="gl-close" id="glClose" aria-label="Закрити">&times;</button>
+
+    <!-- форма -->
+    <div id="glFormWrap">
+      <span class="gl-tag">Залишити заявку</span>
+      <h3>Обговоримо <em>проєкт</em></h3>
+      <p class="gl-sub">Залиште контакти — і ми зв'яжемося з вами, щоб обговорити ваш проєкт. Зазвичай відповідаємо протягом робочого дня.</p>
+
+      <div class="gl-field"><input type="text" id="glName" placeholder="Ваше ім'я" autocomplete="name"></div>
+      <div class="gl-field"><textarea id="glNiche" placeholder="Ніша бізнесу або коротко про запит"></textarea></div>
+      <div class="gl-field"><input type="tel" id="glPhone" placeholder="Номер телефону" autocomplete="tel"></div>
+      <div class="gl-field"><input type="text" id="glTg" placeholder="Нік у Telegram (напр. @glide)"></div>
+      <!-- приховане поле-пастка для ботів -->
+      <input type="text" class="gl-hp" id="glHp" tabindex="-1" autocomplete="off">
+
+      <button class="gl-submit" id="glSubmit">Надіслати заявку</button>
+      <div class="gl-err" id="glErr">Заповніть, будь ласка, всі поля.</div>
+    </div>
+
+    <!-- екран подяки -->
+    <div class="gl-thanks" id="glThanks">
+      <div class="gl-check"><svg viewBox="0 0 52 52"><path d="M14 27 l8 8 l16 -18" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Дякуємо за <em>заявку</em></h3>
+      <p>Ми вже отримали ваше повідомлення і скоро зв'яжемося з вами, щоб обговорити проєкт.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var WORKER_URL = "https://tight-pine-1340glide-leads.vncreative-agency.workers.dev/";
+  var overlay = document.getElementById('glOverlay');
+  var closeBtn = document.getElementById('glClose');
+  var submitBtn = document.getElementById('glSubmit');
+  var errBox = document.getElementById('glErr');
+  var formWrap = document.getElementById('glFormWrap');
+  var thanks = document.getElementById('glThanks');
+
+  function openForm(){ overlay.classList.add('open'); }
+  function closeForm(){
+    overlay.classList.remove('open');
+    // повертаємо форму у вихідний стан після закриття
+    setTimeout(function(){ formWrap.style.display='block'; thanks.style.display='none'; errBox.style.display='none'; }, 250);
+  }
+
+  // відкриття по будь-якій кнопці з класом js-open-form
+  document.querySelectorAll('.js-open-form').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault(); openForm(); });
+  });
+  closeBtn.addEventListener('click', closeForm);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) closeForm(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('open')) closeForm(); });
+
+  submitBtn.addEventListener('click', function(){
+    var name = document.getElementById('glName').value.trim();
+    var niche = document.getElementById('glNiche').value.trim();
+    var phone = document.getElementById('glPhone').value.trim();
+    var tg = document.getElementById('glTg').value.trim();
+    var hp = document.getElementById('glHp').value.trim();
+
+    if(!name || !niche || !phone || !tg){ errBox.style.display='block'; return; }
+    errBox.style.display='none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Надсилаємо...';
+
+    fetch(WORKER_URL, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ name:name, niche:niche, phone:phone, telegram:tg, website:hp })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(d && d.ok){
+        formWrap.style.display='none';
+        thanks.style.display='block';
+      } else { throw new Error('fail'); }
+    })
+    .catch(function(){
+      errBox.textContent = 'Не вдалося надіслати. Спробуйте ще раз або напишіть нам у Telegram.';
+      errBox.style.display='block';
+    })
+    .finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Надіслати заявку';
+    });
+  });
+})();
+</script>
 </body>
+
 </html>
