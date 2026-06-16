@@ -52,13 +52,17 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
 .funnel-row{display:grid;grid-template-columns:0.85fr 1.15fr;gap:24px;align-items:start;margin:32px 0}
 .funnel-visual{background:var(--white);padding:36px;margin:0;max-width:none}
+.funnel-shot{margin:0}
+.funnel-shot img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,0.1);display:block;cursor:zoom-in}
+.funnel-shot-cap{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95%;max-height:90%;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:24px;right:32px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,0.15);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,0.3)}
+@media(max-width:860px){.funnel-row{grid-template-columns:1fr}}
 .funnel-visual h3{font-size:14px;font-weight:600;color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:24px}
 .funnel-steps{display:flex;flex-direction:column;gap:0}
-.funnel-shot{margin:0}
-.funnel-shot a{display:block;position:relative}
-.funnel-shot img{width:100%;height:auto;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,0.1);display:block}
-.funnel-shot-cap{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
-@media(max-width:860px){.funnel-row{grid-template-columns:1fr}}
 .funnel-step{display:flex;align-items:center;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
 .funnel-step:last-child{border-bottom:none}
 .funnel-arrow{color:var(--ink3);font-size:18px;display:none}
@@ -96,7 +100,6 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .gallery-item{flex:0 0 auto;width:240px;scroll-snap-align:start}
 .gallery-item img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.08)}
 .gallery-caption{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
-.funnel-img{width:100%;max-width:740px;margin:28px 0 0;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,0.1);display:block}
 @media(max-width:900px){.gallery-section{padding:44px 24px}.gallery-item{width:185px}.gallery-arrow{width:40px;height:40px;font-size:16px}}
 </style>
 </head>
@@ -291,9 +294,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       </div>
     </div>
       <div class="funnel-shot">
-        <a href="gestalt-bot.png" target="_blank" rel="noopener">
-          <img src="gestalt-bot.png" alt="Реальна схема воронки в чат-боті">
-        </a>
+        <img src="gestalt-bot.png" alt="Реальна схема воронки в чат-боті" onclick="openFunnelBox()">
         <div class="funnel-shot-cap">Реальна воронка в боті — натисніть, щоб роздивитись</div>
       </div>
     </div>
@@ -356,6 +357,15 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   document.getElementById('galNext').onclick=function(){ track.scrollBy({left:step()*2,behavior:'smooth'}); };
   document.getElementById('galPrev').onclick=function(){ track.scrollBy({left:-step()*2,behavior:'smooth'}); };
 })();
+</script>
+<div class="lightbox" id="funnelBox" onclick="closeFunnelBox()">
+  <button class="lightbox-close" aria-label="Закрити" onclick="closeFunnelBox()">✕</button>
+  <img src="gestalt-bot.png" alt="Схема воронки">
+</div>
+<script>
+  function openFunnelBox(){ document.getElementById('funnelBox').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeFunnelBox(){ document.getElementById('funnelBox').classList.remove('open'); document.body.style.overflow=''; }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeFunnelBox(); });
 </script>
 </body>
 </html>
