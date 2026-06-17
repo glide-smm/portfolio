@@ -45,6 +45,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .about-grid{display:grid;grid-template-columns:520px 320px;gap:60px;align-items:start}
 .about-text p{font-size:17px;color:var(--ink2);line-height:1.75;margin-bottom:20px;font-weight:300}
 .about-text p strong{color:var(--ink);font-weight:600}
+.about-services-btn{margin-top:12px}
 .services-list{display:flex;flex-direction:column;gap:0}
 .service-item{padding:16px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px}
 .service-dot{width:6px;height:6px;background:var(--bordo);flex-shrink:0}
@@ -94,13 +95,13 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .logos-section{background:var(--cream2);padding:56px 60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .niches-section{background:var(--cream2);padding:64px 60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .niches-inner{max-width:1000px;margin:0 auto;text-align:center}
-.niches-label{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;letter-spacing:0.01em;color:var(--ink);margin-bottom:16px}
+.niches-label{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:0.01em;color:var(--ink);margin-bottom:16px;line-height:1.2}
 .niches-sub{font-size:15px;color:var(--ink3);font-weight:300;margin-bottom:40px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6}
 .niches-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 .niche-tag{background:var(--white);border:1px solid var(--line);color:var(--ink2);font-size:14px;font-weight:500;padding:11px 22px;border-radius:100px;transition:all .2s}
 .niche-tag:hover{background:var(--bordo);color:var(--white);border-color:var(--bordo)}
 .logos-inner{max-width:1100px;margin:0 auto}
-.logos-label{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;letter-spacing:0.01em;color:var(--ink);margin-bottom:44px;text-align:center}
+.logos-label{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:400;letter-spacing:0.01em;color:var(--ink);margin-bottom:44px;text-align:center;line-height:1.2}
 .logos-slider{display:flex;align-items:center;gap:24px}
 .logos-arrow{flex:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--bordo);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .logos-arrow:hover{background:var(--bordo);color:#fff;border-color:var(--bordo)}
@@ -172,6 +173,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <p>Ми не просто ведемо сторінки — ми <strong>будуємо системи продажів</strong> через соціальні мережі. Кожен проєкт починається з глибокого розуміння клієнта, його аудиторії та цілей.</p>
       <p>Ми відстежуємо окупність кожного кроку і знаємо, що продає, а що ні. За кожним рішенням — цифри, а не здогадки.</p>
       <p>Працюємо з <strong>особистими брендами, експертами та бізнесами</strong>, яким важливий вимірюваний результат: заявки, продажі, впізнаваність.</p>
+      <a href="services.html" class="btn-primary about-services-btn">Наші послуги</a>
     </div>
     <img src="about.jpg" alt="Команда Glide SMM Studio" class="about-photo">
   </div>
@@ -286,7 +288,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="niches-section">
   <div class="niches-inner">
     <div class="niches-label">Ніші, з якими ми маємо досвід</div>
-    <p class="niches-sub">Кейси вище — лише частина. За роки роботи ми занурювались у десятки різних сфер бізнесу й особистих брендів.</p>
+    <p class="niches-sub">Кейси вище — лише частина. За роки роботи ми глибоко занурились у десятки сфер: від нерухомості й девелопменту до медицини, освіти та особистих брендів.</p>
     <div class="niches-grid">
       <span class="niche-tag">Нерухомість</span>
       <span class="niche-tag">Девелопмент</span>
