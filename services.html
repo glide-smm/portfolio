@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<link rel="icon" type="image/png" href="favikon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Послуги — Glide SMM Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+a{color:inherit}
+nav{position:sticky;top:0;z-index:100;background:rgba(250,247,242,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:0 80px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo img{height:48px;width:auto;display:block}
+.nav-links{display:flex;gap:36px}
+.nav-links a{text-decoration:none;color:var(--ink2);font-size:14px;font-weight:500;letter-spacing:0.03em;transition:color .2s}
+.nav-links a:hover{color:var(--bordo)}
+.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;cursor:pointer;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--bordo-light)}
+
+/* hero */
+.sv-hero{max-width:760px;margin:0 auto;padding:96px 40px 56px;text-align:center}
+.sv-hero .tag{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--bordo);margin-bottom:22px;display:block}
+.sv-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6.5vw,72px);font-weight:400;line-height:1.02;color:var(--ink);margin-bottom:26px}
+.sv-hero h1 em{font-style:italic;color:var(--bordo)}
+.sv-hero p{font-size:17px;color:var(--ink2);font-weight:300;line-height:1.75;max-width:560px;margin:0 auto}
+
+/* список */
+.services-list{max-width:920px;margin:0 auto;padding:40px 40px 40px}
+.service-item{position:relative;padding:56px 0 52px;border-top:1px solid var(--line);display:grid;grid-template-columns:120px 1fr;gap:0 40px}
+.service-item:first-child{border-top:none}
+
+/* великий приглушений номер */
+.sv-num{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:400;line-height:1;color:var(--bordo);opacity:.18;font-style:italic}
+
+.sv-body{max-width:600px}
+.sv-eyebrow{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--bordo);margin-bottom:14px;display:inline-block}
+.service-item h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,40px);font-weight:400;line-height:1.12;color:var(--ink);margin-bottom:8px}
+.service-item h2 em{font-style:italic;color:var(--bordo)}
+.sv-accent-line{width:44px;height:2px;background:var(--bordo);margin:18px 0 20px;opacity:.55}
+.sv-desc{font-size:16px;line-height:1.75;font-weight:300;color:var(--ink2);margin-bottom:22px}
+.sv-includes{font-size:14px;line-height:1.9;color:var(--ink3);font-weight:400;letter-spacing:.01em}
+.sv-includes span{color:var(--ink2)}
+.sv-portfolio{margin-top:26px}
+.sv-portfolio a{display:inline-flex;align-items:center;gap:8px;color:var(--bordo);font-size:14px;font-weight:600;text-decoration:none;letter-spacing:.02em;transition:gap .2s}
+.sv-portfolio a:hover{gap:14px}
+
+/* флагман — без заливки, тонка ліва рамка + лейбл */
+.service-flagship{position:relative}
+.service-flagship .sv-num{opacity:.28}
+.service-flagship .sv-body{position:relative;padding-left:26px;border-left:2px solid var(--bordo)}
+.flagship-label{display:inline-block;background:var(--bordo);color:#fff;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:5px 13px;margin-bottom:16px}
+
+/* CTA */
+.sv-cta{margin-top:24px;background:var(--cream2);border-top:1px solid var(--line);padding:88px 24px;text-align:center}
+.sv-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,52px);font-weight:400;color:var(--ink);margin-bottom:16px;line-height:1.08}
+.sv-cta h2 em{font-style:italic;color:var(--bordo)}
+.sv-cta p{font-size:17px;color:var(--ink2);font-weight:300;max-width:500px;margin:0 auto 34px;line-height:1.65}
+.sv-cta .btn-primary{background:var(--bordo);color:var(--white);padding:17px 48px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;border:none;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:0.04em;transition:background .2s}
+.sv-cta .btn-primary:hover{background:var(--bordo-light)}
+
+footer{background:var(--ink);color:rgba(255,255,255,.55);padding:40px 80px;text-align:center;font-size:13px}
+footer img{height:36px;margin-bottom:14px;display:block;margin-left:auto;margin-right:auto}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .sv-hero{padding:64px 22px 36px}
+  .services-list{padding:24px 22px}
+  .service-item{grid-template-columns:1fr;gap:0;padding:40px 0 38px}
+  .sv-num{font-size:40px;margin-bottom:10px}
+  .service-flagship .sv-body{padding-left:18px}
+  footer{padding:28px 24px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><a href="index.html"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a></div>
+  <div class="nav-links">
+    <a href="index.html">Головна</a>
+    <a href="index.html#cases">Кейси</a>
+    <a href="index.html#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+  </div>
+  <a href="javascript:void(0)" class="nav-cta js-open-form">Обговорити проєкт</a>
+</nav>
+
+<section class="sv-hero">
+  <span class="tag">Послуги</span>
+  <h1>Те, що ми робимо для <em>вашого бренду</em></h1>
+  <p>Ми працюємо з кожним напрямом глибоко, а не поверхово. Будь-яку послугу можна доопрацювати й наповнити саме тим, що важливо для вашого бренду — наповнення завжди індивідуальне.</p>
+</section>
+
+<section class="services-list">
+
+  <!-- ФЛАГМАН -->
+  <div class="service-item service-flagship">
+    <div class="sv-num">01</div>
+    <div class="sv-body">
+      <span class="flagship-label">Флагман</span>
+      <h2>Комплексний стратегічний <em>маркетинг у соцмережах</em></h2>
+      <div class="sv-accent-line"></div>
+      <p class="sv-desc">Ведення соцмереж під ключ — ми стаємо вашим SMM-відділом. Це може бути одночасне ведення кількох соцмереж для одного бренду або кількох брендів у межах однієї компанії. Послуга включає все, що потрібно вашому проєкту, а якщо для задачі необхідний окремий спеціаліст — ми його знайдемо і візьмемо координацію на себе.</p>
+      <div class="sv-includes">Входить: <span>стратегія · контент · таргет · інфлюенсери та UGC · дизайн · монтаж · аналітика</span></div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="service-item">
+    <div class="sv-num">02</div>
+    <div class="sv-body">
+      <h2>Розробка стратегії</h2>
+      <div class="sv-accent-line"></div>
+      <p class="sv-desc">Фундамент, на якому будується все інше. Розробляємо окрему стратегію під кожну соцмережу — зі своїми рубриками й логікою.</p>
+      <div class="sv-includes">Входить: <span>розпаковка бренду · аналіз аудиторії · аналіз конкурентів · контент-стратегія · tone of voice · позиціонування</span></div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="service-item">
+    <div class="sv-num">03</div>
+    <div class="sv-body">
+      <h2>Таргет під ключ</h2>
+      <div class="sv-accent-line"></div>
+      <p class="sv-desc">Не просто запуск реклами, а вибудувана система, яка приводить заявки й продажі. Будуємо воронки, налаштовуємо автоматизацію та ведемо рекламу до результату.</p>
+      <div class="sv-includes">Входить: <span>воронки продажів · чат-боти · рекламні макети · таргетована реклама</span></div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="service-item">
+    <div class="sv-num">04</div>
+    <div class="sv-body">
+      <h2>Дизайн-супровід</h2>
+      <div class="sv-accent-line"></div>
+      <p class="sv-desc">Єдиний візуальний стиль для ваших соцмереж — разово або на постійній основі. Розробляємо гайдлайн та оформлюємо пости й сторіз у його межах.</p>
+      <div class="sv-includes">Входить: <span>гайдлайн бренду · оформлення постів і сторіз · щомісячний супровід</span></div>
+      <div class="sv-portfolio"><a href="portfolio-design.html">Портфоліо дизайну →</a></div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="service-item">
+    <div class="sv-num">05</div>
+    <div class="sv-body">
+      <h2>Монтаж-супровід</h2>
+      <div class="sv-accent-line"></div>
+      <p class="sv-desc">Монтаж під ключ: ви надаєте відео — ми робимо з них якісний контент у вашому стилі субтитрів і подачі. Різні пакети під складність і обсяг.</p>
+      <div class="sv-includes">Входить: <span>монтаж рилз і відео · ваш стиль субтитрів · різні пакети</span></div>
+      <div class="sv-portfolio"><a href="portfolio-montage.html">Портфоліо монтажу →</a></div>
+    </div>
+  </div>
+
+</section>
+
+<section class="sv-cta">
+  <h2>Готові обговорити <em>ваш проєкт</em>?</h2>
+  <p>Розкажіть про задачу — підберемо формат співпраці й наповнення під ваші цілі.</p>
+  <a href="javascript:void(0)" class="btn-primary js-open-form">Написати нам</a>
+</section>
+
+<footer>
+  <img src="logo-white.png" alt="Glide SMM Studio">
+  © 2025 Glide SMM Studio
+</footer>
+<!-- ===== Форма-попап (власна, без зовнішніх скриптів) ===== -->
+<style>
+.gl-overlay{position:fixed;inset:0;background:rgba(26,18,16,.55);backdrop-filter:blur(2px);z-index:9998;display:none;align-items:center;justify-content:center;padding:20px}
+.gl-overlay.open{display:flex;animation:glfade .25s ease}
+@keyframes glfade{from{opacity:0}to{opacity:1}}
+.gl-modal{background:var(--cream);max-width:440px;width:100%;padding:40px 36px 32px;position:relative;animation:glrise .3s cubic-bezier(.22,.61,.36,1) both;box-shadow:0 24px 70px rgba(26,18,16,.28);max-height:92vh;overflow-y:auto}
+@keyframes glrise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.gl-close{position:absolute;top:16px;right:16px;width:34px;height:34px;border:none;background:transparent;color:var(--ink3);font-size:26px;line-height:1;cursor:pointer;transition:color .2s}
+.gl-close:hover{color:var(--bordo)}
+.gl-tag{display:inline-block;background:var(--pink-light);color:var(--bordo);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;margin-bottom:16px}
+.gl-modal h3{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:10px}
+.gl-modal h3 em{font-style:italic;color:var(--bordo)}
+.gl-sub{font-size:14px;color:var(--ink2);line-height:1.55;margin-bottom:24px}
+.gl-field{margin-bottom:14px}
+.gl-field input,.gl-field textarea{width:100%;font-family:'Manrope',sans-serif;font-size:15px;color:var(--ink);background:#fff;border:1px solid var(--line);padding:13px 15px;transition:border-color .2s;outline:none}
+.gl-field input:focus,.gl-field textarea:focus{border-color:var(--bordo)}
+.gl-field textarea{resize:vertical;min-height:62px}
+.gl-field input.gl-invalid,.gl-field textarea.gl-invalid,.gl-phone.gl-invalid{border-color:var(--bordo);background:#fdf6f8}
+.gl-label{display:block;font-size:12px;font-weight:500;color:var(--ink3);margin-bottom:5px;letter-spacing:.02em}
+.gl-label .gl-star{color:var(--bordo);margin-left:2px}
+.gl-phone{display:flex;border:1px solid var(--line);background:#fff;transition:border-color .2s}
+.gl-phone:focus-within{border-color:var(--bordo)}
+.gl-phone select{flex:none;border:none;border-right:1px solid var(--line);background:#fff;font-family:'Manrope',sans-serif;font-size:15px;color:var(--ink);padding:13px 8px 13px 13px;outline:none;cursor:pointer;max-width:112px}
+.gl-phone input{flex:1;border:none!important;background:transparent}
+.gl-phone input:focus{border:none!important}
+.gl-submit{width:100%;background:var(--bordo);color:#fff;border:none;padding:16px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:.04em;cursor:pointer;transition:background .2s;margin-top:6px}
+.gl-submit:hover{background:var(--bordo-light)}
+.gl-submit:disabled{opacity:.6;cursor:default}
+.gl-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.gl-err{color:var(--bordo);font-size:13px;margin-top:10px;display:none}
+.gl-thanks{display:none;text-align:center;padding:14px 0}
+.gl-thanks .gl-check{width:72px;height:72px;border-radius:50%;background:var(--bordo);display:flex;align-items:center;justify-content:center;margin:0 auto 22px}
+.gl-thanks .gl-check svg{width:34px;height:34px}
+.gl-thanks h3{margin-bottom:12px}
+.gl-thanks p{font-size:15px;color:var(--ink2);line-height:1.6;max-width:320px;margin:0 auto}
+@media(max-width:480px){.gl-modal{padding:34px 22px 26px}.gl-modal h3{font-size:30px}}
+</style>
+
+<div class="gl-overlay" id="glOverlay">
+  <div class="gl-modal">
+    <button class="gl-close" id="glClose" aria-label="Закрити">&times;</button>
+
+    <!-- форма -->
+    <div id="glFormWrap">
+      <span class="gl-tag">Залишити заявку</span>
+      <h3>Обговоримо <em>проєкт</em></h3>
+      <p class="gl-sub">Залиште контакти і ми зв'яжемося з вами, щоб обговорити ваш проєкт. Зазвичай відповідаємо протягом робочого дня.</p>
+
+      <div class="gl-field">
+        <label class="gl-label" for="glName">Ваше ім'я<span class="gl-star">*</span></label>
+        <input type="text" id="glName" placeholder="Як до вас звертатися" autocomplete="name">
+      </div>
+      <div class="gl-field">
+        <label class="gl-label" for="glNiche">Ніша бізнесу або запит<span class="gl-star">*</span></label>
+        <textarea id="glNiche" placeholder="Коротко про ваш бізнес або задачу"></textarea>
+      </div>
+      <div class="gl-field">
+        <label class="gl-label" for="glPhone">Номер телефону<span class="gl-star">*</span></label>
+        <div class="gl-phone" id="glPhoneWrap">
+          <select id="glCode" aria-label="Код країни">
+            <option value="+380" selected>🇺🇦 +380</option>
+            <option value="+48">🇵🇱 +48</option>
+            <option value="+49">🇩🇪 +49</option>
+            <option value="+44">🇬🇧 +44</option>
+            <option value="+1">🇺🇸 +1</option>
+            <option value="+34">🇪🇸 +34</option>
+            <option value="+39">🇮🇹 +39</option>
+            <option value="+33">🇫🇷 +33</option>
+            <option value="+420">🇨🇿 +420</option>
+            <option value="+40">🇷🇴 +40</option>
+            <option value="+995">🇬🇪 +995</option>
+            <option value="+971">🇦🇪 +971</option>
+            <option value="+90">🇹🇷 +90</option>
+            <option value="+7">🇰🇿 +7</option>
+          </select>
+          <input type="tel" id="glPhone" placeholder="00 000 00 00" autocomplete="tel">
+        </div>
+      </div>
+      <div class="gl-field">
+        <label class="gl-label" for="glTg">Нік у Telegram<span class="gl-star">*</span></label>
+        <input type="text" id="glTg" placeholder="напр. @glide" autocomplete="off">
+      </div>
+      <!-- приховане поле-пастка для ботів -->
+      <input type="text" class="gl-hp" id="glHp" tabindex="-1" autocomplete="off">
+
+      <button class="gl-submit" id="glSubmit">Надіслати заявку</button>
+      <div class="gl-err" id="glErr">Заповніть, будь ласка, всі поля.</div>
+    </div>
+
+    <!-- екран подяки -->
+    <div class="gl-thanks" id="glThanks">
+      <div class="gl-check"><svg viewBox="0 0 52 52"><path d="M14 27 l8 8 l16 -18" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Дякуємо за <em>заявку</em></h3>
+      <p>Ми вже отримали ваше повідомлення і скоро зв'яжемося, щоб обговорити проєкт.</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function(){
+  var WORKER_URL = "https://tight-pine-1340glide-leads.vncreative-agency.workers.dev/";
+  var overlay = document.getElementById('glOverlay');
+  var closeBtn = document.getElementById('glClose');
+  var submitBtn = document.getElementById('glSubmit');
+  var errBox = document.getElementById('glErr');
+  var formWrap = document.getElementById('glFormWrap');
+  var thanks = document.getElementById('glThanks');
+
+  function openForm(){ overlay.classList.add('open'); }
+  function closeForm(){
+    overlay.classList.remove('open');
+    // повертаємо форму у вихідний стан після закриття
+    setTimeout(function(){ formWrap.style.display='block'; thanks.style.display='none'; errBox.style.display='none'; }, 250);
+  }
+
+  // відкриття по будь-якій кнопці з класом js-open-form
+  document.querySelectorAll('.js-open-form').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault(); openForm(); });
+  });
+  closeBtn.addEventListener('click', closeForm);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) closeForm(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('open')) closeForm(); });
+
+  submitBtn.addEventListener('click', function(){
+    var nameEl = document.getElementById('glName');
+    var nicheEl = document.getElementById('glNiche');
+    var phoneEl = document.getElementById('glPhone');
+    var tgEl = document.getElementById('glTg');
+    var phoneWrap = document.getElementById('glPhoneWrap');
+    var code = document.getElementById('glCode').value;
+
+    var name = nameEl.value.trim();
+    var niche = nicheEl.value.trim();
+    var phoneRaw = phoneEl.value.trim();
+    var tg = tgEl.value.trim();
+    var hp = document.getElementById('glHp').value.trim();
+
+    // скидаємо підсвітку
+    [nameEl, nicheEl, tgEl].forEach(function(el){ el.classList.remove('gl-invalid'); });
+    phoneWrap.classList.remove('gl-invalid');
+
+    // перевірка обов'язкових полів — підсвічуємо порожні
+    var ok = true;
+    if(!name){ nameEl.classList.add('gl-invalid'); ok=false; }
+    if(!niche){ nicheEl.classList.add('gl-invalid'); ok=false; }
+    if(!phoneRaw){ phoneWrap.classList.add('gl-invalid'); ok=false; }
+    if(!tg){ tgEl.classList.add('gl-invalid'); ok=false; }
+    if(!ok){ errBox.textContent='Заповніть, будь ласка, всі поля.'; errBox.style.display='block'; return; }
+
+    var phone = code + ' ' + phoneRaw;
+    errBox.style.display='none';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Надсилаємо...';
+
+    fetch(WORKER_URL, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ name:name, niche:niche, phone:phone, telegram:tg, website:hp })
+    })
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(d && d.ok){
+        formWrap.style.display='none';
+        thanks.style.display='block';
+      } else { throw new Error('fail'); }
+    })
+    .catch(function(){
+      errBox.textContent = 'Не вдалося надіслати. Спробуйте ще раз або напишіть нам у Telegram.';
+      errBox.style.display='block';
+    })
+    .finally(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Надіслати заявку';
+    });
+  });
+})();
+</script>
+</body>
+</html>
