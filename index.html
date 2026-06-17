@@ -55,7 +55,7 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
 .case-card-bg{position:relative;background:var(--white);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;min-height:auto;padding:0;text-decoration:none;color:inherit;transition:transform .25s,box-shadow .25s}
 .case-card-bg:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,18,16,0.1)}
-.case-card-bg::before{content:'';display:block;height:170px;background-image:inherit;background-size:cover;background-position:center}
+.case-card-bg::before{content:'';display:block;height:170px;background-image:var(--cardbg);background-size:cover;background-position:center}
 .case-card-bg > *{margin-left:24px;margin-right:24px}
 .case-card-bg .case-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:#fff;position:absolute;top:12px;left:14px;margin:0;z-index:2;text-shadow:0 1px 4px rgba(0,0,0,0.45)}
 .case-card-bg .case-category{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--bordo);background:none;padding:0;display:inline-block;margin:22px 24px 10px}
@@ -203,7 +203,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     </div>
     <div class="cases-grid">
 
-<a href="case-spanish-life.html" class="case-card case-card-bg" style="background-image:url('spanish-life.jpg')">
+<a href="case-spanish-life.html" class="case-card case-card-bg" style="--cardbg:url('spanish-life.jpg')">
   <div class="case-num">01 / 09</div>
   <div class="case-category">Комерція · Нерухомість</div>
   <div class="case-title">Spanish Life — нерухомість в Іспанії</div>
@@ -212,7 +212,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-metric-label">зростання конверсії в контакт у директі</div>
   <div class="case-link">Читати кейс</div>
 </a>
-<a href="case-sun-haven.html" class="case-card case-card-bg" style="background-image:url('sun-haven.jpg')">
+<a href="case-sun-haven.html" class="case-card case-card-bg" style="--cardbg:url('sun-haven.jpg')">
   <div class="case-num">02 / 09</div>
   <div class="case-category">Комерція · Нерухомість</div>
   <div class="case-title">Sun Haven — забудовник в Іспанії</div>
@@ -221,7 +221,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-metric-label">зростання лідів на проєкти за місяць</div>
   <div class="case-link">Читати кейс</div>
 </a>
-<a href="case-ak-school.html" class="case-card case-card-bg" style="background-image:url('ak-school.jpg')">
+<a href="case-ak-school.html" class="case-card case-card-bg" style="--cardbg:url('ak-school.jpg')">
   <div class="case-num">03 / 09</div>
   <div class="case-category">Особистий бренд · Освіта</div>
   <div class="case-title">AK School — школа англійської мови</div>
@@ -230,7 +230,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-metric-label">переглядів на топ-відео в TikTok</div>
   <div class="case-link">Читати кейс</div>
 </a>
-      <a href="case-galyna.html" class="case-card case-card-bg" style="background-image:url('galyna.jpg')">
+      <a href="case-galyna.html" class="case-card case-card-bg" style="--cardbg:url('galyna.jpg')">
   <div class="case-num">06 / 09</div>
   <div class="case-category">Особистий бренд · Медицина</div>
   <div class="case-title">Галина Сорочан — гастроентеролог, хелс-коуч</div>
@@ -240,7 +240,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-link">Читати кейс</div>
 </a>
 
-  <a href="case-jaya.html" class="case-card case-card-bg" style="background-image:url('jaya.jpg')">
+  <a href="case-jaya.html" class="case-card case-card-bg" style="--cardbg:url('jaya.jpg')">
   <div class="case-num">07 / 09</div>
   <div class="case-category">Особистий бренд · Духовність</div>
   <div class="case-title">Джая Берник — провідниця ошо-медитацій</div>
@@ -250,7 +250,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-link">Читати кейс</div>
 </a>
 
-      <a href="case-alona.html" class="case-card case-card-bg" style="background-image:url('alyona.jpg')">
+      <a href="case-alona.html" class="case-card case-card-bg" style="--cardbg:url('alyona.jpg')">
   <div class="case-num">08 / 09</div>
   <div class="case-category">Особистий бренд · Медицина</div>
   <div class="case-title">Альона Масина — хелс-коуч, генетик</div>
@@ -260,7 +260,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-link">Читати кейс</div>
 </a>
 
-    <a href="case-gestalt.html" class="case-card case-card-bg" style="background-image:url('geshtalt.jpg')">
+    <a href="case-gestalt.html" class="case-card case-card-bg" style="--cardbg:url('geshtalt.jpg')">
   <div class="case-num">09 / 09</div>
   <div class="case-category">Освіта · Психологія</div>
   <div class="case-title">Інститут гештальт-терапії</div>
