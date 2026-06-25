@@ -11,30 +11,41 @@
 :root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
 html{scroll-behavior:smooth}
 body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}.logo img{height:60px;width:auto;display:block;margin-left:100px}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center}
+.logo img{height:60px;width:auto;display:block;margin-left:100px}
+.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--bordo-light)}
+.nav-right{display:flex;align-items:center;gap:40px}
 .back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
 .back-link:hover{color:var(--bordo)}
 .back-link::before{content:'← '}
-.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
-.nav-cta:hover{background:var(--bordo-light)}
-.nav-right{display:flex;align-items:center;gap:40px}.case-hero{background-image:linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)),url('ak-school.jpg');background-size:cover;background-position:center;padding:72px 60px 56px;color:var(--white)}
+.case-hero{background-image:linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)),url('ak-school.jpg');background-size:cover;background-position:center;padding:72px 60px 56px;color:var(--white)}
 .case-hero-inner{max-width:1100px;margin:0 auto}
-.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink-light);margin-bottom:20px}
 .case-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
 .case-hero h1 em{font-style:italic;color:var(--white)}
-.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:680px;font-weight:300;line-height:1.75}
 .metrics-bar{background:var(--ink);padding:0 60px}
-.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid rgba(255,255,255,0.08)}
 .metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
 .metric-big{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--white);font-weight:600;line-height:1}
 .metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
-.case-section{padding:48px 60px}.case-section:nth-of-type(even){background:var(--cream2)}.case-section-inner{max-width:1100px;margin:0 auto}.case-body{padding:0}
-.section-block{margin-bottom:0px}
-.block-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.case-section{padding:48px 60px}.case-section-inner{max-width:1100px;margin:0 auto}
+.bg-cream{background:var(--cream)}
+.bg-cream2{background:var(--cream2)}
+.case-body{padding:0}
+.section-block{margin-bottom:0}
+.block-label{display:inline-flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
 .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
 .section-block h2 em{font-style:italic;color:var(--bordo)}
 .body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
 .body-text strong{color:var(--ink);font-weight:600}
+.req-list{list-style:none;margin:24px 0 8px;max-width:740px}
+.req-list li{position:relative;padding:10px 0 10px 28px;font-size:15px;color:var(--ink2);font-weight:300;border-bottom:1px solid var(--line)}
+.req-list li:last-child{border-bottom:none}
+.req-list li::before{content:'';position:absolute;left:0;top:18px;width:10px;height:10px;background:var(--bordo);border-radius:50%}
+.req-list li strong{color:var(--ink);font-weight:600}
 .insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
 .insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
 .insight-box p strong{color:var(--bordo);font-weight:600}
@@ -47,12 +58,10 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
 .result-card{background:var(--white);padding:28px}
 .result-card.accent{background:var(--bordo)}
-.result-num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
 .result-card.accent .result-num{color:var(--white)}
+.result-card.accent .result-label{color:rgba(255,255,255,0.8)}
+.result-num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
 .result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
-.result-card.accent .result-label{color:rgba(255,255,255,0.7)}
-.divider-line{width:100%;height:1px;background:var(--line);margin:64px 0}
-.phase-badge{display:inline-block;background:var(--bordo);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;margin-bottom:28px}
 .case-nav{background:var(--cream2);padding:56px 60px}
 .case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
 .case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
@@ -64,7 +73,38 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
 .footer-logo span{font-style:italic}
 .footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
-@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+.gallery-section{padding:56px 60px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.gallery-inner{max-width:1100px;margin:0 auto}
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;gap:24px;flex-wrap:wrap}
+.gallery-head-text{flex:1;min-width:240px}
+.gallery-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:14px}
+.gallery-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25}
+.gallery-head h2 em{font-style:italic;color:var(--bordo)}
+.gallery-arrows{display:flex;gap:12px;flex:none}
+.gallery-arrow{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.gallery-arrow:hover{background:var(--bordo);color:var(--white);border-color:var(--bordo)}
+.gallery-track{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-bottom:8px;-ms-overflow-style:none;scrollbar-width:none}
+.gallery-track::-webkit-scrollbar{display:none}
+.gallery-item{flex:0 0 auto;width:240px;scroll-snap-align:start}
+.gallery-item img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.08);cursor:zoom-in}
+.gallery-caption{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
+.split-row{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:start;margin:8px 0 4px;max-width:920px}
+.split-text .body-text{margin-bottom:18px}
+.split-text .body-text:last-child{margin-bottom:0}
+.split-shot{margin:0}
+.split-shot img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 8px 28px rgba(0,0,0,0.12);cursor:zoom-in}
+.split-shot-cap{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
+.beforeafter{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:8px}
+.ba-col h3{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:16px;text-align:center}
+.ba-col.after h3{color:var(--bordo)}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ba-pair img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.08);cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95%;max-height:90%;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:24px;right:32px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,0.15);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,0.3)}
+@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-section{padding:44px 24px}.gallery-item{width:185px}.gallery-arrow{width:40px;height:40px;font-size:16px}.beforeafter{grid-template-columns:1fr;gap:28px}.split-row{grid-template-columns:1fr;gap:24px;max-width:none}.split-shot{max-width:280px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -80,79 +120,165 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="case-hero">
   <div class="case-hero-inner">
     <div class="case-tag">Кейс · Особистий бренд · Освіта</div>
-    <h1>AK School — <em>4 роки разом: від вірального TikTok до системного бренду школи англійської</em></h1>
+    <h1>AK School — 4 роки разом <em>до системного бренду школи англійської</em></h1>
+    <p class="case-hero-sub">За 4 роки ми пройшли шлях від сторінки з 700 підписниками до мільйонних охоплень завдяки органіці, стабільного потоку заявок і статусу однієї з найвпізнаваніших шкіл англійської мови.</p>
   </div>
 </div>
 
 <div class="metrics-bar">
   <div class="metrics-inner">
     <div class="metric-cell">
+      <div class="metric-big">1,3 млн</div>
+      <div class="metric-sub">Переглядів акаунту / місяць</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">195K</div>
+      <div class="metric-sub">Охоплених акаунтів / місяць</div>
+    </div>
+    <div class="metric-cell">
       <div class="metric-big">5 млн</div>
-      <div class="metric-sub">Переглядів на топ-відео в TikTok</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-big">+12K</div>
-      <div class="metric-sub">Підписників за перший рік</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-big">1,8 млн</div>
-      <div class="metric-sub">Органічних переглядів за пів року</div>
-    </div>
-    <div class="metric-cell">
-      <div class="metric-big">923K</div>
-      <div class="metric-sub">Охоплених акаунтів</div>
+      <div class="metric-sub">Переглядів на відео в TikTok</div>
     </div>
   </div>
 </div>
 
-<div class="case-section"><div class="case-section-inner">
+<div class="case-body">
+<div class="case-section bg-cream"><div class="case-section-inner">
 
   <div class="section-block">
-    <div class="block-label">Запит</div>
-    <h2>Школа з контентом — <em>але без системи просування</em></h2>
-    <p class="body-text">AK School — школа англійської мови та особистий бренд її власниці Анастасії. Коли ми починали співпрацю, акаунт уже жив: була гарна аватарка, впізнаваний нікнейм і стабільне ведення контенту. Але <strong>не вистачало системи</strong> — шапка профілю була без УТП і заклику, в акаунті не було рубрикатора, а контент не працював на конкретні цілі бізнесу.</p>
-    <p class="body-text">Запит був комплексним: <strong>збільшити впізнаваність школи, підняти лояльність до бренду, залучати лідів — потенційних студентів — і перетворювати інтерес у реальних клієнтів.</strong> Не косметичні правки, а повна стратегічна перебудова просування.</p>
-    <p class="body-text">З цим проєктом ми працюємо вже <strong>понад 4 роки</strong> — тож тут показуємо не все, а найяскравіше: ранній віральний прорив у TikTok і те, як сьогодні працює доросла контент-система школи.</p>
+    <div class="block-label">Показники за місяць</div>
+    <h2>Як виглядає <em>акаунт у цифрах</em></h2>
+    <p class="body-text">Метрики за попередній місяць роботи — органічне охоплення, що тримається на системному контенті, а не на разових сплесках.</p>
+    <ul class="req-list">
+      <li><strong>1 302 675</strong> переглядів акаунту (26,8% з реклами)</li>
+      <li><strong>195 192</strong> охоплених облікових записів</li>
+      <li><strong>16 536</strong> відвідувань профілю</li>
+      <li>медіанні перегляди сторіс — <strong>4 300</strong></li>
+      <li>медіанні перегляди постів — <strong>18 600</strong></li>
+      <li>медіанні перегляди рилзів — <strong>14 000</strong></li>
+    </ul>
   </div>
 
   </div></div>
-  <div class="case-section"><div class="case-section-inner">
-  <div class="section-block">
-    <div class="block-label">Рішення</div>
-    <h2>Спочатку — <em>упакувати, потім масштабувати</em></h2>
-    <p class="body-text">Ми почали з фундаменту: розробили контент-стратегію та контент-план із чітким рубрикатором, сформували позиціонування й УТП школи, виправили шапку профілю та допрацювали фірмовий стиль — оновили візуал, оформлення сторіс і актуальні. Профіль підготували до просування таргетованою рекламою.</p>
-    <p class="body-text">Основою акаунту став <strong>відеоконтент</strong>, який показує школу з найкращого боку — реальні шматочки уроків, життя викладачів, корисна англійська для щодення. А щоб отримати додатковий безкоштовний трафік, ми <strong>підключили нову соцмережу — TikTok.</strong></p>
-    <div class="insight-box">
-      <p><strong>Сторіс ДО:</strong> охоплення ≈150–330, без оформлення і діалогу з аудиторією. <strong>Сторіс ПІСЛЯ:</strong> ≈3000–7000 — за рахунок впізнаваного стилю та постійного діалогу з підписниками.</p>
+
+<div class="gallery-section bg-cream2">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="gallery-head-text">
+        <span class="gallery-label">Статистика</span>
+        <h2>Реальні цифри <em>з акаунту</em></h2>
+      </div>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="statsTrack" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="statsTrack" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="statsTrack">
+      <div class="gallery-item"><img src="ak-stat1.jpg" alt="Статистика акаунту" onclick="openBox(this.src)"><div class="gallery-caption">Огляд показників</div></div>
+      <div class="gallery-item"><img src="ak-stat2.jpg" alt="Статистика акаунту" onclick="openBox(this.src)"><div class="gallery-caption">Охоплення</div></div>
+      <div class="gallery-item"><img src="ak-stat3.jpg" alt="Статистика акаунту" onclick="openBox(this.src)"><div class="gallery-caption">Динаміка профілю</div></div>
     </div>
   </div>
+</div>
+
+  <div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Запит</div>
+    <h2>Школа з чудовим контентом, <em>але без системи просування</em></h2>
+    <p class="body-text">AK School — школа англійської мови, побудована на особистому бренді власниці Анастасії. Коли ми починали співпрацю, акаунт вже мав стабільний контент. Проте не вистачало системи — шапка профілю без УТП і заклику, в акаунті не було рубрикатора, а контент не працював на конкретні цілі бізнесу.</p>
+    <p class="body-text">Запит був комплексним:</p>
+    <ul class="req-list">
+      <li>збільшити <strong>впізнаваність</strong> школи</li>
+      <li>підняти <strong>лояльність</strong> до бренду</li>
+      <li>залучати <strong>лідів</strong> — потенційних студентів школи</li>
+      <li>перетворювати інтерес у <strong>реальних клієнтів</strong></li>
+    </ul>
+  </div>
 
   </div></div>
-  <div class="case-section"><div class="case-section-inner">
+  <div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Рішення</div>
+    <h2>Спочатку — упакувати, <em>потім масштабувати</em></h2>
+    <p class="body-text">Ми почали з фундаменту: розробили контент-стратегію та контент-план із чітким рубрикатором, сформували позиціонування й УТП школи та допрацювали фірмовий стиль — оновили візуал, оформлення сторіс і актуальні. Профіль був підготовлений до просування таргетованою рекламою.</p>
+    <p class="body-text">Основою акаунту став <strong>відеоконтент</strong>, який показує школу з найкращого боку — реальні шматочки уроків, життя власниці та корисна англійська для щодення.</p>
+  </div>
+
+  </div></div>
+  <div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Головний виклик</div>
+    <h2>Трафік: контент працював, <em>але його бачили не всі</em></h2>
+    <p class="body-text">Попри якісний контент, основною проблемою залишалися охоплення. Контент працював, але його бачила недостатня кількість людей для того, аби досягати поставлених цілей.</p>
+    <p class="body-text">Саме тому було прийнято рішення запустити <strong>TikTok</strong> як додатковий канал залучення аудиторії. Власниця школи вела його самостійно та створювала більшу частину контенту, а ми періодично допомагали з окремими відео.</p>
+  </div>
+
+  </div></div>
+  <div class="case-section bg-cream2"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">TikTok-прорив</div>
     <h2>5 мільйонів переглядів <em>і потік теплої аудиторії</em></h2>
-    <p class="body-text">TikTok став головним відкриттям проєкту. Завдяки правильній контент-стратегії він перетворився на потужне джерело безкоштовного трафіку: майже після кожного відео відбувався <strong>«перегін» аудиторії в Instagram</strong> — і ці люди не просто заходили подивитись, а лишались і продовжували стежити за школою.</p>
-    <p class="body-text">Рекорд — <strong>5 мільйонів переглядів на одне відео.</strong> Акаунт швидко виріс до 45 тисяч+ підписників. Почали приходити перші запити на співпрацю та заняття — у тому числі від популярних блогерів.</p>
+
+    <div class="split-row">
+      <div class="split-text">
+        <p class="body-text">TikTok став головним відкриттям проєкту. Завдяки правильній контент-стратегії він перетворився на потужне джерело безкоштовного трафіку: майже після кожного відео відбувався «перегін» аудиторії в Instagram — ці люди не просто заходили подивитись, а лишались і продовжували стежити за школою.</p>
+        <p class="body-text"><strong>Рекорд — 5 мільйонів переглядів на одне відео.</strong> Акаунт швидко виріс до 45 тисяч+ підписників. Почали приходити перші запити на співпрацю та заняття — у тому числі від популярних блогерів.</p>
+      </div>
+      <div class="split-shot">
+        <img src="ak-tiktok1.jpg" alt="5 млн переглядів у TikTok" onclick="openBox(this.src)">
+        <div class="split-shot-cap">Рекорд переглядів у TikTok</div>
+      </div>
+    </div>
+
     <div class="insight-box">
-      <p><strong>Найкращі заявки в директі</strong> пішли саме після активного постингу в TikTok — віральне відео працювало як вершина воронки, а Instagram утримував і прогрівав аудиторію.</p>
+      <p><strong>💡 Найкращі заявки в директі</strong> пішли саме після активного постингу в TikTok — віральне відео працювало як вершина воронки, а Instagram утримував і прогрівав аудиторію.</p>
     </div>
   </div>
 
   </div></div>
-  <div class="case-section"><div class="case-section-inner">
+
+  <div class="case-section bg-cream"><div class="case-section-inner">
   <div class="section-block">
-    <div class="block-label">Труднощі</div>
+    <div class="block-label">Ребрендинг та нові труднощі</div>
     <h2>Зростити особистий бренд <em>у бренд цілої команди</em></h2>
-    <p class="body-text">На старті все трималося на особистості Анастасії. Але школа — це команда викладачів, і аудиторії важливо було побачити, що за навчанням стоїть не одна людина. Виникала навіть характерна проблема: <strong>«я не знаю свого викладача, хочу до Анастасії».</strong></p>
-    <p class="body-text">Ми поступово й плавно розширювали акцент з особистого бренду на всю команду — вводили нові обличчя, візитівки викладачів, EGC-контент. Завдяки м'якому переходу активність не просто збереглась, а зросла: аудиторія сприйняла школу як <strong>системний проєкт, а не сольну сторінку.</strong></p>
+    <p class="body-text">На старті все трималося на особистості Анастасії. Але школа — це команда викладачів, і аудиторії важливо було побачити, що за навчанням стоїть не одна людина. Виникала навіть характерна проблема «Я хочу на заняття лише до Анастасії».</p>
+    <p class="body-text">Ми поступово й плавно розширювали акцент з особистого бренду на всю команду — вводили нові обличчя, візитівки викладачів, EGC-контент. <strong>Завдяки м'якому переходу активність не просто збереглась, а й зросла.</strong> Додатково, аби підкреслити преміальність школи, ми оновили фірмовий стиль.</p>
   </div>
 
   </div></div>
-  <div class="case-section"><div class="case-section-inner">
+
+<div class="gallery-section bg-cream2">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="gallery-head-text">
+        <span class="gallery-label">До / Після</span>
+        <h2>Оновлений <em>фірмовий стиль</em></h2>
+      </div>
+    </div>
+    <div class="beforeafter">
+      <div class="ba-col before">
+        <h3>Було</h3>
+        <div class="ba-pair">
+          <img src="ak-before-feed.jpg" alt="Стрічка до" onclick="openBox(this.src)">
+          <img src="ak-before-stories.jpg" alt="Сторіс до" onclick="openBox(this.src)">
+        </div>
+      </div>
+      <div class="ba-col after">
+        <h3>Стало</h3>
+        <div class="ba-pair">
+          <img src="ak-after-feed.jpg" alt="Стрічка після" onclick="openBox(this.src)">
+          <img src="ak-after-stories.jpg" alt="Сторіс після" onclick="openBox(this.src)">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="case-section bg-cream"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Система</div>
-    <h2>Контент-машина, <em>що працює на ліди й довіру</em></h2>
+    <h2>Контент-машина, що працює <em>на ліди й довіру</em></h2>
+
     <div class="steps-list">
       <div class="step-item">
         <div class="step-num">01</div>
@@ -164,8 +290,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <div class="step-item">
         <div class="step-num">02</div>
         <div class="step-content">
-          <h3>TikTok як джерело безкоштовного трафіку</h3>
-          <p>Окрема контент-стратегія під TikTok із віральними форматами та постійним перегоном теплої аудиторії в Instagram.</p>
+          <h3>TikTok як джерело трафіку</h3>
+          <p>Безкоштовний трафік і постійний перегін теплої аудиторії в Instagram.</p>
         </div>
       </div>
       <div class="step-item">
@@ -178,69 +304,129 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <div class="step-item">
         <div class="step-num">04</div>
         <div class="step-content">
-          <h3>Тригерні шматочки уроків</h3>
-          <p>Реальні фрагменти занять з Анастасією та викладачами — найкраще показують процес навчання й стабільно дають віральні охоплення.</p>
+          <h3>Реальні фрагменти занять</h3>
+          <p>Уроки з Анастасією та викладачами найкраще показують процес навчання й працюють на лояльність.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">05</div>
         <div class="step-content">
           <h3>Команда у контенті</h3>
-          <p>Візитівки викладачів, EGC-контент, кейси й відгуки студентів — будують довіру до школи як до системного проєкту.</p>
+          <p>Візитівки викладачів, EGC-контент, кейси й відгуки студентів будують довіру до школи як до системного проєкту.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">06</div>
         <div class="step-content">
-          <h3>Воронки та щомісячна аналітика</h3>
-          <p>Лід-магніти, автоматичні воронки, таргет і потижнева статистика — розбір кожного формату й масштабування того, що працює.</p>
+          <h3>Масштабна звітність</h3>
+          <p>Розбір контенту, створення гіпотез і масштабування того, що працює.</p>
         </div>
       </div>
     </div>
   </div>
 
   </div></div>
-  <div class="case-section"><div class="case-section-inner">
+  <div class="case-section bg-cream2"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Результати</div>
-    <h2>Цифри за <em>останній звітний період</em></h2>
+    <h2>Жива система, <em>що росте</em></h2>
+    <p class="body-text">Школа отримала керовану систему просування, яка не зупиняється. Запуск TikTok дав вибуховий старт, а за роки роботи вибудувалась повноцінна контент-машина: органіка, впізнаваний бренд та стабільний потік заявок на послуги.</p>
+    <p class="body-text">Щоб покращувати результати та експериментувати з контентом, ми постійно тестуємо нові формати — ситуативний контент, пробні рилзи та інші підходи, які підсилюють органічне охоплення.</p>
     <div class="results-grid">
       <div class="result-card accent">
         <div class="result-num">5 млн</div>
-        <div class="result-label">Переглядів на топ-відео в TikTok — рекорд проєкту, потужне джерело безкоштовного трафіку</div>
+        <div class="result-label">Переглядів на одне відео в TikTok</div>
       </div>
       <div class="result-card">
-        <div class="result-num">+12K</div>
-        <div class="result-label">Підписників за перший рік роботи — і співпраця триває вже понад 4 роки</div>
+        <div class="result-num">700 → 45K+</div>
+        <div class="result-label">Зростання аудиторії за роки роботи</div>
       </div>
       <div class="result-card">
-        <div class="result-num">1,8 млн</div>
-        <div class="result-label">Органічних переглядів акаунту за пів року — без ставки на платне просування</div>
+        <div class="result-num">1,3 млн</div>
+        <div class="result-label">Переглядів акаунту щомісяця</div>
       </div>
       <div class="result-card">
-        <div class="result-num">923K</div>
-        <div class="result-label">Охоплених акаунтів за період — переважно органіка</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">+43%</div>
-        <div class="result-label">Зростання медіанних охоплень сториз за 5 місяців, ERR піднявся до ~10%</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">211K</div>
-        <div class="result-label">Переглядів на топ-рилз періоду — ситуативний контент із ERR майже 14%</div>
+        <div class="result-num">Стабільно</div>
+        <div class="result-label">Потік заявок на навчання через соцмережі</div>
       </div>
     </div>
-    <p class="body-text" style="margin-top:32px">І головне — <strong>школа отримала живу, керовану систему просування.</strong> Віральний TikTok дав вибуховий старт, а за роки роботи ми вибудували дорослу контент-машину: стабільна органіка, впізнаваний бренд команди й постійний потік заявок на заняття. Робота над проєктом триває — і кожен етап додає школі впізнаваності та довіри.</p>
   </div>
 
-</div></div>
+  </div></div>
+
+<div class="gallery-section bg-cream">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="gallery-head-text">
+        <span class="gallery-label">Результат у контенті</span>
+        <h2>Як виглядає <em>акаунт сьогодні</em></h2>
+      </div>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="resultTrack" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="resultTrack" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="resultTrack">
+      <div class="gallery-item"><img src="ak-result1.jpg" alt="Контент акаунту" onclick="openBox(this.src)"><div class="gallery-caption">Стрічка профілю</div></div>
+      <div class="gallery-item"><img src="ak-result2.jpg" alt="Контент акаунту" onclick="openBox(this.src)"><div class="gallery-caption">Рилз</div></div>
+      <div class="gallery-item"><img src="ak-result3.jpg" alt="Контент акаунту" onclick="openBox(this.src)"><div class="gallery-caption">Сторіс</div></div>
+      <div class="gallery-item"><img src="ak-result4.jpg" alt="Контент акаунту" onclick="openBox(this.src)"><div class="gallery-caption">Пост</div></div>
+    </div>
+  </div>
+</div>
+
+  <div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Звітність</div>
+    <h2>Не перегляди заради переглядів, <em>а контент, що веде до дій</em></h2>
+    <p class="body-text">Щоб розуміти, який контент реально працює на бізнес, ми ведемо регулярну звітність:</p>
+    <ul class="req-list">
+      <li>розбираємо, які формати набирають охоплення, а які приводять реальні заявки</li>
+      <li>відстежуємо, яку кількість аудиторії ми отримуємо</li>
+      <li>порівнюємо показники з минулим звітним періодом, щоб бачити динаміку</li>
+      <li>пропонуємо нові гіпотези на основі результатів і тестуємо їх у наступному періоді</li>
+    </ul>
+    <p class="body-text" style="margin-top:24px">Це дозволяє не гнатися за переглядами заради переглядів, а концентрувати увагу на контенті, що веде аудиторію до цільових дій.</p>
+  </div>
+
+  </div></div>
+
+<div class="gallery-section bg-cream">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="gallery-head-text">
+        <span class="gallery-label">Аналітика</span>
+        <h2>Масштаб <em>нашої звітності</em></h2>
+      </div>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="reportTrack" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="reportTrack" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="reportTrack">
+      <div class="gallery-item"><img src="ak-report1.jpg" alt="Звіт" onclick="openBox(this.src)"><div class="gallery-caption">Розбір контенту</div></div>
+      <div class="gallery-item"><img src="ak-report2.jpg" alt="Звіт" onclick="openBox(this.src)"><div class="gallery-caption">Динаміка показників</div></div>
+      <div class="gallery-item"><img src="ak-report3.jpg" alt="Звіт" onclick="openBox(this.src)"><div class="gallery-caption">Гіпотези й тести</div></div>
+    </div>
+  </div>
+</div>
+
+  <div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <p class="body-text" style="margin-bottom:0">Цей кейс — про те, як за роки системної роботи особистий бренд однієї людини перетворюється на впізнаваний бренд школи з власною контент-машиною. <strong>Органіка, що дає мільйонні охоплення, і звітність, що тримає фокус на бізнес-цілях, — це не везіння, а керована система.</strong></p>
+  </div>
+
+</div></div></div>
 
 <div class="case-nav">
   <div class="case-nav-inner">
-    <a href="index.html" class="case-nav-link prev">Всі кейси</a>
-    <a href="case-galyna.html" class="case-nav-link next">
-      <span class="case-nav-label">Наступний кейс</span>
-      Галина Сорочан
+    <a href="case-sun-haven.html" class="case-nav-link prev">
+      <span class="case-nav-label">Попередній кейс</span>
+      Sun Haven
+    </a>
+    <a href="index.html" class="case-nav-link next">
+      <span class="case-nav-label">Назад</span>
+      Всі кейси
     </a>
   </div>
 </div>
@@ -249,5 +435,26 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
   <div class="footer-copy">© 2025 Glide SMM Studio</div>
 </footer>
+
+<div class="lightbox" id="imgBox" onclick="closeBox()">
+  <button class="lightbox-close" aria-label="Закрити" onclick="closeBox()">✕</button>
+  <img src="" alt="" id="imgBoxImg">
+</div>
+
+<script>
+document.querySelectorAll('.gallery-arrow').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var track=document.getElementById(btn.dataset.track);
+    if(!track) return;
+    var it=track.querySelector('.gallery-item');
+    var step=it ? it.getBoundingClientRect().width+18 : 260;
+    var dir=btn.dataset.dir==='next' ? 1 : -1;
+    track.scrollBy({left:dir*step*2,behavior:'smooth'});
+  });
+});
+function openBox(src){ var b=document.getElementById('imgBox'); document.getElementById('imgBoxImg').src=src; b.classList.add('open'); document.body.style.overflow='hidden'; }
+function closeBox(){ document.getElementById('imgBox').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeBox(); });
+</script>
 </body>
 </html>
