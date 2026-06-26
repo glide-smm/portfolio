@@ -220,8 +220,6 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="section-block">
     <div class="block-label">Система</div>
     <h2>Контент, який <em>працює на довіру</em></h2>
-    <div class="split-row">
-    <div class="split-main">
     <div class="steps-list">
       <div class="step-item">
         <div class="step-num">01</div>
@@ -259,16 +257,24 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
         </div>
       </div>
     </div>
-    </div>
-    <aside class="split-aside">
-      <span class="split-aside-label">Пост-новина зі статистикою</span>
-      <div class="split-aside-stack">
-        <figure><img src="sl-post1.PNG" alt="Пост-новина" onclick="openBox(this.src)"><figcaption>Новинний пост для українців в Іспанії</figcaption></figure>
-        <figure><img src="sl-post2.PNG" alt="Пост-новина" onclick="openBox(this.src)"><figcaption>Реакція аудиторії на новину</figcaption></figure>
-        <figure><img src="sl-post3.PNG" alt="Статистика поста" onclick="openBox(this.src)"><figcaption>Статистика: охоплення і збереження</figcaption></figure>
-        <figure><img src="sl-post4.PNG" alt="Статистика поста" onclick="openBox(this.src)"><figcaption>Пересилання — контент, яким діляться</figcaption></figure>
+
+    <div class="gallery-section">
+      <div class="gallery-head">
+        <div class="gallery-head-text">
+          <span class="gallery-label">Пост-новина зі статистикою</span>
+          <h3>Контент, який <em>зберігають і пересилають</em></h3>
+        </div>
+        <div class="gallery-arrows">
+          <button class="gallery-arrow" data-track="slPosts" aria-label="Назад">‹</button>
+          <button class="gallery-arrow" data-track="slPosts" data-dir="next" aria-label="Вперед">›</button>
+        </div>
       </div>
-    </aside>
+      <div class="gallery-track" id="slPosts">
+        <div class="gallery-item"><img src="sl-post1.PNG" alt="Пост-новина" onclick="openBox(this.src)"><div class="gallery-caption">Новинний пост для українців в Іспанії</div></div>
+        <div class="gallery-item"><img src="sl-post2.PNG" alt="Пост-новина" onclick="openBox(this.src)"><div class="gallery-caption">Реакція аудиторії на новину</div></div>
+        <div class="gallery-item"><img src="sl-post3.PNG" alt="Статистика поста" onclick="openBox(this.src)"><div class="gallery-caption">Статистика: охоплення і збереження</div></div>
+        <div class="gallery-item"><img src="sl-post4.PNG" alt="Статистика поста" onclick="openBox(this.src)"><div class="gallery-caption">Пересилання — контент, яким діляться</div></div>
+      </div>
     </div>
 
     <div class="gallery-section">
