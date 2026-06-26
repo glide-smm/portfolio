@@ -64,7 +64,24 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
 .footer-logo span{font-style:italic}
 .footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
-@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;margin-left:14px;flex:none}
+.burger span{display:block;width:24px;height:2px;background:var(--bordo);border-radius:2px;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu-overlay{position:fixed;inset:0;background:rgba(26,18,16,0.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:200}
+.menu-overlay.open{opacity:1;visibility:visible}
+.menu-panel{position:fixed;top:0;right:0;height:100%;width:min(82vw,340px);background:var(--cream);box-shadow:-12px 0 40px rgba(0,0,0,0.18);transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);z-index:201;display:flex;flex-direction:column;padding:28px 32px}
+.menu-panel.open{transform:translateX(0)}
+.menu-panel-close{align-self:flex-end;width:42px;height:42px;border:none;background:none;color:var(--ink2);font-size:26px;line-height:1;cursor:pointer;margin-bottom:24px}
+.menu-panel-close:hover{color:var(--bordo)}
+.menu-links{display:flex;flex-direction:column;gap:4px}
+.menu-links a{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.menu-links a:last-child{border-bottom:none}
+.menu-links a:hover{color:var(--bordo)}
+.menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
+.menu-cta:hover{background:var(--bordo-light)}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
 </style>
 </head>
 <body>
@@ -75,6 +92,21 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <a href="index.html" class="back-link">Всі кейси</a>
     <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
   </div>
+  <button class="burger" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="menu-panel" id="menuPanel" aria-label="Мобільне меню">
+  <button class="menu-panel-close" id="menuClose" aria-label="Закрити">✕</button>
+  <div class="menu-links">
+    <a href="index.html#about">Про нас</a>
+    <a href="index.html#cases">Кейси</a>
+    <a href="index.html#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+    <a href="partnery.html">Партнерам</a>
+    <a href="index.html#contact">Контакти</a>
+  </div>
+  <a href="index.html#contact" class="menu-cta">Обговорити проєкт</a>
 </nav>
 
 <div class="case-hero">
@@ -249,5 +281,20 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
   <div class="footer-copy">© 2025 Glide SMM Studio</div>
 </footer>
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),
+      panel=document.getElementById('menuPanel'),
+      ov=document.getElementById('menuOverlay'),
+      cl=document.getElementById('menuClose');
+  function openM(){panel.classList.add('open');ov.classList.add('open');btn.classList.add('open');document.body.style.overflow='hidden';}
+  function closeM(){panel.classList.remove('open');ov.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  if(btn){btn.addEventListener('click',function(){panel.classList.contains('open')?closeM():openM();});}
+  if(ov){ov.addEventListener('click',closeM);}
+  if(cl){cl.addEventListener('click',closeM);}
+  document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+})();
+</script>
 </body>
 </html>

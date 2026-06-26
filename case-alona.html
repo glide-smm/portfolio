@@ -72,7 +72,24 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
 .footer-logo span{font-style:italic}
 .footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
-@media(max-width:900px){nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;margin-left:14px;flex:none}
+.burger span{display:block;width:24px;height:2px;background:var(--bordo);border-radius:2px;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu-overlay{position:fixed;inset:0;background:rgba(26,18,16,0.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:200}
+.menu-overlay.open{opacity:1;visibility:visible}
+.menu-panel{position:fixed;top:0;right:0;height:100%;width:min(82vw,340px);background:var(--cream);box-shadow:-12px 0 40px rgba(0,0,0,0.18);transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);z-index:201;display:flex;flex-direction:column;padding:28px 32px}
+.menu-panel.open{transform:translateX(0)}
+.menu-panel-close{align-self:flex-end;width:42px;height:42px;border:none;background:none;color:var(--ink2);font-size:26px;line-height:1;cursor:pointer;margin-bottom:24px}
+.menu-panel-close:hover{color:var(--bordo)}
+.menu-links{display:flex;flex-direction:column;gap:4px}
+.menu-links a{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.menu-links a:last-child{border-bottom:none}
+.menu-links a:hover{color:var(--bordo)}
+.menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
+.menu-cta:hover{background:var(--bordo-light)}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
 </style>
 </head>
 <body>
@@ -83,13 +100,28 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <a href="index.html" class="back-link">Всі кейси</a>
     <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
   </div>
+  <button class="burger" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="menu-panel" id="menuPanel" aria-label="Мобільне меню">
+  <button class="menu-panel-close" id="menuClose" aria-label="Закрити">✕</button>
+  <div class="menu-links">
+    <a href="index.html#about">Про нас</a>
+    <a href="index.html#cases">Кейси</a>
+    <a href="index.html#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+    <a href="partnery.html">Партнерам</a>
+    <a href="index.html#contact">Контакти</a>
+  </div>
+  <a href="index.html#contact" class="menu-cta">Обговорити проєкт</a>
 </nav>
 
 <div class="case-hero">
   <div class="case-hero-inner">
     <div class="case-tag">Кейс 03 · Особистий бренд · Медицина</div>
-    <h1>Альона Масина — <em>кейс, де головною перешкодою стали особисті страхи і упередження експертки</em></h1>
-    <p class="case-hero-sub">Лікар-дерматолог, хелс-коуч, генетик з 15-річним досвідом. Переїхала в Данію і хотіла відновити практику через особистий бренд. Головний висновок: психологічна готовність клієнта — це фундамент, без якого жодна стратегія не працює.</p>
+    <h1>Альона Масина — <em>кейс, де ми побачили справжній бар'єр раніше, ніж почали стратегію</em></h1>
+    <p class="case-hero-sub">Лікар-дерматолог, хелс коуч, генетик з 15-річним досвідом. Жила в Данії і хотіла відновити практику через особистий бренд. Ми одразу побачили, що головна перешкода — не в стратегії, а в готовності експерта виходити в публічність, і вибудували роботу саме навколо цього. Результат: системний потік клієнтів і показники реклами вище норми ринку.</p>
   </div>
 </div>
 
@@ -120,20 +152,20 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="section-block">
     <div class="block-label">Запит</div>
     <h2>Заявити про себе як експерт — <em>і отримати клієнтів онлайн</em></h2>
-    <p class="body-text">Альона — лікар-дерматолог, хелс-коуч і генетик з великим досвідом. Вийшовши заміж, переїхала в Данію і не практикувала за спеціальністю. <strong>Запит: розвивати особистий бренд в Instagram, залучати клієнтів на консультації і заявляти про себе як фахівця.</strong></p>
-    <p class="body-text">Запит видавався стандартним. Але вже на старті стало зрозуміло: головна перешкода — не відсутність стратегії, а внутрішній стан самої клієнтки.</p>
+    <p class="body-text">Альона — лікар-дерматолог, хелс коуч і генетик з великим досвідом. Жила в Данії і не практикувала за спеціальністю. <strong>Запит: розвивати особистий бренд в Instagram, залучати клієнтів на консультації і заявляти про себе як фахівця.</strong></p>
+    <p class="body-text">Запит видавався стандартним — і саме тут важлива робота стратега. Замість того щоб одразу братися за контент-план, ми уважно розібралися в ситуації. І вже на старті побачили те, що визначило всю подальшу роботу: головна перешкода — не відсутність плану, а внутрішня готовність самої експертки виходити в публічність.</p>
   </div>
 
   </div></div>
   <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
-    <div class="block-label">Ключова проблема</div>
-    <h2>Перфекціонізм і страх камери як <em>бар'єр для розвитку бренду</em></h2>
-    <p class="body-text">Альона уникала відеозйомки. Вона прагнула до ідеального результату на виході — і через це не робила нічого. Паралельно існував страх говорити про себе, свої досягнення і свою роботу відкрито.</p>
-    <p class="body-text">Це <strong>поширена ситуація в особистому бренді</strong>: людина має глибоку експертизу, але не може транслювати її назовні через психологічні обмеження. В такому стані навіть найкраща SMM-стратегія не дасть результату — тому що контент не буде зніматись, а продажі не будуть відбуватись.</p>
+    <div class="block-label">Що ми побачили</div>
+    <h2>Ми побачили те, що блокувало результат — <em>ще до старту просування</em></h2>
+    <p class="body-text">Альона уникала відеозйомки. Прагнула ідеального результату на виході — і через це не робила нічого. Паралельно існував страх відкрито говорити про себе, свої досягнення і свою роботу.</p>
+    <p class="body-text">Для нас це був чіткий сигнал: <strong>це поширений патерн в особистому бренді</strong> — людина має глибоку експертизу, але не може транслювати її через психологічні обмеження. Запускати стандартну SMM-стратегію в такому стані — означає злити бюджет: контент не зніматиметься, а продажі не відбуватимуться. Тому ми побудували стратегію інакше.</p>
 
     <div class="insight-box">
-      <p><strong>Підхід студії:</strong> В особистому бренді стан власника визначає все. Ми розуміємо це і враховуємо з першого дня роботи — паралельно з упаковкою і стратегією ведемо клієнта до готовності відкрито говорити про свою роботу.</p>
+      <p><strong>Наш підхід:</strong> ми не працюємо за шаблоном. В особистому бренді стан власника визначає все — і ми будуємо стратегію навколо конкретної людини, а не навпаки. З першого дня вели Альону до готовності відкрито говорити про свою роботу паралельно з упаковкою і просуванням. Саме ця індивідуальна адаптація і дала результат, якого не дала б типова воронка.</p>
     </div>
   </div>
 
@@ -141,22 +173,22 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Як ми працювали</div>
-    <h2>Паралельна робота: <em>зовнішнє і внутрішнє</em></h2>
-    <p class="body-text">З першого тижня ми вели дві лінії роботи одночасно: побудова акаунту і підготовка самої Альони до ролі публічного експерта. Це вимагало більше часу і уваги, ніж стандартний SMM-проєкт — але саме це дало результат.</p>
+    <h2>Дві лінії одночасно: <em>акаунт і готовність експерта</em></h2>
+    <p class="body-text">Ми свідомо обрали складніший шлях. З першого тижня вели дві лінії роботи паралельно: вибудовували акаунт і одночасно готували Альону до ролі публічного експерта. Це вимагало більше уваги, ніж стандартний SMM-проєкт — але саме така індивідуальна стратегія була єдиною, що могла спрацювати в цій ситуації. І вона спрацювала.</p>
 
     <div class="steps-list">
       <div class="step-item">
         <div class="step-num">01</div>
         <div class="step-content">
           <h3>Розпаковка особистості і позиціонування</h3>
-          <p>Провели глибоку роботу з тим, ким є Альона як експерт, яка її унікальна точка зору і чим вона відрізняється від інших. Допомогли чітко сформулювати свою цінність — і почати говорити про неї впевнено.</p>
+          <p>Почали з фундаменту: хто Альона як експерт, у чому її унікальна точка зору і чим вона відрізняється від інших на ринку. Вивели чітке позиціонування — і дали інструмент говорити про свою цінність впевнено.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">02</div>
         <div class="step-content">
           <h3>Покрокове подолання бар'єру зйомки</h3>
-          <p>Розробили поступовий підхід до зйомки: від голосових повідомлень і простих сторіс — до повноцінних рилзів. Детально пропрацювали підготовку до зйомки, налаштування і поведінку перед камерою.</p>
+          <p>Наш ключовий стратегічний хід. Розробили індивідуальну методику входу в кадр: від голосових і простих сторіс — до повноцінних рилзів. Детально пропрацювали підготовку, налаштування і поведінку перед камерою, рухаючись у темпі, комфортному для клієнтки.</p>
         </div>
       </div>
       <div class="step-item">
@@ -170,27 +202,27 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
         <div class="step-num">04</div>
         <div class="step-content">
           <h3>Постановка продуктової лінійки</h3>
-          <p>Розробили структуру продуктів і послуг: від безкоштовного лід-магніту до консультацій. Навчали клієнтку продавати через контент — через цінність і довіру, без тиску.</p>
+          <p>Вибудували структуру продуктів: від безкоштовного лід-магніту до консультацій. Навчили клієнтку продавати через контент — через цінність і довіру, без тиску. Контент почав працювати не лише на охоплення, а на конкретні бізнес-цілі.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">05</div>
         <div class="step-content">
           <h3>Таргетована реклама</h3>
-          <p>Запустили рекламні кампанії на теми, що резонують аудиторії: вітаміни і їх форми, аналізи, кортизол, АІТ, болючі менструації, інсулінорезистентність. Показники — нижче середнього по ринку.</p>
+          <p>Запустили кампанії на теми, що резонують з аудиторією: форми вітамінів, аналізи, кортизол, АІТ, болючі менструації, інсулінорезистентність. Влучне попадання в болі аудиторії дало вартість залучення нижчу за середню по ринку.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">06</div>
         <div class="step-content">
           <h3>Щомісячна аналітика і оптимізація</h3>
-          <p>Детальні звіти після кожного місяця: які рекламні теми і формати контенту дають найбільше запитів, що коригуємо, що масштабуємо.</p>
+          <p>Після кожного місяця — детальний розбір: які теми і формати дають найбільше запитів, що коригуємо, що масштабуємо. Стратегія не стояла на місці, а постійно загострювалась під реальні дані.</p>
         </div>
       </div>
     </div>
 
     <div class="insight-box green">
-      <p><strong>Ключове досягнення:</strong> За 3 місяці Альона вільно записувала рилзи, голосові, знімала регулярний контент. Вона подолала головний бар'єр — і це відкрило шлях до системного розвитку бренду.</p>
+      <p><strong>Що це дало:</strong> за 3 місяці Альона вільно записувала рилзи, голосові, знімала регулярний контент. Бар'єр, який міг поховати весь проєкт, було подолано — і саме це відкрило шлях до системного зростання. Якби ми не побачили цього на старті, такого результату просто не було б.</p>
     </div>
   </div>
 
@@ -226,8 +258,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-section"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Підсумок</div>
-    <h2>Що цей кейс <em>демонструє</em></h2>
-    <p class="body-text">Кейс Альони — це приклад того, що в особистому бренді <strong>SMM-робота нерозривно пов'язана зі станом і готовністю самого експерта</strong>. Ми знаємо про цю залежність і враховуємо її з першого дня — незалежно від того, чи клієнт приходить з цим запитом свідомо.</p>
+    <h2>Сильна стратегія починається <em>з уважного погляду на ситуацію</em></h2>
+    <p class="body-text">Кейс Альони показує головне в нашій роботі: ми не накладаємо шаблон на клієнта, а будуємо стратегію під конкретну ситуацію. Тут результат залежав не від чергового контент-плану, а від того, щоб <strong>вчасно розгледіти справжній бар'єр і вибудувати роботу навколо нього</strong>. Ми вміємо помічати це з перших зустрічей — навіть коли клієнт приходить зі стандартним на вигляд запитом. Саме в цьому різниця між підрядником, що «веде сторінки», і командою, що приводить до результату.</p>
 
     <div class="results-grid">
       <div class="result-card">
@@ -268,5 +300,20 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
   <div class="footer-copy">© 2025 Glide SMM Studio</div>
 </footer>
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),
+      panel=document.getElementById('menuPanel'),
+      ov=document.getElementById('menuOverlay'),
+      cl=document.getElementById('menuClose');
+  function openM(){panel.classList.add('open');ov.classList.add('open');btn.classList.add('open');document.body.style.overflow='hidden';}
+  function closeM(){panel.classList.remove('open');ov.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  if(btn){btn.addEventListener('click',function(){panel.classList.contains('open')?closeM():openM();});}
+  if(ov){ov.addEventListener('click',closeM);}
+  if(cl){cl.addEventListener('click',closeM);}
+  document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+})();
+</script>
 </body>
 </html>
