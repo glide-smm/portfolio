@@ -88,9 +88,9 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .gallery-item{flex:0 0 auto;width:240px;scroll-snap-align:start}
 .gallery-item img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.08);cursor:zoom-in}
 .gallery-caption{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
-.split-row{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:start;margin:8px 0 4px;max-width:920px}
+.split-row{display:grid;grid-template-columns:1fr 230px;gap:40px;align-items:start;margin:8px 0 4px;max-width:920px}
 .split-text .body-text{margin-bottom:18px}
-.split-text .body-text:last-child{margin-bottom:0}
+.split-text .insight-box{margin:18px 0 0;max-width:none}
 .split-shot{margin:0}
 .split-shot img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 8px 28px rgba(0,0,0,0.12);cursor:zoom-in}
 .split-shot-cap{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center}
@@ -121,7 +121,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .menu-links a:hover{color:var(--bordo)}
 .menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
 .menu-cta:hover{background:var(--bordo-light)}
-@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-section{padding:44px 24px}.gallery-item{width:185px}.gallery-arrow{width:40px;height:40px;font-size:16px}.beforeafter{grid-template-columns:1fr;gap:28px}.split-row{grid-template-columns:1fr;gap:24px;max-width:none}.split-shot{max-width:280px;margin:0 auto}}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-section{padding:44px 24px}.gallery-item{width:185px}.gallery-arrow{width:40px;height:40px;font-size:16px}.beforeafter{grid-template-columns:1fr;gap:28px}.split-row{grid-template-columns:1fr;gap:24px;max-width:none}.split-shot{max-width:230px;margin:0 auto}}
 </style>
 </head>
 <body>
@@ -255,15 +255,14 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <div class="split-text">
         <p class="body-text">TikTok став головним відкриттям проєкту. Завдяки правильній контент-стратегії він перетворився на потужне джерело безкоштовного трафіку: майже після кожного відео відбувався «перегін» аудиторії в Instagram — ці люди не просто заходили подивитись, а лишались і продовжували стежити за школою.</p>
         <p class="body-text"><strong>Рекорд — 5 мільйонів переглядів на одне відео.</strong> Акаунт швидко виріс до 45 тисяч+ підписників. Почали приходити перші запити на співпрацю та заняття — у тому числі від популярних блогерів.</p>
+        <div class="insight-box">
+          <p><strong>💡 Найкращі заявки в директі</strong> пішли саме після активного постингу в TikTok — віральне відео працювало як вершина воронки, а Instagram утримував і прогрівав аудиторію.</p>
+        </div>
       </div>
       <div class="split-shot">
         <img src="ak-tiktok1.jpg" alt="5 млн переглядів у TikTok" onclick="openBox(this.src)">
         <div class="split-shot-cap">Рекорд переглядів у TikTok</div>
       </div>
-    </div>
-
-    <div class="insight-box">
-      <p><strong>💡 Найкращі заявки в директі</strong> пішли саме після активного постингу в TikTok — віральне відео працювало як вершина воронки, а Instagram утримував і прогрівав аудиторію.</p>
     </div>
   </div>
 
@@ -452,13 +451,10 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 
 <div class="case-nav">
   <div class="case-nav-inner">
-    <a href="case-sun-haven.html" class="case-nav-link prev">
-      <span class="case-nav-label">Попередній кейс</span>
-      Sun Haven
-    </a>
-    <a href="index.html" class="case-nav-link next">
-      <span class="case-nav-label">Назад</span>
-      Всі кейси
+    <a href="index.html" class="case-nav-link prev">Всі кейси</a>
+    <a href="case-spanish-life.html" class="case-nav-link next">
+      <span class="case-nav-label">Наступний кейс</span>
+      Spanish Life
     </a>
   </div>
 </div>
