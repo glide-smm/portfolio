@@ -72,11 +72,11 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .gallery-item{flex:none;width:230px;scroll-snap-align:start}
 .gallery-item img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
 .gallery-caption{font-size:12px;color:var(--ink3);margin-top:8px;line-height:1.5;font-weight:300}
-.beforeafter{display:flex;flex-direction:column;gap:32px;margin:28px 0 8px;max-width:560px}
+.beforeafter{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:28px 0 8px;max-width:920px}
 .ba-col-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
 .ba-col.before .ba-col-label{color:var(--ink3)}
 .ba-col.after .ba-col-label{color:var(--bordo)}
-.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .ba-pair img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
 .lightbox{position:fixed;inset:0;background:rgba(20,14,12,0.92);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out;padding:32px}
 .lightbox.open{display:flex}
@@ -110,7 +110,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .menu-links a:hover{color:var(--bordo)}
 .menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
 .menu-cta:hover{background:var(--bordo-light)}
-@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.metric-big{font-size:32px}.metric-cell{padding:24px 12px}.case-body{padding:0}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-item{width:170px}.gallery-head h3{font-size:18px}.beforeafter{max-width:none}footer{flex-direction:column;gap:14px;text-align:center}}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.metric-big{font-size:32px}.metric-cell{padding:24px 12px}.case-body{padding:0}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-item{width:170px}.gallery-head h3{font-size:18px}.beforeafter{grid-template-columns:1fr;gap:28px;max-width:none}footer{flex-direction:column;gap:14px;text-align:center}}
 </style>
 </head>
 <body>
@@ -142,7 +142,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-hero-inner">
     <div class="case-tag">Кейс · B2B · Виробництво</div>
     <h1>Zotti — <em>живий інстаграм для «неінстаграмного» бізнесу</em></h1>
-    <p class="case-hero-sub">Постачальник матеріалів і фурнітури для виробників взуття, 25 років на ринку. Ми зробили робочий, сучасний інстаграм для ніші, яку складно назвати інстаграмною — і вивели бренд на нову молоду аудиторію виробників.</p>
+    <p class="case-hero-sub">Постачальник матеріалів і фурнітури для виробників взуття, 25 років на ринку. Ми зробили робочий, сучасний інстаграм для ніші, яку складно назвати інстаграмною, і вивели бренд на нову молоду аудиторію виробників.</p>
   </div>
 </div>
 
@@ -172,7 +172,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="case-section bg-cream"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Запит</div>
-    <h2>25 років на ринку — <em>і запит на молоду аудиторію</em></h2>
+    <h2>25 років на ринку <em>і запит на молоду аудиторію</em></h2>
     <p class="body-text">Zotti — постачальник матеріалів, фурнітури та обладнання для виробників взуття. Компанія <strong>25 років на ринку</strong>, має стабільну базу клієнтів, які працюють з нею роками. Але бізнес хотів розвитку: вийти на нове покоління — <strong>молодих виробників взуття</strong>, які шукають постачальників онлайн.</p>
     <p class="body-text">Саме з цим запитом Zotti звернулися до нас. Головна ціль — <strong>омолодження аудиторії бренду</strong>: зробити сторінку, яка говоритиме мовою нової аудиторії, виходитиме в рекомендації й приводитиме молодших виробників.</p>
   </div>
@@ -195,7 +195,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="case-section bg-cream2"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Рішення</div>
-    <h2>Контент про реальне виробництво — <em>і людина в кадрі</em></h2>
+    <h2>Контент про реальне виробництво <em>і людина в кадрі</em></h2>
     <p class="body-text">Ми зробили ставку на те, що по-справжньому цікаво виробникам: <strong>матеріали, фурнітуру, процес виробництва й товар</strong>. Каталоги, добірки, поради й тести — контент, який одночасно показує асортимент і доводить експертність Zotti.</p>
     <p class="body-text">Щоб виходити на молоду аудиторію, ми взяли людину з команди й почали знімати <strong>трендові розмовні рилз</strong>: про матеріали, обладнання, закулісся компанії. Відео з людьми стабільно давали найбільший відсоток нової аудиторії та виходили в рекомендації — саме те, що потрібно для омолодження бази.</p>
     <p class="body-text">Паралельно ми запустили <strong>рекламу на сайт</strong>. Перед стартом дали детальні рекомендації, як зробити сайт зручнішим і актуальнішим, підключили UTM-мітки для наскрізної аналітики та налаштували окрему лід-форму — щоб бачити заявки не лише з директу, а й із сайту.</p>
@@ -209,11 +209,11 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="case-section bg-cream"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Труднощі</div>
-    <h2>Складна ніша — <em>і потреба в чіткому напрямку</em></h2>
+    <h2>Складна ніша <em>і потреба в чіткому напрямку</em></h2>
     <p class="body-text">Матеріали для виробництва взуття — ніша далеко не «інстаграмна»: тут немає глянцю й готового візуалу, а аудиторія — професіонали, які приймають рішення раціонально. Завдання було показати, що <strong>навіть такий бізнес може мати живий, працюючий інстаграм.</strong></p>
     <p class="body-text">Клієнт прагнув розвитку й був готовий експериментувати — важливо було задати правильний напрямок і темп. <strong>Спираючись на багаторічний досвід, ми вибудували систему</strong>: що знімати, у якому форматі, як тестувати й що масштабувати. Крок за кроком формати, які працюють, ставали основою контенту.</p>
     <div class="insight-box">
-      <p><strong>Неінстаграмних ніш не буває.</strong> Є контент, який не знайшов своєї аудиторії — і система, яка допомагає його знайти.</p>
+      <p><strong>Неінстаграмних ніш не буває.</strong> Є контент, який ще не знайшов своєї аудиторії, і система, яка допомагає звести їх разом.</p>
     </div>
   </div>
 </div></div>
@@ -249,7 +249,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="case-section bg-cream"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Контент</div>
-    <h2>Постійні тести — <em>і зростання охоплень</em></h2>
+    <h2>Постійні тести <em>і зростання охоплень</em></h2>
     <p class="body-text">Головне досягнення в контенті — ми <strong>багато експериментували й постійно тестували формати</strong>. Завдяки цьому охоплення постів зростало щомісяця, а нова аудиторія в рилз набирала обертів.</p>
     <p class="body-text">Охоплення постів: грудень 399 → січень 445 → квітень <strong>593</strong>. А частка нової аудиторії в рилз зросла з <strong>~32% у березні до ~44% у квітні</strong> — тобто контент усе впевненіше виходив за межі наявних підписників.</p>
   </div>
@@ -347,7 +347,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="section-block">
     <div class="block-label">Дизайн</div>
     <h2>Нова дизайн-система — <em>до і після</em></h2>
-    <p class="body-text">Окремо ми розробили для Zotti <strong>дизайн-систему</strong>: оновили візуал стрічки, постів і сторіз так, щоб профіль виглядав сучасно й упізнавано — і відповідав запиту на молодшу аудиторію.</p>
+    <p class="body-text">Окремо ми розробили для Zotti <strong>дизайн-систему</strong>: оновили візуал стрічки, постів і сторіз так, щоб профіль виглядав сучасно й упізнавано та відповідав запиту на молодшу аудиторію.</p>
   </div>
   <div class="beforeafter">
     <div class="ba-col before">
@@ -450,7 +450,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="case-nav-inner">
     <a href="case-gbar.html" class="case-nav-link prev">
       <span class="case-nav-label">Попередній кейс</span>
-      G Bar
+      G×Bar
     </a>
     <a href="case-jaya.html" class="case-nav-link next">
       <span class="case-nav-label">Наступний кейс</span>
