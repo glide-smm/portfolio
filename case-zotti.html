@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: Zotti — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}.logo img{height:60px;width:auto;display:block;margin-left:100px}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--bordo-light)}
+.nav-right{display:flex;align-items:center;gap:40px}.case-hero{background-image:linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)),url('zotti.jpg');background-size:cover;background-position:center;padding:72px 60px 56px;color:var(--white)}
+.case-hero-inner{max-width:1100px;margin:0 auto}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+.case-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.case-hero h1 em{font-style:italic;color:var(--white)}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.metrics-bar{background:var(--ink);padding:0 60px}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 20px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--white);font-weight:600;line-height:1}
+.metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
+.case-section{padding:48px 60px}.case-section-inner{max-width:1100px;margin:0 auto}.case-body{padding:0}
+.bg-cream{background:var(--cream)}.bg-cream2{background:var(--cream2)}
+.section-block{margin-bottom:0px}
+.block-label{display:inline-flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
+.section-block h2 em{font-style:italic;color:var(--bordo)}
+.body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
+.body-text strong{color:var(--ink);font-weight:600}
+.req-list{list-style:none;max-width:740px;margin:8px 0 0}
+.req-list li{position:relative;padding:8px 0 8px 26px;font-size:16px;color:var(--ink2);font-weight:300;line-height:1.7}
+.req-list li::before{content:'';position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--bordo);border-radius:50%}
+.insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
+.insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
+.insight-box p strong{color:var(--bordo);font-weight:600}
+.steps-list{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:740px}
+.step-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
+.step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
+.result-card{background:var(--white);padding:28px}
+.result-card.accent{background:var(--bordo)}
+.result-num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
+.result-card.accent .result-num{color:var(--white)}
+.result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
+.result-card.accent .result-label{color:rgba(255,255,255,0.7)}
+.single-shot{max-width:740px;margin:28px 0}
+.single-shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.single-shot.video-shot{max-width:560px}
+.single-shot .gallery-caption{margin-top:10px}
+.gallery-section{margin:32px 0 8px}
+.gallery-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;max-width:1100px}
+.gallery-head .block-label{margin-bottom:0}
+.gallery-head h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);flex:1}
+.gallery-arrows{display:flex;gap:8px}
+.gallery-arrow{width:38px;height:38px;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:16px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.gallery-arrow:hover{background:var(--bordo);color:var(--white)}
+.gallery-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.gallery-track::-webkit-scrollbar{height:6px}
+.gallery-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.gallery-item{flex:none;width:230px;scroll-snap-align:start}
+.gallery-item img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.gallery-caption{font-size:12px;color:var(--ink3);margin-top:8px;line-height:1.5;font-weight:300}
+.beforeafter{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:28px 0 8px;max-width:900px}
+.ba-col-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
+.ba-col.before .ba-col-label{color:var(--ink3)}
+.ba-col.after .ba-col-label{color:var(--bordo)}
+.ba-pair{display:flex;flex-direction:column;gap:12px}
+.ba-pair img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.lightbox{position:fixed;inset:0;background:rgba(20,14,12,0.92);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out;padding:32px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;border-radius:4px}
+.lightbox-close{position:absolute;top:24px;right:32px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+.case-nav{background:var(--cream2);padding:56px 60px}
+.case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
+.case-nav-link:hover{color:var(--bordo)}
+.case-nav-link.next::after{content:' →'}
+.case-nav-link.prev::before{content:'← '}
+.case-nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);font-weight:600;display:block;margin-bottom:4px}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;margin-left:14px;flex:none}
+.burger span{display:block;width:24px;height:2px;background:var(--bordo);border-radius:2px;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu-overlay{position:fixed;inset:0;background:rgba(26,18,16,0.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:200}
+.menu-overlay.open{opacity:1;visibility:visible}
+.menu-panel{position:fixed;top:0;right:0;height:100%;width:min(82vw,340px);background:var(--cream);box-shadow:-12px 0 40px rgba(0,0,0,0.18);transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);z-index:201;display:flex;flex-direction:column;padding:28px 32px}
+.menu-panel.open{transform:translateX(0)}
+.menu-panel-close{align-self:flex-end;width:42px;height:42px;border:none;background:none;color:var(--ink2);font-size:26px;line-height:1;cursor:pointer;margin-bottom:24px}
+.menu-panel-close:hover{color:var(--bordo)}
+.menu-links{display:flex;flex-direction:column;gap:4px}
+.menu-links a{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.menu-links a:last-child{border-bottom:none}
+.menu-links a:hover{color:var(--bordo)}
+.menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
+.menu-cta:hover{background:var(--bordo-light)}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.metric-big{font-size:32px}.metric-cell{padding:24px 12px}.case-body{padding:0}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-item{width:170px}.gallery-head h3{font-size:18px}.beforeafter{grid-template-columns:1fr}footer{flex-direction:column;gap:14px;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a>
+  <div class="nav-right">
+    <a href="index.html" class="back-link">Всі кейси</a>
+    <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
+  </div>
+  <button class="burger" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="menu-panel" id="menuPanel" aria-label="Мобільне меню">
+  <button class="menu-panel-close" id="menuClose" aria-label="Закрити">✕</button>
+  <div class="menu-links">
+    <a href="index.html#about">Про нас</a>
+    <a href="index.html#cases">Кейси</a>
+    <a href="index.html#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+    <a href="partnery.html">Партнерам</a>
+    <a href="index.html#contact">Контакти</a>
+  </div>
+  <a href="index.html#contact" class="menu-cta">Обговорити проєкт</a>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Кейс · B2B · Виробництво</div>
+    <h1>Zotti — <em>живий інстаграм для «неінстаграмного» бізнесу</em></h1>
+    <p class="case-hero-sub">Постачальник матеріалів і фурнітури для виробників взуття, 25 років на ринку. Ми зробили робочий, сучасний інстаграм для ніші, яку складно назвати інстаграмною — і вивели бренд на нову молоду аудиторію виробників.</p>
+  </div>
+</div>
+
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-cell">
+      <div class="metric-big">+1775</div>
+      <div class="metric-sub">Підписників за 10 міс.</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">0,05$</div>
+      <div class="metric-sub">Ціна за клік (від)</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">×4</div>
+      <div class="metric-sub">Дешевша заявка за місяць</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">+44%</div>
+      <div class="metric-sub">Нової аудиторії в рилз</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Запит</div>
+    <h2>25 років на ринку — <em>і запит на молоду аудиторію</em></h2>
+    <p class="body-text">Zotti — постачальник матеріалів, фурнітури та обладнання для виробників взуття. Компанія <strong>25 років на ринку</strong>, має стабільну базу клієнтів, які працюють з нею роками. Але бізнес хотів розвитку: вийти на нове покоління — <strong>молодих виробників взуття</strong>, які шукають постачальників онлайн.</p>
+    <p class="body-text">Саме з цим запитом Zotti звернулися до нас. Головна ціль — <strong>омолодження аудиторії бренду</strong>: зробити сторінку, яка говоритиме мовою нової аудиторії, виходитиме в рекомендації й приводитиме молодших виробників.</p>
+  </div>
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Динаміка підписників</div>
+      <h3>3 217 → 4 992 за 10 місяців</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-subs" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-subs" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-subs">
+      <div class="gallery-item"><img src="zotti-subs-before.png" alt="Підписники до" onclick="openBox(this.src)"><div class="gallery-caption">Точка А — на старті роботи</div></div>
+      <div class="gallery-item"><img src="zotti-subs-after.png" alt="Підписники після" onclick="openBox(this.src)"><div class="gallery-caption">Точка Б — за 10 місяців: +1 775 підписників</div></div>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Рішення</div>
+    <h2>Контент про реальне виробництво — <em>і людина в кадрі</em></h2>
+    <p class="body-text">Ми зробили ставку на те, що по-справжньому цікаво виробникам: <strong>матеріали, фурнітуру, процес виробництва й товар</strong>. Каталоги, добірки, поради й тести — контент, який одночасно показує асортимент і доводить експертність Zotti.</p>
+    <p class="body-text">Щоб виходити на молоду аудиторію, ми взяли людину з команди й почали знімати <strong>трендові розмовні рилз</strong>: про матеріали, обладнання, закулісся компанії. Відео з людьми стабільно давали найбільший відсоток нової аудиторії та виходили в рекомендації — саме те, що потрібно для омолодження бази.</p>
+    <p class="body-text">Паралельно ми запустили <strong>рекламу на сайт</strong>. Перед стартом дали детальні рекомендації, як зробити сайт зручнішим і актуальнішим, підключили UTM-мітки для наскрізної аналітики та налаштували окрему лід-форму — щоб бачити заявки не лише з директу, а й із сайту.</p>
+  </div>
+  <div class="single-shot video-shot">
+    <video src="zotti-leadform.mp4" controls muted playsinline style="width:100%;display:block;border:1px solid var(--line);border-radius:4px"></video>
+    <div class="gallery-caption">Лід-форма на сайті: заявки збираються й відстежуються окремо від директу</div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Труднощі</div>
+    <h2>Складна ніша — <em>і потреба в чіткому напрямку</em></h2>
+    <p class="body-text">Матеріали для виробництва взуття — ніша далеко не «інстаграмна»: тут немає глянцю й готового візуалу, а аудиторія — професіонали, які приймають рішення раціонально. Завдання було показати, що <strong>навіть такий бізнес може мати живий, працюючий інстаграм.</strong></p>
+    <p class="body-text">Клієнт прагнув розвитку й був готовий експериментувати — важливо було задати правильний напрямок і темп. <strong>Спираючись на багаторічний досвід, ми вибудували систему</strong>: що знімати, у якому форматі, як тестувати й що масштабувати. Крок за кроком формати, які працюють, ставали основою контенту.</p>
+    <div class="insight-box">
+      <p><strong>Неінстаграмних ніш не буває.</strong> Є контент, який не знайшов своєї аудиторії — і система, яка допомагає його знайти.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Реклама</div>
+    <h2>Стабільні ліди <em>за дешевим кліком</em></h2>
+    <p class="body-text">Реклама працювала на дві цілі — підписки й заявки. Ціна за клік стабільно тримається на рівні <strong>0,05–0,11$</strong>, а ціна за підписника — в межах <strong>0,24–1,05$</strong>, тобто здебільшого нижче за норму ринку в 1$.</p>
+    <p class="body-text">Після налаштування окремої лід-форми ми почали чітко відстежувати заявки із сайту. У квітні ціна за заявку склала <strong>4,47$ — у понад 4 рази дешевше, ніж у березні (18,98$).</strong> Паралельно ми щомісяця отримували ліди в директі.</p>
+    <div class="results-grid">
+      <div class="result-card accent">
+        <div class="result-num">30</div>
+        <div class="result-label">Лідів за 7 днів — рекламна кампанія на фурнітуру</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">24</div>
+        <div class="result-label">Ліди за 15 днів — кампанія на клеї</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">18</div>
+        <div class="result-label">Лідів за 19 днів — кампанія на світлоактиватори</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">4,47$</div>
+        <div class="result-label">Ціна за заявку у квітні проти 18,98$ у березні</div>
+      </div>
+    </div>
+    <p class="body-text" style="margin-top:32px">Серед окремих кампаній найкраще спрацювали: <strong>колодки</strong> (CTR 6,06%, CPC 0,07$), <strong>туніти</strong> (CTR 8,26%, CPM 2,69–3,94$) і <strong>сітки</strong> — найдешевший CPM за весь період (1,74$), які заодно принесли +195 підписників.</p>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Контент</div>
+    <h2>Постійні тести — <em>і зростання охоплень</em></h2>
+    <p class="body-text">Головне досягнення в контенті — ми <strong>багато експериментували й постійно тестували формати</strong>. Завдяки цьому охоплення постів зростало щомісяця, а нова аудиторія в рилз набирала обертів.</p>
+    <p class="body-text">Охоплення постів: грудень 399 → січень 445 → квітень <strong>593</strong>. А частка нової аудиторії в рилз зросла з <strong>~32% у березні до ~44% у квітні</strong> — тобто контент усе впевненіше виходив за межі наявних підписників.</p>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Рилз про виробництво</div>
+      <h3>Як виготовляють шнурки</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-laces" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-laces" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-laces">
+      <div class="gallery-item"><img src="zotti-laces1.png" alt="Шнурки 1" onclick="openBox(this.src)"><div class="gallery-caption">Статистика рилз про шнурки</div></div>
+      <div class="gallery-item"><img src="zotti-laces2.png" alt="Шнурки 2" onclick="openBox(this.src)"><div class="gallery-caption">Охоплення та перегляди</div></div>
+      <div class="gallery-item"><img src="zotti-laces3.png" alt="Шнурки 3" onclick="openBox(this.src)"><div class="gallery-caption">Відсоток нової аудиторії</div></div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Карусель від команди</div>
+      <h3>«Від команди Zotti — Едік»</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-team" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-team" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-team">
+      <div class="gallery-item"><img src="zotti-team1.png" alt="Команда 1" onclick="openBox(this.src)"><div class="gallery-caption">Найвища взаємодія місяця</div></div>
+      <div class="gallery-item"><img src="zotti-team2.png" alt="Команда 2" onclick="openBox(this.src)"><div class="gallery-caption">Понад 100 лайків і десятки коментарів</div></div>
+      <div class="gallery-item"><img src="zotti-team3.png" alt="Команда 3" onclick="openBox(this.src)"><div class="gallery-caption">107 відвідувань профілю з одного допису</div></div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Новинка сезону</div>
+      <h3>Карусель про туніти</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-tuniti" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-tuniti" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-tuniti">
+      <div class="gallery-item"><img src="zotti-tuniti1.png" alt="Туніти 1" onclick="openBox(this.src)"><div class="gallery-caption">Статистика каруселі про туніти</div></div>
+      <div class="gallery-item"><img src="zotti-tuniti2.png" alt="Туніти 2" onclick="openBox(this.src)"><div class="gallery-caption">Охоплення новинки сезону</div></div>
+      <div class="gallery-item"><img src="zotti-tuniti3.png" alt="Туніти 3" onclick="openBox(this.src)"><div class="gallery-caption">Залученість аудиторії</div></div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Топ охоплення</div>
+      <h3>Найкращі дописи в профілі</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-top" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-top" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-top">
+      <div class="gallery-item"><img src="zotti-top1.png" alt="Топ 1" onclick="openBox(this.src)"><div class="gallery-caption">Топ охоплення — 1</div></div>
+      <div class="gallery-item"><img src="zotti-top2.png" alt="Топ 2" onclick="openBox(this.src)"><div class="gallery-caption">Топ охоплення — 2</div></div>
+      <div class="gallery-item"><img src="zotti-top3.png" alt="Топ 3" onclick="openBox(this.src)"><div class="gallery-caption">Топ охоплення — 3</div></div>
+      <div class="gallery-item"><img src="zotti-top4.png" alt="Топ 4" onclick="openBox(this.src)"><div class="gallery-caption">Топ охоплення — 4</div></div>
+      <div class="gallery-item"><img src="zotti-top5.png" alt="Топ 5" onclick="openBox(this.src)"><div class="gallery-caption">Топ охоплення — 5</div></div>
+      <div class="gallery-item"><img src="zotti-top6.png" alt="Топ 6" onclick="openBox(this.src)"><div class="gallery-caption">Топ охоплення — 6</div></div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Рилз про продукцію</div>
+      <h3>Підошва в кадрі</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-sole" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-sole" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-sole">
+      <div class="gallery-item"><img src="zotti-sole1.png" alt="Підошва 1" onclick="openBox(this.src)"><div class="gallery-caption">Статистика рилз про підошву</div></div>
+      <div class="gallery-item"><img src="zotti-sole2.png" alt="Підошва 2" onclick="openBox(this.src)"><div class="gallery-caption">Перегляди й охоплення</div></div>
+      <div class="gallery-item"><img src="zotti-sole3.png" alt="Підошва 3" onclick="openBox(this.src)"><div class="gallery-caption">Відсоток нової аудиторії</div></div>
+      <div class="gallery-item"><img src="zotti-sole4.png" alt="Підошва 4" onclick="openBox(this.src)"><div class="gallery-caption">Залученість і збереження</div></div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <p><strong>Що працює найкраще:</strong> каруселі-каталоги й добірки товарів, рубрика «від команди Zotti», рилз із тестами та порадами, а також відео про виробництво й обладнання — глибше занурення в те, чим живе компанія.</p>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Дизайн</div>
+    <h2>Нова дизайн-система — <em>до і після</em></h2>
+    <p class="body-text">Окремо ми розробили для Zotti <strong>дизайн-систему</strong>: оновили візуал стрічки, постів і сторіз так, щоб профіль виглядав сучасно й упізнавано — і відповідав запиту на молодшу аудиторію.</p>
+  </div>
+  <div class="beforeafter">
+    <div class="ba-col before">
+      <div class="ba-col-label">Було</div>
+      <div class="ba-pair">
+        <img src="zotti-design-before1.png" alt="Дизайн до 1" onclick="openBox(this.src)">
+        <img src="zotti-design-before2.png" alt="Дизайн до 2" onclick="openBox(this.src)">
+      </div>
+    </div>
+    <div class="ba-col after">
+      <div class="ba-col-label">Стало</div>
+      <div class="ba-pair">
+        <img src="zotti-design-after1.png" alt="Дизайн після 1" onclick="openBox(this.src)">
+        <img src="zotti-design-after2.png" alt="Дизайн після 2" onclick="openBox(this.src)">
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Система</div>
+    <h2>Як ми вибудували роботу <em>з нуля до системи</em></h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Стратегія під омолодження бренду</h3>
+          <p>Аналіз аудиторії та конкурентів, позиціонування під молодих виробників, контент-стратегія з акцентом на вихід у рекомендації.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Контент про матеріали й виробництво</h3>
+          <p>Каталоги, добірки, поради, тести, відео про обладнання й процеси — те, що цінує професійна аудиторія виробників.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Людина з команди в кадрі</h3>
+          <p>Трендові розмовні рилз із людиною з команди — формат, який стабільно давав найбільше нової аудиторії та виходив у рекомендації.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Реклама на сайт із наскрізною аналітикою</h3>
+          <p>Рекомендації щодо сайту, UTM-мітки й окрема лід-форма — щоб бачити заявки з сайту, а не лише з директу, і керувати ціною за результат.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Постійні тести форматів</h3>
+          <p>Системне тестування гіпотез: каруселі, рилз, рубрики. Те, що працює, ставало основою; те, що ні, прибирали.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h3>Щомісячна аналітика й масштабування</h3>
+          <p>Детальний розбір кожного формату й каналу, висновки та масштабування того, що працює на бізнес-цілі.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Результати</div>
+    <h2>Робочий інстаграм <em>для складної ніші</em></h2>
+    <p class="body-text">Ми зробили головне — <strong>живий, працюючий інстаграм для бізнесу, який складно назвати інстаграмним.</strong> Сторінка вийшла на молодшу аудиторію, стабільно виходить у рекомендації й приводить заявки і з директу, і з сайту. Робота над проєктом триває.</p>
+    <div class="results-grid">
+      <div class="result-card accent">
+        <div class="result-num">+1775</div>
+        <div class="result-label">Підписників за 10 місяців: 3 217 → 4 992, з них реклама була лише 6</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">0,05–0,11$</div>
+        <div class="result-label">Стабільна ціна за клік протягом усього періоду</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">593</div>
+        <div class="result-label">Середнє охоплення постів у квітні проти 399 у грудні</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">~44%</div>
+        <div class="result-label">Частка нової аудиторії в рилз — зростання з ~32%</div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+</div>
+
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <a href="index.html" class="case-nav-link prev">Всі кейси</a>
+    <a href="case-sun-haven.html" class="case-nav-link next">
+      <span class="case-nav-label">Наступний кейс</span>
+      Sun Haven
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeBox()">
+  <span class="lightbox-close" onclick="closeBox()">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),
+      panel=document.getElementById('menuPanel'),
+      ov=document.getElementById('menuOverlay'),
+      cl=document.getElementById('menuClose');
+  function openM(){panel.classList.add('open');ov.classList.add('open');btn.classList.add('open');document.body.style.overflow='hidden';}
+  function closeM(){panel.classList.remove('open');ov.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  if(btn){btn.addEventListener('click',function(){panel.classList.contains('open')?closeM():openM();});}
+  if(ov){ov.addEventListener('click',closeM);}
+  if(cl){cl.addEventListener('click',closeM);}
+  document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();closeBox();}});
+})();
+document.querySelectorAll('.gallery-arrow').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.track);
+    if(!t)return;
+    var step=t.querySelector('.gallery-item').offsetWidth+16;
+    t.scrollBy({left:b.dataset.dir==='next'?step:-step,behavior:'smooth'});
+  });
+});
+function openBox(src){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeBox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+</script>
+</body>
+</html>
