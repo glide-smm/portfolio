@@ -97,7 +97,28 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .logos-track{display:flex;transition:transform .6s cubic-bezier(.4,0,.2,1)}
 .logo-item{flex:0 0 20%;display:flex;align-items:center;justify-content:center;padding:0 20px}
 .logo-item img{width:100%;max-width:150px;height:72px;object-fit:contain}
-@media(max-width:900px){.logos-section{padding:48px 24px}.logo-item{flex:0 0 50%;padding:0 12px}.logo-item img{height:56px;max-width:110px}.logos-slider{gap:12px}.logos-arrow{width:36px;height:36px;font-size:16px}.niches-section{padding:48px 24px}.niche-tag{font-size:13px;padding:9px 16px}}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;margin-left:14px;flex:none}
+.burger span{display:block;width:24px;height:2px;background:var(--bordo);border-radius:2px;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu-overlay{position:fixed;inset:0;background:rgba(26,18,16,0.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:200}
+.menu-overlay.open{opacity:1;visibility:visible}
+.menu-panel{position:fixed;top:0;right:0;height:100%;width:min(82vw,340px);background:var(--cream);box-shadow:-12px 0 40px rgba(0,0,0,0.18);transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);z-index:201;display:flex;flex-direction:column;padding:28px 32px}
+.menu-panel.open{transform:translateX(0)}
+.menu-panel-close{align-self:flex-end;width:42px;height:42px;border:none;background:none;color:var(--ink2);font-size:26px;line-height:1;cursor:pointer;margin-bottom:24px}
+.menu-panel-close:hover{color:var(--bordo)}
+.menu-links{display:flex;flex-direction:column;gap:4px}
+.menu-links a{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.menu-links a:last-child{border-bottom:none}
+.menu-links a:hover{color:var(--bordo)}
+.menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
+.menu-cta:hover{background:var(--bordo-light)}
+.footer-social{display:flex;align-items:center;gap:16px}
+.footer-ig{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.55);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.footer-ig:hover{color:var(--white)}
+.footer-ig svg{width:22px;height:22px;display:block}
+@media(max-width:900px){.burger{display:flex}.logos-section{padding:48px 24px}.logo-item{flex:0 0 50%;padding:0 12px}.logo-item img{height:56px;max-width:110px}.logos-slider{gap:12px}.logos-arrow{width:36px;height:36px;font-size:16px}.niches-section{padding:48px 24px}.niche-tag{font-size:13px;padding:9px 16px}}
 @media(max-width:1024px){.stats-strip{grid-template-columns:repeat(2,1fr);gap:2px}.stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);padding:28px 20px}.stat-item:nth-child(odd){border-right:1px solid rgba(255,255,255,0.15)}.stat-item:nth-last-child(-n+2){border-bottom:none}}
 @media(max-width:900px){nav{padding:0 20px}.logo{margin-left:0;margin-right:auto}.logo img{height:48px}.nav-cta{padding:9px 16px;font-size:13px;line-height:1.2}.nav-links{display:none}.hero{padding:64px 24px 48px;background-position:left top}.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,242,0.92) 0%,rgba(250,247,242,0.75) 45%,rgba(250,247,242,0) 100%);z-index:1}.stats-strip{padding:0 24px;grid-template-columns:1fr}.stat-item{border-right:none!important;border-bottom:1px solid rgba(255,255,255,0.15)!important;padding:28px 0}.stat-item:last-child{border-bottom:none!important}.section{padding:56px 24px}.about-grid{grid-template-columns:1fr}.cases-section{padding:56px 0}.cases-inner{padding:0 24px}.cases-grid{grid-template-columns:1fr}.approach-grid{grid-template-columns:1fr 1fr;gap:2px}.cta-section{padding:56px 24px}footer{padding:36px 24px;flex-direction:column;gap:12px;text-align:center}}
 @media(max-width:560px){.approach-grid{grid-template-columns:1fr}}
@@ -111,9 +132,26 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <a href="#about">Про нас</a>
     <a href="#cases">Кейси</a>
     <a href="#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+    <a href="partnery.html">Партнерам</a>
     <a href="#contact">Контакти</a>
   </div>
   <a href="javascript:void(0)" class="nav-cta js-open-form">Обговорити проєкт</a>
+  <button class="burger" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="menu-panel" id="menuPanel" aria-label="Мобільне меню">
+  <button class="menu-panel-close" id="menuClose" aria-label="Закрити">✕</button>
+  <div class="menu-links">
+    <a href="#about">Про нас</a>
+    <a href="#cases">Кейси</a>
+    <a href="#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+    <a href="partnery.html">Партнерам</a>
+    <a href="#contact">Контакти</a>
+  </div>
+  <a href="javascript:void(0)" class="menu-cta js-open-form">Обговорити проєкт</a>
 </nav>
 
 <div class="hero">
@@ -335,6 +373,12 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 
 <footer>
   <a href="#" class="footer-logo"><img src="logo-white.png" alt="Glide SMM Studio"></a>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/glide.smm/" class="footer-ig" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      Instagram
+    </a>
+  </div>
   <div class="footer-copy">© 2025 Glide SMM Studio</div>
 </footer>
 
@@ -552,6 +596,21 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       submitBtn.textContent = 'Надіслати заявку';
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),
+      panel=document.getElementById('menuPanel'),
+      ov=document.getElementById('menuOverlay'),
+      cl=document.getElementById('menuClose');
+  function openM(){panel.classList.add('open');ov.classList.add('open');btn.classList.add('open');document.body.style.overflow='hidden';}
+  function closeM(){panel.classList.remove('open');ov.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  if(btn){btn.addEventListener('click',function(){panel.classList.contains('open')?closeM():openM();});}
+  if(ov){ov.addEventListener('click',closeM);}
+  if(cl){cl.addEventListener('click',closeM);}
+  document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
 })();
 </script>
 </body>
