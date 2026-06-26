@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.PNG">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Кейс: Spanish Life — Glide SMM</title>
@@ -81,13 +81,39 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .menu-links a:hover{color:var(--bordo)}
 .menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
 .menu-cta:hover{background:var(--bordo-light)}
-@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+.gallery-section{padding:8px 0 0}
+.gallery-head{display:flex;justify-content:space-between;align-items:flex-end;margin:28px 0 22px;gap:24px;flex-wrap:wrap}
+.gallery-head-text{flex:1;min-width:220px}
+.gallery-label{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:12px}
+.gallery-head h3{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.4vw,28px);font-weight:400;color:var(--ink);line-height:1.25}
+.gallery-head h3 em{font-style:italic;color:var(--bordo)}
+.gallery-arrows{display:flex;gap:12px;flex:none}
+.gallery-arrow{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.gallery-arrow:hover{background:var(--bordo);color:var(--white);border-color:var(--bordo)}
+.gallery-track{display:flex;gap:18px;overflow-x:auto;scroll-behavior:smooth;scroll-snap-type:x mandatory;padding-bottom:8px;-ms-overflow-style:none;scrollbar-width:none}
+.gallery-track::-webkit-scrollbar{display:none}
+.gallery-item{flex:0 0 auto;width:230px;scroll-snap-align:start}
+.gallery-item img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.08);cursor:zoom-in}
+.gallery-caption{font-size:13px;color:var(--ink3);margin-top:10px;font-weight:500;text-align:center;line-height:1.4}
+.split-row{display:grid;grid-template-columns:1fr 260px;gap:44px;align-items:start}
+.split-aside{position:sticky;top:88px}
+.split-aside-label{display:block;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:14px}
+.split-aside-stack{display:flex;flex-direction:column;gap:16px}
+.split-aside-stack figure{margin:0}
+.split-aside-stack img{width:100%;height:auto;border-radius:8px;display:block;box-shadow:0 6px 24px rgba(0,0,0,0.1);cursor:zoom-in}
+.split-aside-stack figcaption{font-size:12px;color:var(--ink3);margin-top:8px;font-weight:500;line-height:1.4}
+.lightbox{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:40px;cursor:zoom-out}
+.lightbox.open{display:flex}
+.lightbox img{max-width:95%;max-height:90%;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,0.5)}
+.lightbox-close{position:absolute;top:24px;right:32px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,255,255,0.15);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-close:hover{background:rgba(255,255,255,0.3)}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-item{width:170px}.gallery-arrow{width:40px;height:40px;font-size:16px}.split-row{grid-template-columns:1fr;gap:28px}.split-aside{position:static}.split-aside-stack{display:grid;grid-template-columns:1fr 1fr;gap:14px}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a>
+  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.PNG" alt="Glide SMM Studio"></a>
   <div class="nav-right">
     <a href="index.html" class="back-link">Всі кейси</a>
     <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
@@ -154,6 +180,27 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <h2>Не «ще одне агентство», <em>а медіа про Іспанію</em></h2>
     <p class="body-text">Головна мета — будувати не черговий акаунт нерухомості, а створити <strong>медіапростір про Іспанію</strong>. Акаунт, який не тільки показує об'єкти, а закохує в країну, відповідає на питання і закриває заперечення, щоб людина пройшла з нами весь шлях від «а як це — жити в Іспанії?» до купівлі квартири.</p>
     <p class="body-text">Звідси й контент: новини, важливі для українців в Іспанії; огляди районів, міст і узбережжя; поради та особистий досвід, історії агентів; регулярні огляди конкретних об'єктів. Паралельно ми вибудовували контент-систему всередині команди клієнта — щоб агенти й експерти стабільно з'являлися в кадрі, а зйомки готувалися заздалегідь під прописані сценарії.</p>
+
+    <div class="gallery-section">
+      <div class="gallery-head">
+        <div class="gallery-head-text">
+          <span class="gallery-label">Візуал і сторіз</span>
+          <h3>Як змінилось <em>оформлення акаунту</em></h3>
+        </div>
+        <div class="gallery-arrows">
+          <button class="gallery-arrow" data-track="slLook" aria-label="Назад">‹</button>
+          <button class="gallery-arrow" data-track="slLook" data-dir="next" aria-label="Вперед">›</button>
+        </div>
+      </div>
+      <div class="gallery-track" id="slLook">
+        <div class="gallery-item"><img src="sl-feed-before.PNG" alt="Стрічка до" onclick="openBox(this.src)"><div class="gallery-caption">Стрічка до — без єдиної лінії</div></div>
+        <div class="gallery-item"><img src="sl-feed-after1.PNG" alt="Стрічка після" onclick="openBox(this.src)"><div class="gallery-caption">Стрічка після — єдиний стиль</div></div>
+        <div class="gallery-item"><img src="sl-feed-after2.PNG" alt="Стрічка після" onclick="openBox(this.src)"><div class="gallery-caption">Стрічка після — впізнаваний візуал</div></div>
+        <div class="gallery-item"><img src="sl-stories1.PNG" alt="Сторіс" onclick="openBox(this.src)"><div class="gallery-caption">Сторіс — оформлення</div></div>
+        <div class="gallery-item"><img src="sl-stories2.PNG" alt="Сторіс" onclick="openBox(this.src)"><div class="gallery-caption">Сторіс — експерти в кадрі</div></div>
+        <div class="gallery-item"><img src="sl-stories3.PNG" alt="Сторіс" onclick="openBox(this.src)"><div class="gallery-caption">Сторіс — корисні формати</div></div>
+      </div>
+    </div>
   </div>
 
   </div></div>
@@ -173,6 +220,8 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="section-block">
     <div class="block-label">Система</div>
     <h2>Контент, який <em>працює на довіру</em></h2>
+    <div class="split-row">
+    <div class="split-main">
     <div class="steps-list">
       <div class="step-item">
         <div class="step-num">01</div>
@@ -208,6 +257,35 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
           <h3>Щомісячна аналітика</h3>
           <p>Розбір кожного формату, сториз і поста — і коригування стратегії під те, що реально працює.</p>
         </div>
+      </div>
+    </div>
+    </div>
+    <aside class="split-aside">
+      <span class="split-aside-label">Пост-новина зі статистикою</span>
+      <div class="split-aside-stack">
+        <figure><img src="sl-post1.PNG" alt="Пост-новина" onclick="openBox(this.src)"><figcaption>Новинний пост для українців в Іспанії</figcaption></figure>
+        <figure><img src="sl-post2.PNG" alt="Пост-новина" onclick="openBox(this.src)"><figcaption>Реакція аудиторії на новину</figcaption></figure>
+        <figure><img src="sl-post3.PNG" alt="Статистика поста" onclick="openBox(this.src)"><figcaption>Статистика: охоплення і збереження</figcaption></figure>
+        <figure><img src="sl-post4.PNG" alt="Статистика поста" onclick="openBox(this.src)"><figcaption>Пересилання — контент, яким діляться</figcaption></figure>
+      </div>
+    </aside>
+    </div>
+
+    <div class="gallery-section">
+      <div class="gallery-head">
+        <div class="gallery-head-text">
+          <span class="gallery-label">Авторська рубрика</span>
+          <h3>«5 міст біля…» — <em>рубрика, яку копіювали конкуренти</em></h3>
+        </div>
+        <div class="gallery-arrows">
+          <button class="gallery-arrow" data-track="slCities" aria-label="Назад">‹</button>
+          <button class="gallery-arrow" data-track="slCities" data-dir="next" aria-label="Вперед">›</button>
+        </div>
+      </div>
+      <div class="gallery-track" id="slCities">
+        <div class="gallery-item"><img src="sl-cities1.PNG" alt="Рубрика 5 міст" onclick="openBox(this.src)"><div class="gallery-caption">Рубрика «5 міст біля…»</div></div>
+        <div class="gallery-item"><img src="sl-cities2.PNG" alt="Рубрика 5 міст" onclick="openBox(this.src)"><div class="gallery-caption">Огляд міст і узбережжя</div></div>
+        <div class="gallery-item"><img src="sl-cities3.PNG" alt="Рубрика 5 міст" onclick="openBox(this.src)"><div class="gallery-caption">Формат, що залучає аудиторію</div></div>
       </div>
     </div>
   </div>
@@ -276,6 +354,25 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
 })();
+</script>
+<div class="lightbox" id="imgBox" onclick="closeBox()">
+  <button class="lightbox-close" aria-label="Закрити" onclick="closeBox()">✕</button>
+  <img src="" alt="" id="imgBoxImg">
+</div>
+<script>
+document.querySelectorAll('.gallery-arrow').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var track=document.getElementById(btn.dataset.track);
+    if(!track) return;
+    var it=track.querySelector('.gallery-item');
+    var step=it ? it.getBoundingClientRect().width+18 : 248;
+    var dir=btn.dataset.dir==='next' ? 1 : -1;
+    track.scrollBy({left:dir*step*2,behavior:'smooth'});
+  });
+});
+function openBox(src){var b=document.getElementById('imgBox');document.getElementById('imgBoxImg').src=src;b.classList.add('open');document.body.style.overflow='hidden';}
+function closeBox(){document.getElementById('imgBox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeBox();});
 </script>
 </body>
 </html>
