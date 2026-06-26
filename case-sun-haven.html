@@ -24,17 +24,21 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .case-hero h1 em{font-style:italic;color:var(--white)}
 .case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
 .metrics-bar{background:var(--ink);padding:0 60px}
-.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
-.metric-cell{padding:32px 24px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
-.metric-big{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--white);font-weight:600;line-height:1}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 18px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--white);font-weight:600;line-height:1}
 .metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
-.case-section{padding:48px 60px}.case-section:nth-of-type(even){background:var(--cream2)}.case-section-inner{max-width:1100px;margin:0 auto}.case-body{padding:0}
+.case-section{padding:48px 60px}.case-section-inner{max-width:1100px;margin:0 auto}.case-body{padding:0}
+.bg-cream{background:var(--cream)}.bg-cream2{background:var(--cream2)}
 .section-block{margin-bottom:0px}
 .block-label{display:inline-flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
 .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
 .section-block h2 em{font-style:italic;color:var(--bordo)}
 .body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
 .body-text strong{color:var(--ink);font-weight:600}
+.req-list{list-style:none;max-width:740px;margin:8px 0 0}
+.req-list li{position:relative;padding:8px 0 8px 26px;font-size:16px;color:var(--ink2);font-weight:300;line-height:1.7}
+.req-list li::before{content:'';position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--bordo);border-radius:50%}
 .insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
 .insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
 .insight-box p strong{color:var(--bordo);font-weight:600}
@@ -51,8 +55,26 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .result-card.accent .result-num{color:var(--white)}
 .result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
 .result-card.accent .result-label{color:rgba(255,255,255,0.7)}
-.divider-line{width:100%;height:1px;background:var(--line);margin:64px 0}
-.phase-badge{display:inline-block;background:var(--bordo);color:var(--white);font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;margin-bottom:28px}
+.single-shot{max-width:740px;margin:28px 0}
+.single-shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.single-shot .gallery-caption{margin-top:10px}
+.gallery-section{margin:32px 0 8px}
+.gallery-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;max-width:1100px}
+.gallery-head .block-label{margin-bottom:0}
+.gallery-head h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);flex:1}
+.gallery-arrows{display:flex;gap:8px}
+.gallery-arrow{width:38px;height:38px;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:16px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.gallery-arrow:hover{background:var(--bordo);color:var(--white)}
+.gallery-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.gallery-track::-webkit-scrollbar{height:6px}
+.gallery-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.gallery-item{flex:none;width:230px;scroll-snap-align:start}
+.gallery-item img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.gallery-caption{font-size:12px;color:var(--ink3);margin-top:8px;line-height:1.5;font-weight:300}
+.lightbox{position:fixed;inset:0;background:rgba(20,14,12,0.92);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out;padding:32px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;border-radius:4px}
+.lightbox-close{position:absolute;top:24px;right:32px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
 .case-nav{background:var(--cream2);padding:56px 60px}
 .case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
 .case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
@@ -81,7 +103,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .menu-links a:hover{color:var(--bordo)}
 .menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
 .menu-cta:hover{background:var(--bordo-light)}
-@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.case-body{padding:56px 24px}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr 1fr}.metric-big{font-size:30px}.metric-cell{padding:22px 10px}.case-body{padding:0}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-item{width:170px}.gallery-head h3{font-size:18px}footer{flex-direction:column;gap:14px;text-align:center}}
 </style>
 </head>
 <body>
@@ -112,65 +134,124 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="case-hero">
   <div class="case-hero-inner">
     <div class="case-tag">Кейс · Комерція · Нерухомість</div>
-    <h1>Забудовник в Іспанії — <em>запуск з нуля до системи продажів</em></h1>
-    <p class="case-hero-sub">Український девелопер, що будує житло на узбережжі Іспанії. Ми запускали соцмережі з чистого аркуша — і за пів року перетворили їх на впізнаваний медіапростір, який щомісяця приводить ліди на проєкти.</p>
+    <h1>Запуск забудовника в Іспанії — <em>з нуля до системи продажів</em></h1>
+    <p class="case-hero-sub">Український девелопер, що будує житло на узбережжі Іспанії. Ми запускали соцмережі з чистого аркуша і за пів року перетворили їх на впізнаваний медіапростір, який щомісяця приводить ліди на проєкти.</p>
   </div>
 </div>
 
 <div class="metrics-bar">
   <div class="metrics-inner">
     <div class="metric-cell">
+      <div class="metric-big">1000+</div>
+      <div class="metric-sub">Підписників з нуля</div>
+    </div>
+    <div class="metric-cell">
       <div class="metric-big">×2</div>
       <div class="metric-sub">Ліди за місяць</div>
     </div>
     <div class="metric-cell">
-      <div class="metric-big">414K</div>
-      <div class="metric-sub">Переглядів за місяць</div>
+      <div class="metric-big">333K</div>
+      <div class="metric-sub">Переглядів профілю</div>
     </div>
     <div class="metric-cell">
-      <div class="metric-big">+112%</div>
-      <div class="metric-sub">Охоплення постів</div>
+      <div class="metric-big">93K</div>
+      <div class="metric-sub">Охоплено акаунтів</div>
     </div>
     <div class="metric-cell">
-      <div class="metric-big">1000+</div>
-      <div class="metric-sub">Підписників з нуля</div>
+      <div class="metric-big">+59%</div>
+      <div class="metric-sub">Реакцій за місяць</div>
     </div>
   </div>
 </div>
 
 <div class="case-body">
-<div class="case-section"><div class="case-section-inner">
 
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Статистика профілю</div>
+      <h3>Метрики за попередній місяць</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-metrics" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-metrics" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-metrics">
+      <div class="gallery-item"><img src="sh-metric1.png" alt="Метрика 1" onclick="openBox(this.src)"><div class="gallery-caption">Перегляди профілю за місяць</div></div>
+      <div class="gallery-item"><img src="sh-metric2.png" alt="Метрика 2" onclick="openBox(this.src)"><div class="gallery-caption">Охоплені облікові записи</div></div>
+      <div class="gallery-item"><img src="sh-metric3.png" alt="Метрика 3" onclick="openBox(this.src)"><div class="gallery-caption">Динаміка реакцій</div></div>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Запит</div>
     <h2>Забудовник без сторінки — <em>і амбітна мета</em></h2>
-    <p class="body-text">Sun Haven Developers — український девелопер, який будує житло на узбережжі Іспанії: Бенідорм, Кульєра, Валенсія, Costa Blanca. До нас у компанії <strong>не було соцмереж зовсім</strong> — сторінку треба було запускати з нуля.</p>
-    <p class="body-text">Запит був чітким: <strong>розвинути сторінку забудовника, зробити бренд впізнаваним на ринку і вибудувати потік лідів на проєкти.</strong> Не просто «вести акаунт», а збудувати медіа, якому довіряють інвестори.</p>
+    <p class="body-text">До нас звернувся український девелопер, який будує житло на узбережжі Іспанії: Бенідорм, Кульєра, Валенсія, Аліканте. Сторінку треба було запускати з нуля, адже компанія <strong>не мала соцмереж зовсім</strong>.</p>
+    <p class="body-text">Запит був чітким:</p>
+    <ul class="req-list">
+      <li>розвинути сторінку забудовника;</li>
+      <li>зробити бренд впізнаваним на ринку;</li>
+      <li>вибудувати потік лідів на проєкти;</li>
+      <li>збудувати лояльне медіа, якому довіряють інвестори.</li>
+    </ul>
   </div>
+</div></div>
 
-  </div></div>
-  <div class="case-section"><div class="case-section-inner">
+<div class="case-section bg-cream"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Рішення</div>
     <h2>Стратегія, побудована <em>на аналізі ринку</em></h2>
-    <p class="body-text">Перед стартом ми проаналізували аудиторію та конкурентів на ринку нерухомості Іспанії — і на основі цього розробили стратегію запуску. Sun Haven мав стати не черговим акаунтом із квартирами, а <strong>медіа про інвестиції в іспанську нерухомість</strong>: з експертизою, реальним процесом будівництва і прозорістю забудовника.</p>
-    <p class="body-text">Особливість проєкту — масштаб. Ми ведемо не одну сторінку, а <strong>цілу екосистему каналів</strong>: Instagram і Telegram Sun Haven, пов'язані проєкти, партнерські майданчики. І під кожну ціль будуємо окрему воронку, щоб усі канали працювали разом.</p>
+    <p class="body-text">Перед стартом ми проаналізували аудиторію та конкурентів на ринку нерухомості Іспанії і на основі цього розробили стратегію запуску. Перед нами стояла задача не стати черговим акаунтом із добіркою апартаментів, а <strong>демонструвати експертність щодо інвестицій в іспанську нерухомість</strong>: з реальним процесом будівництва і прозорістю забудовника.</p>
+    <p class="body-text">Особливість проєкту — масштаб. Ми ведемо не одну сторінку, а <strong>цілу екосистему каналів</strong>: Instagram українською, іспанською та англійською мовами, а також декілька Telegram-каналів, пов'язаних з проєктами та партнерськими майданчиками. І під кожну ціль будуємо окрему воронку, щоб усі канали працювали разом.</p>
   </div>
+</div></div>
 
-  </div></div>
-  <div class="case-section"><div class="case-section-inner">
+<div class="case-section bg-cream2"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Труднощі</div>
     <h2>Складна ніша — <em>і висока планка довіри</em></h2>
-    <p class="body-text">Інвестиція в закордонну нерухомість — це велике рішення і великий чек. Аудиторія приймає його не імпульсивно, тож контент мав одночасно <strong>закохувати в Іспанію, доводити експертність забудовника і знімати страхи інвестора.</strong></p>
+    <p class="body-text">Інвестиція в закордонну нерухомість — це непросте рішення і великий чек. Аудиторія приймає його не імпульсивно, тож контент має одночасно <strong>закохувати в Іспанію, доводити експертність забудовника і знімати страхи інвестора.</strong></p>
     <p class="body-text">Ми зробили ставку на конкретику й закулісся: реальний прогрес будівництва, власне виробництво, цифри ринку, історії засновників у кадрі. Саме такий контент аудиторія сприймала найкраще — він стабільно давав переходи в профіль і нові ліди.</p>
     <div class="insight-box">
       <p><strong>Найбільше довіри</strong> будує не реклама об'єктів, а реальний процес: будівництво, команда, конкретні цифри по ринку Іспанії.</p>
     </div>
+    <p class="body-text">Результати контенту на проєкті ми відслідковуємо завдяки щотижневій аналітиці, а також звітності щомісяця.</p>
+    <div class="single-shot">
+      <img src="sh-analytics.png" alt="Скрін аналітики" onclick="openBox(this.src)">
+      <div class="gallery-caption">Приклад щомісячної аналітики проєкту</div>
+    </div>
   </div>
+</div></div>
 
-  </div></div>
-  <div class="case-section"><div class="case-section-inner">
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Окремий запуск</div>
+    <h2>Triumph Towers — <em>3 соцмережі за 7 днів</em></h2>
+    <p class="body-text">Під один із проєктів забудовника ми запустили <strong>повноцінну присутність у 3 соцмережах усього за 7 днів</strong> і вибудували мультиканальний прогрів до партнерського мітапу.</p>
+    <p class="body-text">За 10 днів прогріву Instagram проєкту виріс із <strong>12 925 до 144 898 переглядів</strong>, а сумарно контент про захід зібрав понад <strong>448 000 переглядів</strong> по всіх майданчиках.</p>
+    <div class="gallery-section">
+      <div class="gallery-head">
+        <div class="block-label">Статистика запуску</div>
+        <h3>Прогрів до мітапу</h3>
+        <div class="gallery-arrows">
+          <button class="gallery-arrow" data-track="g-triumph" data-dir="prev" aria-label="Назад">‹</button>
+          <button class="gallery-arrow" data-track="g-triumph" data-dir="next" aria-label="Вперед">›</button>
+        </div>
+      </div>
+      <div class="gallery-track" id="g-triumph">
+        <div class="gallery-item"><img src="sh-triumph1.png" alt="Статистика 1" onclick="openBox(this.src)"><div class="gallery-caption">Зростання переглядів Instagram</div></div>
+        <div class="gallery-item"><img src="sh-triumph2.png" alt="Статистика 2" onclick="openBox(this.src)"><div class="gallery-caption">Сумарне охоплення по майданчиках</div></div>
+      </div>
+    </div>
+    <div class="insight-box">
+      <p><strong>Повноцінний кейс</strong> про запуск проєкту з нуля та мітап ми розкриємо окремо. Тут це приклад того, як працює мультиканальний підхід на прикладі забудовника.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Система</div>
     <h2>Екосистема каналів, <em>що працює на продажі</em></h2>
@@ -179,21 +260,21 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
         <div class="step-num">01</div>
         <div class="step-content">
           <h3>Аналіз і стратегія запуску</h3>
-          <p>Дослідження аудиторії та конкурентів, позиціонування забудовника, контент-стратегія під цілі бізнесу — впізнаваність і ліди.</p>
+          <p>Дослідження аудиторії та конкурентів, позиціонування забудовника, контент-стратегія під цілі бізнесу — впізнаваність та ліди.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">02</div>
         <div class="step-content">
           <h3>Контент про реальний процес</h3>
-          <p>Звіти з будівництва, власне виробництво металоконструкцій, закулісся компанії, експертні теми про інвестування — те, що формує довіру.</p>
+          <p>Звіти з будівництва, власне виробництво металоконструкцій, закулісся компанії, експертні теми про інвестування.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">03</div>
         <div class="step-content">
           <h3>Засновники та експерти в кадрі</h3>
-          <p>Рилз і випуски зі співзасновниками. Відео з людьми стабільно давали найкращі охоплення — топове відео зібрало понад 30 000 переглядів.</p>
+          <p>Рилз і випуски зі співзасновниками, адже відео з людьми дають найкращі охоплення та формують довіру.</p>
         </div>
       </div>
       <div class="step-item">
@@ -207,65 +288,61 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
         <div class="step-num">05</div>
         <div class="step-content">
           <h3>Мультиканальні воронки</h3>
-          <p>Instagram, Telegram і партнерські майданчики, зв'язані між собою. Кросспостинг підсилює охоплення — одне відео вперше отримало понад 30 000 переглядів переважно з Facebook.</p>
+          <p>Instagram, Telegram і партнерські майданчики, зв'язані між собою. Кросспостинг підсилює охоплення — відео отримують додаткові перегляди з Facebook.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">06</div>
         <div class="step-content">
-          <h3>Щомісячна аналітика</h3>
-          <p>Розбір кожного формату, тестування гіпотез і масштабування того, що працює на ліди й лояльність.</p>
+          <h3>Щомісячна звітність та щотижнева аналітика</h3>
+          <p>Розбір кожного формату, тестування гіпотез і масштабування того, що працює на досягнення бізнес-цілей.</p>
         </div>
       </div>
     </div>
   </div>
+</div></div>
 
-  </div></div>
-  <div class="case-section"><div class="case-section-inner">
-  <div class="section-block">
-    <div class="block-label">Окремий запуск</div>
-    <h2>Triumph Towers — <em>3 соцмережі за 7 днів</em></h2>
-    <p class="body-text">Під один із проєктів забудовника ми запустили <strong>повноцінну присутність у трьох соцмережах усього за 7 днів</strong> — і вибудували мультиканальний прогрів до партнерського мітапу Triumph Towers. Instagram проєкту виріс із 12 925 до 144 898 переглядів, а сумарно контент про захід зібрав понад 448 000 переглядів по всіх каналах.</p>
-    <div class="insight-box">
-      <p><strong>Це окрема велика історія</strong> — повноцінний кейс про запуск проєкту з нуля та мітап ми розкриємо окремо. Тут це приклад того, як працює мультиканальний підхід Sun Haven.</p>
-    </div>
-  </div>
-
-  </div></div>
-  <div class="case-section"><div class="case-section-inner">
+<div class="case-section bg-cream"><div class="case-section-inner">
   <div class="section-block">
     <div class="block-label">Результати</div>
     <h2>Цифри за <em>пів року роботи</em></h2>
+    <p class="body-text">Наразі ми масштабуємо отримання стабільного потоку лідів на проєкти забудовника, що є основною задачею SMM-напряму. Ми створили сторінку, вибудували довіру, зібрали аудиторію інвесторів і перетворили інтерес у конкретні запити. Робота над проєктом триває, і кожен місяць система працює все відчутніше.</p>
     <div class="results-grid">
       <div class="result-card accent">
         <div class="result-num">×2</div>
-        <div class="result-label">Зростання лідів у директі за місяць — з 12 до 24 запитів на проєкти</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">414K</div>
-        <div class="result-label">Переглядів акаунту за місяць — зростання з 278K місяцем раніше</div>
+        <div class="result-label">Зростання лідів у директі за місяць — з 12 до 24 запитів на вхід у проєкти</div>
       </div>
       <div class="result-card">
         <div class="result-num">1222</div>
-        <div class="result-label">Підписників з нуля — у травні подолали позначку 1000</div>
+        <div class="result-label">Підписники наприкінці місяця — у цьому ж місяці подолали позначку 1000</div>
       </div>
       <div class="result-card">
-        <div class="result-num">+112%</div>
-        <div class="result-label">Зростання охоплень постів проти старту (рилз +30%, сториз +35%)</div>
+        <div class="result-num">333K</div>
+        <div class="result-label">Переглядів профілю за попередній місяць</div>
       </div>
       <div class="result-card">
-        <div class="result-num">+59%</div>
-        <div class="result-label">Зростання реакцій на контент за місяць, ERR +33%</div>
-      </div>
-      <div class="result-card">
-        <div class="result-num">30K+</div>
-        <div class="result-label">Переглядів топ-відео про інвестиції — переважно з Facebook</div>
+        <div class="result-num">31K / 15,5K</div>
+        <div class="result-label">2 рилзи вийшли в рекомендації завдяки кросспостингу й просуванню на Facebook</div>
       </div>
     </div>
-    <p class="body-text" style="margin-top:32px">І головне — <strong>стабільний потік лідів на проєкти забудовника.</strong> Ми запустили напрям з нуля: створили сторінку, вибудували довіру, зібрали аудиторію інвесторів і перетворили інтерес у конкретні запити. Робота над проєктом триває — і кожен місяць система працює все відчутніше.</p>
+    <div class="gallery-section">
+      <div class="gallery-head">
+        <div class="block-label">Статистика результатів</div>
+        <h3>Динаміка за місяць</h3>
+        <div class="gallery-arrows">
+          <button class="gallery-arrow" data-track="g-results" data-dir="prev" aria-label="Назад">‹</button>
+          <button class="gallery-arrow" data-track="g-results" data-dir="next" aria-label="Вперед">›</button>
+        </div>
+      </div>
+      <div class="gallery-track" id="g-results">
+        <div class="gallery-item"><img src="sh-result1.png" alt="Результат 1" onclick="openBox(this.src)"><div class="gallery-caption">Зростання лідів і підписників</div></div>
+        <div class="gallery-item"><img src="sh-result2.png" alt="Результат 2" onclick="openBox(this.src)"><div class="gallery-caption">Рилзи в рекомендаціях</div></div>
+      </div>
+    </div>
   </div>
+</div></div>
 
-</div></div></div>
+</div>
 
 <div class="case-nav">
   <div class="case-nav-inner">
@@ -281,6 +358,12 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
   <div class="footer-copy">© 2025 Glide SMM Studio</div>
 </footer>
+
+<div class="lightbox" id="lightbox" onclick="closeBox()">
+  <span class="lightbox-close" onclick="closeBox()">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
 <script>
 (function(){
   var btn=document.getElementById('burgerBtn'),
@@ -293,8 +376,18 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   if(ov){ov.addEventListener('click',closeM);}
   if(cl){cl.addEventListener('click',closeM);}
   document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();closeBox();}});
 })();
+document.querySelectorAll('.gallery-arrow').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.track);
+    if(!t)return;
+    var step=t.querySelector('.gallery-item').offsetWidth+16;
+    t.scrollBy({left:b.dataset.dir==='next'?step:-step,behavior:'smooth'});
+  });
+});
+function openBox(src){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeBox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
 </script>
 </body>
 </html>
