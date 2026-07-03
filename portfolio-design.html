@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Портфоліо дизайну — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}.logo img{height:60px;width:auto;display:block;margin-left:100px}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--bordo-light)}
+.nav-right{display:flex;align-items:center;gap:40px;margin-left:auto}
+.pf-hero{background:var(--ink);padding:72px 60px 60px;color:var(--white)}
+.pf-hero-inner{max-width:1100px;margin:0 auto}
+.pf-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+.pf-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.pf-hero h1 em{font-style:italic;color:var(--white)}
+.pf-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:660px;font-weight:300;line-height:1.75}
+.pf-body{padding:0}
+.bg-cream{background:var(--cream)}.bg-cream2{background:var(--cream2)}
+.gallery-section{padding:52px 60px}
+.gallery-inner{max-width:1100px;margin:0 auto}
+.gallery-head{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.block-label{display:inline-flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo)}
+.gallery-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,32px);font-weight:400;color:var(--ink);flex:1;line-height:1.2}
+.gallery-head h2 em{font-style:italic;color:var(--bordo)}
+.gallery-desc{font-size:15px;color:var(--ink2);font-weight:300;line-height:1.75;max-width:640px;margin-bottom:24px}
+.gallery-arrows{display:flex;gap:8px}
+.gallery-arrow{width:38px;height:38px;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:16px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.gallery-arrow:hover{background:var(--bordo);color:var(--white)}
+.gallery-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.gallery-track::-webkit-scrollbar{height:6px}
+.gallery-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.gallery-item{flex:none;width:250px;scroll-snap-align:start}
+.gallery-item img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in;background:var(--cream2)}
+.gallery-caption{font-size:12px;color:var(--ink3);margin-top:8px;line-height:1.5;font-weight:300}
+.lightbox{position:fixed;inset:0;background:rgba(20,14,12,0.92);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out;padding:32px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;border-radius:4px}
+.lightbox-close{position:absolute;top:24px;right:32px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+.pf-cta{background:var(--cream2);padding:64px 60px;text-align:center}
+.pf-cta h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.2vw,40px);font-weight:400;color:var(--ink);margin-bottom:8px}
+.pf-cta h2 em{font-style:italic;color:var(--bordo)}
+.pf-cta p{font-size:15px;color:var(--ink2);font-weight:300;margin-bottom:26px}
+.pf-cta a{background:var(--bordo);color:var(--white);text-decoration:none;padding:15px 40px;font-size:15px;font-weight:500;letter-spacing:0.03em;display:inline-block;transition:background .2s}
+.pf-cta a:hover{background:var(--bordo-light)}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;margin-left:24px;flex:none}
+.burger span{display:block;width:24px;height:2px;background:var(--bordo);border-radius:2px;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu-overlay{position:fixed;inset:0;background:rgba(26,18,16,0.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:200}
+.menu-overlay.open{opacity:1;visibility:visible}
+.menu-panel{position:fixed;top:0;right:0;height:100%;width:min(82vw,340px);background:var(--cream);box-shadow:-12px 0 40px rgba(0,0,0,0.18);transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);z-index:201;display:flex;flex-direction:column;padding:28px 32px;overflow-y:auto}
+.menu-panel.open{transform:translateX(0)}
+.menu-panel-close{align-self:flex-end;width:42px;height:42px;border:none;background:none;color:var(--ink2);font-size:26px;line-height:1;cursor:pointer;margin-bottom:24px}
+.menu-panel-close:hover{color:var(--bordo)}
+.menu-links{display:flex;flex-direction:column;gap:4px}
+.menu-links a{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.menu-links a:last-child{border-bottom:none}
+.menu-links a:hover{color:var(--bordo)}
+.menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
+.menu-cta:hover{background:var(--bordo-light)}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.pf-hero{padding:56px 24px 44px}.gallery-section{padding:40px 24px}.pf-cta{padding:48px 24px}.gallery-item{width:180px}.gallery-head h2{font-size:20px}footer{flex-direction:column;gap:14px;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a>
+  <div class="nav-right">
+    <a href="index.html" class="back-link">На головну</a>
+    <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
+  </div>
+  <button class="burger" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="menu-panel" id="menuPanel" aria-label="Мобільне меню">
+  <button class="menu-panel-close" id="menuClose" aria-label="Закрити">✕</button>
+  <div class="menu-links">
+    <a href="index.html#about">Про нас</a>
+    <a href="index.html#cases">Кейси</a>
+    <a href="index.html#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+    <a href="portfolio-design.html">Портфоліо дизайну</a>
+    <a href="portfolio-montage.html">Портфоліо монтажу</a>
+    <a href="partnery.html">Партнерам</a>
+    <a href="index.html#contact">Контакти</a>
+  </div>
+  <a href="index.html#contact" class="menu-cta">Обговорити проєкт</a>
+</nav>
+
+<div class="pf-hero">
+  <div class="pf-hero-inner">
+    <div class="pf-tag">Портфоліо · Дизайн</div>
+    <h1>Дизайн, який <em>працює на впізнаваність</em></h1>
+    <p class="pf-hero-sub">Оформлення, що тримає єдиний стиль бренду і зупиняє в стрічці. Гортайте приклади наших каруселей, сторіз і віральних форматів.</p>
+  </div>
+</div>
+
+<div class="pf-body">
+
+<!-- 1. Каруселі -->
+<section class="gallery-section bg-cream">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="block-label">Дизайн</div>
+      <h2>Каруселі</h2>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-carousel" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-carousel" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <p class="gallery-desc">Змістовні каруселі з чіткою структурою: обкладинка чіпляє, слайди ведуть до дії.</p>
+    <div class="gallery-track" id="g-carousel">
+      <div class="gallery-item"><img src="design-carousel1.png" alt="Дизайн каруселі 1" onclick="openBox(this.src)"><div class="gallery-caption">Приклад каруселі</div></div>
+      <div class="gallery-item"><img src="design-carousel2.png" alt="Дизайн каруселі 2" onclick="openBox(this.src)"><div class="gallery-caption">Приклад каруселі</div></div>
+      <div class="gallery-item"><img src="design-carousel3.png" alt="Дизайн каруселі 3" onclick="openBox(this.src)"><div class="gallery-caption">Приклад каруселі</div></div>
+      <div class="gallery-item"><img src="design-carousel4.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Приклад каруселі</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Сторіз -->
+<section class="gallery-section bg-cream2">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="block-label">Дизайн</div>
+      <h2>Сторіз</h2>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-stories" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-stories" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <p class="gallery-desc">Оформлення сторіз у стилі бренду: продающі, інформаційні та залучаючі формати.</p>
+    <div class="gallery-track" id="g-stories">
+      <div class="gallery-item"><img src="design-stories1.png" alt="Дизайн сторіз 1" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
+      <div class="gallery-item"><img src="design-stories2.png" alt="Дизайн сторіз 2" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
+      <div class="gallery-item"><img src="design-stories3.png" alt="Дизайн сторіз 3" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
+      <div class="gallery-item"><img src="design-stories4.png" alt="Дизайн сторіз 4" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Ситуативні каруселі -->
+<section class="gallery-section bg-cream">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="block-label">Дизайн</div>
+      <h2>Ситуативні каруселі</h2>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-situational" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-situational" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <p class="gallery-desc">Реакція на інфопривід у стилі бренду — актуальне, що ловить хвилю уваги тут і зараз.</p>
+    <div class="gallery-track" id="g-situational">
+      <div class="gallery-item"><img src="design-situational1.png" alt="Ситуативна карусель 1" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
+      <div class="gallery-item"><img src="design-situational2.png" alt="Ситуативна карусель 2" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
+      <div class="gallery-item"><img src="design-situational3.png" alt="Ситуативна карусель 3" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
+      <div class="gallery-item"><img src="design-situational4.png" alt="Ситуативна карусель 4" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Віральні каруселі -->
+<section class="gallery-section bg-cream2">
+  <div class="gallery-inner">
+    <div class="gallery-head">
+      <div class="block-label">Дизайн</div>
+      <h2>Віральні каруселі</h2>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-viral" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-viral" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <p class="gallery-desc">Формати, зроблені під максимальне охоплення й репости — те, що розлітається за межі акаунту.</p>
+    <div class="gallery-track" id="g-viral">
+      <div class="gallery-item"><img src="design-viral1.png" alt="Віральна карусель 1" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
+      <div class="gallery-item"><img src="design-viral2.png" alt="Віральна карусель 2" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
+      <div class="gallery-item"><img src="design-viral3.png" alt="Віральна карусель 3" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
+      <div class="gallery-item"><img src="design-viral4.png" alt="Віральна карусель 4" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<section class="pf-cta">
+  <h2>Хочете такий <em>дизайн</em> для свого бренду?</h2>
+  <p>Напишіть — і почнемо.</p>
+  <a href="index.html#contact">Обговорити проєкт</a>
+</section>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeBox()">
+  <span class="lightbox-close">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),
+      panel=document.getElementById('menuPanel'),
+      ov=document.getElementById('menuOverlay'),
+      cl=document.getElementById('menuClose');
+  function openM(){panel.classList.add('open');ov.classList.add('open');btn.classList.add('open');document.body.style.overflow='hidden';}
+  function closeM(){panel.classList.remove('open');ov.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  if(btn){btn.addEventListener('click',function(){panel.classList.contains('open')?closeM():openM();});}
+  if(ov){ov.addEventListener('click',closeM);}
+  if(cl){cl.addEventListener('click',closeM);}
+  document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();closeBox();}});
+})();
+document.querySelectorAll('.gallery-arrow').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.track);
+    if(!t)return;
+    var step=t.querySelector('.gallery-item').offsetWidth+16;
+    t.scrollBy({left:b.dataset.dir==='next'?step:-step,behavior:'smooth'});
+  });
+});
+function openBox(src){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeBox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+</script>
+</body>
+</html>
