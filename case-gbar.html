@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кейс: G×Bar Madrid — Glide SMM</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bordo:#8B1A3A;--bordo-light:#B8396A;--pink:#D4A0B0;--pink-light:#F2E4E9;--green:#2D5A3D;--green-light:#C8D8CC;--cream:#FAF7F2;--cream2:#F0EBE3;--ink:#1A1210;--ink2:#4A3D38;--ink3:#857A75;--white:#FFFFFF;--line:rgba(139,26,58,0.12)}
+html{scroll-behavior:smooth}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.65}
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between}.logo img{height:60px;width:auto;display:block;margin-left:100px}
+.back-link{color:var(--ink2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.back-link:hover{color:var(--bordo)}
+.back-link::before{content:'← '}
+.nav-cta{background:var(--bordo);color:var(--white);border:none;padding:10px 24px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:500;letter-spacing:0.04em;transition:background .2s;text-decoration:none;display:inline-block}
+.nav-cta:hover{background:var(--bordo-light)}
+.nav-right{display:flex;align-items:center;gap:40px;margin-left:auto}.case-hero{background-image:linear-gradient(rgba(0,0,0,0.68),rgba(0,0,0,0.68)),url('gbar.jpg');background-size:cover;background-position:center;padding:72px 60px 56px;color:var(--white)}
+.case-hero-inner{max-width:1100px;margin:0 auto}
+.case-tag{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--pink);margin-bottom:20px}
+.case-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,58px);font-weight:400;line-height:1.1;margin-bottom:24px}
+.case-hero h1 em{font-style:italic;color:var(--white)}
+.case-hero-sub{font-size:17px;color:rgba(255,255,255,0.75);max-width:640px;font-weight:300;line-height:1.75}
+.metrics-bar{background:var(--ink);padding:0 60px}
+.metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid rgba(255,255,255,0.08)}
+.metric-cell{padding:32px 20px;border-right:1px solid rgba(255,255,255,0.08);text-align:center}
+.metric-big{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--white);font-weight:600;line-height:1}
+.metric-sub{font-size:11px;color:rgba(255,255,255,0.45);margin-top:6px;letter-spacing:0.05em;text-transform:uppercase}
+.case-section{padding:48px 60px}.case-section-inner{max-width:1100px;margin:0 auto}.case-body{padding:0}
+.bg-cream{background:var(--cream)}.bg-cream2{background:var(--cream2)}
+.section-block{margin-bottom:0px}
+.block-label{display:inline-flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo);margin-bottom:18px}
+.section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:20px}
+.section-block h2 em{font-style:italic;color:var(--bordo)}
+.body-text{font-size:16px;color:var(--ink2);line-height:1.85;font-weight:300;max-width:740px;margin-bottom:18px}
+.body-text strong{color:var(--ink);font-weight:600}
+.req-list{list-style:none;max-width:740px;margin:8px 0 0}
+.req-list li{position:relative;padding:8px 0 8px 26px;font-size:16px;color:var(--ink2);font-weight:300;line-height:1.7}
+.req-list li::before{content:'';position:absolute;left:0;top:16px;width:8px;height:8px;background:var(--bordo);border-radius:50%}
+.insight-box{background:var(--pink-light);border-left:3px solid var(--bordo);padding:22px 28px;margin:28px 0;max-width:740px}
+.insight-box p{font-size:15px;color:var(--ink2);font-weight:400;line-height:1.7}
+.insight-box p strong{color:var(--bordo);font-weight:600}
+.steps-list{display:flex;flex-direction:column;gap:0;margin:28px 0;max-width:740px}
+.step-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.step-item:last-child{border-bottom:none}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--pink);font-weight:600;line-height:1;min-width:34px;padding-top:3px}
+.step-content h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:5px}
+.step-content p{font-size:14px;color:var(--ink3);line-height:1.65;font-weight:300}
+.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-top:28px}
+.result-card{background:var(--white);padding:28px}
+.result-card.accent{background:var(--bordo)}
+.result-num{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--bordo);font-weight:600;line-height:1;margin-bottom:6px}
+.result-card.accent .result-num{color:var(--white)}
+.result-label{font-size:13px;color:var(--ink3);font-weight:500;line-height:1.4}
+.result-card.accent .result-label{color:rgba(255,255,255,0.7)}
+.single-shot{max-width:740px;margin:28px 0}
+.single-shot img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.single-shot.video-shot{max-width:300px}
+.single-shot.video-shot video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--line);border-radius:8px;background:var(--ink)}
+.single-shot .gallery-caption{margin-top:10px}
+.gallery-section{margin:32px 0 8px}
+.gallery-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;max-width:1100px}
+.gallery-head .block-label{margin-bottom:0}
+.gallery-head h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);flex:1}
+.gallery-arrows{display:flex;gap:8px}
+.gallery-arrow{width:38px;height:38px;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:16px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.gallery-arrow:hover{background:var(--bordo);color:var(--white)}
+.gallery-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.gallery-track::-webkit-scrollbar{height:6px}
+.gallery-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.gallery-item{flex:none;width:230px;scroll-snap-align:start}
+.gallery-item img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.gallery-item.wide{width:420px}
+.gallery-item video{width:100%;aspect-ratio:9/16;object-fit:cover;display:block;border:1px solid var(--line);border-radius:8px;background:var(--ink)}
+.gallery-caption{font-size:12px;color:var(--ink3);margin-top:8px;line-height:1.5;font-weight:300}
+.beforeafter{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:28px 0 8px;max-width:920px}
+.ba-col-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
+.ba-col.before .ba-col-label{color:var(--ink3)}
+.ba-col.after .ba-col-label{color:var(--bordo)}
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.ba-pair img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in}
+.lightbox{position:fixed;inset:0;background:rgba(20,14,12,0.92);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out;padding:32px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:90vh;border-radius:4px}
+.lightbox-close{position:absolute;top:24px;right:32px;color:#fff;font-size:34px;cursor:pointer;line-height:1}
+.case-nav{background:var(--cream2);padding:56px 60px}
+.case-nav-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px}
+.case-nav-link{text-decoration:none;color:var(--ink);font-size:15px;font-weight:500;transition:color .2s}
+.case-nav-link:hover{color:var(--bordo)}
+.case-nav-link.next::after{content:' →'}
+.case-nav-link.prev::before{content:'← '}
+.case-nav-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--ink3);font-weight:600;display:block;margin-bottom:4px}
+footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white)}
+.footer-logo span{font-style:italic}
+.footer-copy{font-size:13px;color:rgba(255,255,255,0.35);font-weight:300}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;margin-left:24px;flex:none}
+.burger span{display:block;width:24px;height:2px;background:var(--bordo);border-radius:2px;transition:transform .25s,opacity .2s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.menu-overlay{position:fixed;inset:0;background:rgba(26,18,16,0.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:200}
+.menu-overlay.open{opacity:1;visibility:visible}
+.menu-panel{position:fixed;top:0;right:0;height:100%;width:min(82vw,340px);background:var(--cream);box-shadow:-12px 0 40px rgba(0,0,0,0.18);transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);z-index:201;display:flex;flex-direction:column;padding:28px 32px;overflow-y:auto}
+.menu-panel.open{transform:translateX(0)}
+.menu-panel-close{align-self:flex-end;width:42px;height:42px;border:none;background:none;color:var(--ink2);font-size:26px;line-height:1;cursor:pointer;margin-bottom:24px}
+.menu-panel-close:hover{color:var(--bordo)}
+.menu-links{display:flex;flex-direction:column;gap:4px}
+.menu-links a{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--ink);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--line);transition:color .2s}
+.menu-links a:last-child{border-bottom:none}
+.menu-links a:hover{color:var(--bordo)}
+.menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
+.menu-cta:hover{background:var(--bordo-light)}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.case-hero{padding:56px 24px 44px}.case-section{padding:40px 24px}.metrics-bar{padding:0 24px}.metrics-inner{grid-template-columns:1fr 1fr}.metric-big{font-size:32px}.metric-cell{padding:24px 12px}.case-body{padding:0}.results-grid{grid-template-columns:1fr}.case-nav{padding:40px 24px}.gallery-item{width:170px}.gallery-item.wide{width:280px}.gallery-head h3{font-size:18px}.beforeafter{grid-template-columns:1fr;gap:28px;max-width:none}.single-shot.video-shot{max-width:220px}footer{flex-direction:column;gap:14px;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a>
+  <div class="nav-right">
+    <a href="index.html" class="back-link">Всі кейси</a>
+    <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
+  </div>
+  <button class="burger" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+<nav class="menu-panel" id="menuPanel" aria-label="Мобільне меню">
+  <button class="menu-panel-close" id="menuClose" aria-label="Закрити">✕</button>
+  <div class="menu-links">
+    <a href="index.html#about">Про нас</a>
+    <a href="index.html#cases">Кейси</a>
+    <a href="index.html#approach">Підхід</a>
+    <a href="services.html">Послуги</a>
+    <a href="portfolio-design.html">Портфоліо дизайну</a>
+    <a href="portfolio-montage.html">Портфоліо монтажу</a>
+    <a href="partnery.html">Партнерам</a>
+    <a href="index.html#contact">Контакти</a>
+  </div>
+  <a href="index.html#contact" class="menu-cta">Обговорити проєкт</a>
+</nav>
+
+<div class="case-hero">
+  <div class="case-hero-inner">
+    <div class="case-tag">Кейс · Beauty · Іспанія</div>
+    <h1>G×Bar Madrid — <em>український бренд для іспанської аудиторії</em></h1>
+    <p class="case-hero-sub">G×Bar — один із найвідоміших українських брендів салонів краси, який працює в різних країнах світу. Ми переформатували комунікацію мадридського салону так, щоб акаунт почав працювати на місцеву аудиторію.</p>
+  </div>
+</div>
+
+<div class="metrics-bar">
+  <div class="metrics-inner">
+    <div class="metric-cell">
+      <div class="metric-big">50</div>
+      <div class="metric-sub">Лідів за перший місяць</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">€6,74</div>
+      <div class="metric-sub">Вартість клієнта</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">2,44%</div>
+      <div class="metric-sub">Середній CTR кампаній</div>
+    </div>
+    <div class="metric-cell">
+      <div class="metric-big">€0,15</div>
+      <div class="metric-sub">Середня вартість кліка</div>
+    </div>
+  </div>
+</div>
+
+<div class="case-body">
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Запит</div>
+    <h2>Відомий бренд, <em>але новий ринок</em></h2>
+    <p class="body-text">До нас звернулася співвласниця G×Bar Madrid. Бренд уже мав сильну репутацію серед українок за кордоном, але цього було недостатньо для розвитку бізнесу в Іспанії. Основною аудиторією мали стати <strong>місцеві мешканки</strong>, адже саме вони формують більшу частину beauty-ринку Мадрида.</p>
+    <p class="body-text">Нашою задачею було повністю переформатувати комунікацію: адаптувати Instagram під локальну аудиторію, змінити контент-стратегію та побудувати систему, яка регулярно залучатиме нових клієнток із Мадрида.</p>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Труднощі</div>
+    <h2>Недостатньо просто <em>перекласти контент іспанською</em></h2>
+    <p class="body-text">Головний виклик полягав у тому, що потрібно було змінити не мову, а підхід.</p>
+    <p class="body-text">Українська та іспанська beauty-культура суттєво відрізняються. Якщо українські клієнтки регулярно роблять манікюр, складні фарбування чи комплексні процедури, то іспанки зовсім інакше ставляться до догляду за собою.</p>
+    <p class="body-text">Тому ми відмовилися від універсальної стратегії мережі та почали будувати окрему систему саме під локальний ринок.</p>
+    <div class="insight-box">
+      <p>Ми проаналізували конкурентів, дослідили поведінку місцевої аудиторії та змінили акценти в контенті. Замість стандартних beauty-публікацій почали більше демонструвати <strong>трансформації, атмосферу салону, команду, результати процедур</strong> і ті послуги, які дійсно цікаві іспанкам.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Рішення</div>
+    <h2>Не просто SMM, <em>а повна система роботи</em></h2>
+    <p class="body-text">Робота над проєктом виходила далеко за межі ведення Instagram.</p>
+    <p class="body-text">Щотижня ми проводили стратегічні зустрічі, аналізували статистику, переглядали результати реклами, формували нові гіпотези, шукали актуальні інфоприводи, планували партнерства та коригували контент відповідно до поведінки аудиторії. Саме ця системна робота стала основою розвитку проєкту.</p>
+  </div>
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Щотижневі звіти</div>
+      <h3>Матеріали стратегічних сесій</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-reports" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-reports" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-reports">
+      <div class="gallery-item wide"><img src="gbar-report1.png" alt="Щотижневий звіт 1" onclick="openBox(this.src)"><div class="gallery-caption">Шматочки із щотижневих звітів, які ми обговорювали на стратегічних сесіях</div></div>
+      <div class="gallery-item wide"><img src="gbar-report2.png" alt="Щотижневий звіт 2" onclick="openBox(this.src)"><div class="gallery-caption">Шматочки із щотижневих звітів, які ми обговорювали на стратегічних сесіях</div></div>
+    </div>
+  </div>
+  <div class="section-block">
+    <p class="body-text">Паралельно ми:</p>
+    <ul class="req-list">
+      <li>адаптували стратегію під локальний ринок</li>
+      <li>створили новий рубрикатор</li>
+      <li>перебудували контент-план</li>
+      <li>організували регулярні зйомки</li>
+      <li>аналізували конкурентів</li>
+      <li>тестували різні маркетингові гіпотези</li>
+      <li>впровадили систему аналітики, яка допомагала приймати рішення на основі цифр, а не припущень</li>
+    </ul>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Аналітика</div>
+    <h2>Кожне рішення <em>на основі цифр</em></h2>
+    <p class="body-text">Одним із головних інструментів роботи стала регулярна аналітика. Щотижня ми аналізували перегляди акаунту, охоплення, взаємодії, ERR, клікабельність, ліди та ефективність окремих форматів контенту. Це дозволяло швидко знаходити сильні рішення та масштабувати їх.</p>
+    <div class="single-shot">
+      <img src="gbar-analytics.png" alt="Аналітика проєкту" onclick="openBox(this.src)">
+      <div class="gallery-caption">Приклад скриншоту з аналітикою на проєкті</div>
+    </div>
+    <p class="body-text">Лише за перший місяць роботи <strong>на органіці</strong> акаунт отримав <strong>104 975 органічних переглядів</strong>, охопив <strong>9 228 акаунтів</strong> та зібрав <strong>599 взаємодій</strong>.</p>
+  </div>
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Органічні показники</div>
+      <h3>Перший місяць роботи</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-organic" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-organic" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-organic">
+      <div class="gallery-item"><img src="gbar-organic1.png" alt="Органічна статистика 1" onclick="openBox(this.src)"><div class="gallery-caption">104 975 органічних переглядів за перший місяць</div></div>
+      <div class="gallery-item"><img src="gbar-organic2.png" alt="Органічна статистика 2" onclick="openBox(this.src)"><div class="gallery-caption">9 228 охоплених акаунтів і 599 взаємодій</div></div>
+    </div>
+  </div>
+  <div class="section-block">
+    <p class="body-text">Крім цього, за місяць було отримано <strong>50 лідів</strong>, що підтвердило ефективність нової системи роботи.</p>
+    <p class="body-text">Окремим позитивним сигналом стало поступове збільшення частки аудиторії саме з Мадрида — тобто контент усе краще почав працювати на локальний ринок.</p>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Реклама</div>
+    <h2>Масштабування результатів <em>за допомогою реклами</em></h2>
+    <p class="body-text">Ми не обмежилися одним рекламним запуском, а побудували систему постійного тестування.</p>
+    <p class="body-text">Просували різні напрямки салону, тестували різні офери, креативи, посадкові сторінки та рекламні воронки. Для кожного запуску аналізували CTR, вартість результату, переходи на сайт, заявки через директ та конверсію у запис.</p>
+  </div>
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Креативи</div>
+      <h3>Приклади рекламних макетів</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-ads" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-ads" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-ads">
+      <div class="gallery-item"><video controls playsinline preload="metadata"><source src="gbar-ad1.mp4" type="video/mp4"></video><div class="gallery-caption">Рекламний макет</div></div>
+      <div class="gallery-item"><video controls playsinline preload="metadata"><source src="gbar-ad2.mp4" type="video/mp4"></video><div class="gallery-caption">Рекламний макет</div></div>
+      <div class="gallery-item"><video controls playsinline preload="metadata"><source src="gbar-ad3.mp4" type="video/mp4"></video><div class="gallery-caption">Рекламний макет</div></div>
+    </div>
+  </div>
+  <div class="section-block">
+    <p class="body-text">Окремо ми:</p>
+    <ul class="req-list">
+      <li>побудували кілька рекламних воронок</li>
+      <li>налаштували автоматичні повідомлення для нових підписників</li>
+      <li>підготували окремі рекламні пропозиції під різні послуги</li>
+      <li>налаштували бота на кодові слова з рекламних макетів для автоматизації обробки заявок</li>
+    </ul>
+    <p class="body-text" style="margin-top:18px">Такий підхід дозволив відстежувати повний шлях клієнта — від першого контакту з рекламою до запису в салон.</p>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Результати реклами</div>
+    <h2>Показники <em>за місяць</em></h2>
+    <div class="results-grid">
+      <div class="result-card accent">
+        <div class="result-num">227 514</div>
+        <div class="result-label">Показів</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">169 763</div>
+        <div class="result-label">Охоплених користувачів</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">5 414</div>
+        <div class="result-label">Переходів у профіль</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">841</div>
+        <div class="result-label">Перехід на сайт</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">€0,15</div>
+        <div class="result-label">Середня вартість кліка</div>
+      </div>
+      <div class="result-card">
+        <div class="result-num">2,44%</div>
+        <div class="result-label">Середній CTR кампаній</div>
+      </div>
+    </div>
+  </div>
+  <div class="section-block" style="margin-top:36px">
+    <p class="body-text">На скриншотах нижче можна побачити різницю між показниками <strong>до</strong> та <strong>після</strong> запуску рекламних кампаній.</p>
+    <div class="beforeafter">
+      <div class="ba-col before">
+        <div class="ba-col-label">До запуску реклами</div>
+        <div class="ba-pair">
+          <img src="gbar-before1.png" alt="До запуску реклами 1" onclick="openBox(this.src)">
+          <img src="gbar-before2.png" alt="До запуску реклами 2" onclick="openBox(this.src)">
+        </div>
+      </div>
+      <div class="ba-col after">
+        <div class="ba-col-label">Після запуску</div>
+        <div class="ba-pair">
+          <img src="gbar-after1.png" alt="Після запуску 1" onclick="openBox(this.src)">
+          <img src="gbar-after2.png" alt="Після запуску 2" onclick="openBox(this.src)">
+        </div>
+      </div>
+    </div>
+    <p class="body-text" style="margin-top:28px">За цей період:</p>
+    <ul class="req-list">
+      <li>загальна кількість переглядів зросла зі <strong>102 210</strong> до <strong>430 555</strong></li>
+      <li>охоплення акаунта збільшилося з <strong>8 076</strong> до <strong>129 788</strong></li>
+      <li>кількість відвідувань профілю зросла з <strong>2 842</strong> до <strong>8 425</strong></li>
+      <li>переходи на сайт збільшилися з <strong>467</strong> до <strong>1 036</strong></li>
+    </ul>
+    <p class="body-text" style="margin-top:18px">Ці результати підтвердили, що реклама працювала не лише на залучення заявок, а й суттєво підсилила впізнаваність бренду, збільшила кількість взаємодій із профілем та допомогла масштабувати органічні результати.</p>
+    <div class="insight-box">
+      <p>Враховуючи кількість реєстрацій нових клієнтів у звітний період, ми можемо розрахувати орієнтовну вартість клієнта. Кількість нових реєстрацій у системі — <strong>102</strong>. Витрачений загальний бюджет на рекламу — <strong>687,12 євро</strong>. Вартість 1 клієнта — <strong>6,74 євро</strong>.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Більше, ніж SMM</div>
+    <h2>Ми працювали <em>як повноцінний маркетинговий партнер</em></h2>
+    <p class="body-text">Разом із клієнтом аналізували результати, тестували нові гіпотези, планували маркетингові активності та приймали рішення на основі отриманих результатів.</p>
+    <p class="body-text">Окрім цього, ми закривали й суміжні задачі: розробили поліграфічну продукцію — <strong>візитівки, листівки та банери</strong> у фірмовому стилі бренду.</p>
+    <p class="body-text">А до Чорної п'ятниці підготували окремий креативний запуск з анімованим відеомонтажем, забезпечивши комплексну реалізацію кампанії — від ідеї до запуску.</p>
+  </div>
+  <div class="gallery-section">
+    <div class="gallery-head">
+      <div class="block-label">Поліграфія</div>
+      <h3>Квитки для лотереї на Чорну п'ятницю</h3>
+      <div class="gallery-arrows">
+        <button class="gallery-arrow" data-track="g-print" data-dir="prev" aria-label="Назад">‹</button>
+        <button class="gallery-arrow" data-track="g-print" data-dir="next" aria-label="Вперед">›</button>
+      </div>
+    </div>
+    <div class="gallery-track" id="g-print">
+      <div class="gallery-item"><img src="gbar-print1.png" alt="Квитки лотереї 1" onclick="openBox(this.src)"><div class="gallery-caption">Розробка квитків для реалізації лотереї на Чорну п'ятницю</div></div>
+      <div class="gallery-item"><img src="gbar-print2.png" alt="Квитки лотереї 2" onclick="openBox(this.src)"><div class="gallery-caption">Розробка квитків для реалізації лотереї на Чорну п'ятницю</div></div>
+    </div>
+  </div>
+  <div class="single-shot video-shot">
+    <video controls playsinline preload="metadata"><source src="gbar-blackfriday.mp4" type="video/mp4"></video>
+    <div class="gallery-caption">Анімований макет для рекламної кампанії на Чорну п'ятницю</div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream2"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Система роботи</div>
+    <h2>Як виглядала <em>наша система</em></h2>
+    <div class="steps-list">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Аналіз ринку</h3>
+          <p>Дослідили конкурентів, локальний beauty-ринок та поведінку аудиторії Мадрида</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Адаптація стратегії</h3>
+          <p>Перебудували позиціонування та комунікацію під місцевих клієнток</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Системна організація роботи</h3>
+          <p>Щотижневі мітинги, аналітика, тестування гіпотез, планування контенту, рекламних кампаній і партнерських активностей</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Постійна аналітика</h3>
+          <p>Регулярно аналізували показники акаунту, ефективність контенту та реклами, щоб швидко масштабувати найкращі рішення</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">05</div>
+        <div class="step-content">
+          <h3>Реклама</h3>
+          <p>Створили кілька рекламних воронок, протестували різні офери та побудували шлях користувача від реклами до запису</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">06</div>
+        <div class="step-content">
+          <h3>Комплексний маркетинг</h3>
+          <p>Поліграфія, сезонні кампанії, автоматизація комунікації та маркетингові активності під ключ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+
+<div class="case-section bg-cream"><div class="case-section-inner">
+  <div class="section-block">
+    <div class="block-label">Загальні результати</div>
+    <h2>Що дала <em>системна робота</em></h2>
+    <p class="body-text">За час роботи над проєктом ми оптимізували маркетингові процеси, адаптували комунікацію під локальну аудиторію та протестували десятки контентних і рекламних гіпотез.</p>
+    <p class="body-text">Регулярна аналітика допомогла покращити показники акаунту, масштабувати результати за допомогою реклами та зробити маркетингові активності більш ефективними.</p>
+    <div class="insight-box">
+      <p>Ми не шукали одне «ідеальне» рішення — натомість постійно тестували нові підходи, аналізували результати та вдосконалювали стратегію, щоб знаходити <strong>найефективніші інструменти</strong> для розвитку проєкту.</p>
+    </div>
+  </div>
+</div></div>
+
+</div>
+
+<div class="case-nav">
+  <div class="case-nav-inner">
+    <a href="case-sunhaven.html" class="case-nav-link prev">
+      <span class="case-nav-label">Попередній кейс</span>
+      Sun Haven
+    </a>
+    <a href="case-zotti.html" class="case-nav-link next">
+      <span class="case-nav-label">Наступний кейс</span>
+      Zotti
+    </a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo"><span>G</span>lide SMM STUDIO</div>
+  <div class="footer-copy">© 2025 Glide SMM Studio</div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeBox()">
+  <span class="lightbox-close" onclick="closeBox()">✕</span>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('burgerBtn'),
+      panel=document.getElementById('menuPanel'),
+      ov=document.getElementById('menuOverlay'),
+      cl=document.getElementById('menuClose');
+  function openM(){panel.classList.add('open');ov.classList.add('open');btn.classList.add('open');document.body.style.overflow='hidden';}
+  function closeM(){panel.classList.remove('open');ov.classList.remove('open');btn.classList.remove('open');document.body.style.overflow='';}
+  if(btn){btn.addEventListener('click',function(){panel.classList.contains('open')?closeM():openM();});}
+  if(ov){ov.addEventListener('click',closeM);}
+  if(cl){cl.addEventListener('click',closeM);}
+  document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();closeBox();}});
+})();
+document.querySelectorAll('.gallery-arrow').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=document.getElementById(b.dataset.track);
+    if(!t)return;
+    var step=t.querySelector('.gallery-item').offsetWidth+16;
+    t.scrollBy({left:b.dataset.dir==='next'?step:-step,behavior:'smooth'});
+  });
+});
+function openBox(src){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
+function closeBox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+</script>
+</body>
+</html>
