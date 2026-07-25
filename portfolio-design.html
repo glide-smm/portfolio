@@ -32,16 +32,19 @@ nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px 
 .block-label{display:inline-flex;align-items:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--bordo)}
 .gallery-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,32px);font-weight:400;color:var(--ink);flex:1;line-height:1.2}
 .gallery-head h2 em{font-style:italic;color:var(--bordo)}
-.gallery-desc{font-size:15px;color:var(--ink2);font-weight:300;line-height:1.75;max-width:640px;margin-bottom:24px}
-.gallery-arrows{display:flex;gap:8px}
-.gallery-arrow{width:38px;height:38px;border:1px solid var(--line);background:var(--white);color:var(--bordo);font-size:16px;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s}
-.gallery-arrow:hover{background:var(--bordo);color:var(--white)}
-.gallery-track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-.gallery-track::-webkit-scrollbar{height:6px}
-.gallery-track::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
-.gallery-item{flex:none;width:250px;scroll-snap-align:start}
-.gallery-item img{width:100%;height:auto;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in;background:var(--cream2)}
-.gallery-caption{font-size:12px;color:var(--ink3);margin-top:8px;line-height:1.5;font-weight:300}
+.gallery-desc{font-size:15px;color:var(--ink2);font-weight:300;line-height:1.75;max-width:640px;margin-bottom:8px}
+.post-block{margin-top:40px}
+.post-block:first-of-type{margin-top:28px}
+.post-title{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.post-title .post-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--ink);line-height:1.2}
+.post-title .post-tag{font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--bordo)}
+.slide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.slide-grid img,.slide-grid video{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;border:1px solid var(--line);border-radius:4px;cursor:zoom-in;background:var(--cream2)}
+.slide-grid.stories img,.slide-grid.stories video{aspect-ratio:9/16}
+.slide-grid video{cursor:default}
+.reveal{opacity:0;transform:translateY(28px) scale(.97);transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 .lightbox{position:fixed;inset:0;background:rgba(20,14,12,0.92);display:none;align-items:center;justify-content:center;z-index:300;cursor:zoom-out;padding:32px}
 .lightbox.open{display:flex}
 .lightbox img{max-width:92vw;max-height:90vh;border-radius:4px}
@@ -73,7 +76,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .menu-links a:hover{color:var(--bordo)}
 .menu-cta{margin-top:28px;background:var(--bordo);color:var(--white);text-align:center;text-decoration:none;padding:14px;font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;letter-spacing:0.03em;transition:background .2s}
 .menu-cta:hover{background:var(--bordo-light)}
-@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.pf-hero{padding:56px 24px 44px}.gallery-section{padding:40px 24px}.pf-cta{padding:48px 24px}.gallery-item{width:180px}.gallery-head h2{font-size:20px}footer{flex-direction:column;gap:14px;text-align:center}}
+@media(max-width:900px){.burger{display:flex}nav,footer{padding-left:24px;padding-right:24px}nav .logo img{margin-left:0;height:40px}.nav-right{gap:14px}.back-link{font-size:13px}.nav-cta{padding:9px 14px;font-size:13px}.pf-hero{padding:56px 24px 44px}.gallery-section{padding:40px 24px}.pf-cta{padding:48px 24px}.gallery-head h2{font-size:20px}.slide-grid{grid-template-columns:repeat(2,1fr);gap:10px}.post-title .post-name{font-size:19px}footer{flex-direction:column;gap:14px;text-align:center}}
 </style>
 </head>
 <body>
@@ -119,54 +122,83 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <div class="gallery-head">
       <div class="block-label">Дизайн</div>
       <h2>Каруселі</h2>
-      <div class="gallery-arrows">
-        <button class="gallery-arrow" data-track="g-carousel" data-dir="prev" aria-label="Назад">‹</button>
-        <button class="gallery-arrow" data-track="g-carousel" data-dir="next" aria-label="Вперед">›</button>
-      </div>
     </div>
     <p class="gallery-desc">Дизайн постів в стилі бренду, що працюють на підвищення лояльності, довіри і на прогрів аудиторії до продукту.</p>
-    <div class="gallery-track" id="g-carousel">
-      <div class="gallery-item"><img src="design-carousel1-1.png" alt="Дизайн каруселі 1" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel1-2.png" alt="Дизайн каруселі 2" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel1-3.png" alt="Дизайн каруселі 3" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel1-4.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel1-5.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel1-6.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel1-7.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel1-8.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для AK School</div></div>
-      <div class="gallery-item"><img src="design-carousel2-1.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
-      <div class="gallery-item"><img src="design-carousel2-2.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
-      <div class="gallery-item"><img src="design-carousel2-3.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
-      <div class="gallery-item"><img src="design-carousel2-4.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
-      <div class="gallery-item"><img src="design-carousel2-5.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
-      <div class="gallery-item"><img src="design-carousel2-6.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
-      <div class="gallery-item"><img src="design-carousel2-7.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
-      <div class="gallery-item"><img src="design-carousel2-8.png" alt="Дизайн каруселі 4" onclick="openBox(this.src)"><div class="gallery-caption">Пост для забудовника в Іспанії</div></div>
 
-    </div>
-  </div>
-</section>
-
-<!-- 2. Сторіз -->
-<section class="gallery-section bg-cream2">
-  <div class="gallery-inner">
-    <div class="gallery-head">
-      <div class="block-label">Дизайн</div>
-      <h2>Сторіз</h2>
-      <div class="gallery-arrows">
-        <button class="gallery-arrow" data-track="g-stories" data-dir="prev" aria-label="Назад">‹</button>
-        <button class="gallery-arrow" data-track="g-stories" data-dir="next" aria-label="Вперед">›</button>
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">AK School</span></div>
+      <div class="slide-grid">
+        <img src="design-carousel1-1.png" alt="AK School, слайд 1" onclick="openBox(this.src)">
+        <img src="design-carousel1-2.png" alt="AK School, слайд 2" onclick="openBox(this.src)">
+        <img src="design-carousel1-3.png" alt="AK School, слайд 3" onclick="openBox(this.src)">
+        <img src="design-carousel1-4.png" alt="AK School, слайд 4" onclick="openBox(this.src)">
+        <img src="design-carousel1-5.png" alt="AK School, слайд 5" onclick="openBox(this.src)">
+        <img src="design-carousel1-6.png" alt="AK School, слайд 6" onclick="openBox(this.src)">
+        <img src="design-carousel1-7.png" alt="AK School, слайд 7" onclick="openBox(this.src)">
+        <img src="design-carousel1-8.png" alt="AK School, слайд 8" onclick="openBox(this.src)">
       </div>
     </div>
-    <p class="gallery-desc">Оформлення сториз у стилі бренду.</p>
-    <div class="gallery-track" id="g-stories">
-      <div class="gallery-item"><img src="design-stories1-1.jpg" alt="Дизайн сторіз 1" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
-      <div class="gallery-item"><img src="design-stories1-2.jpg" alt="Дизайн сторіз 2" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
-      <div class="gallery-item"><img src="design-stories1-3.jpg" alt="Дизайн сторіз 3" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
-      <div class="gallery-item"><img src="design-stories4.png" alt="Дизайн сторіз 4" onclick="openBox(this.src)"><div class="gallery-caption">Приклад сторіз</div></div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Забудовник в Іспанії</span></div>
+      <div class="slide-grid">
+        <img src="design-carousel2-1.png" alt="Забудовник в Іспанії, слайд 1" onclick="openBox(this.src)">
+        <img src="design-carousel2-2.png" alt="Забудовник в Іспанії, слайд 2" onclick="openBox(this.src)">
+        <img src="design-carousel2-3.png" alt="Забудовник в Іспанії, слайд 3" onclick="openBox(this.src)">
+        <img src="design-carousel2-4.png" alt="Забудовник в Іспанії, слайд 4" onclick="openBox(this.src)">
+        <img src="design-carousel2-5.png" alt="Забудовник в Іспанії, слайд 5" onclick="openBox(this.src)">
+        <img src="design-carousel2-6.png" alt="Забудовник в Іспанії, слайд 6" onclick="openBox(this.src)">
+        <img src="design-carousel2-7.png" alt="Забудовник в Іспанії, слайд 7" onclick="openBox(this.src)">
+        <img src="design-carousel2-8.png" alt="Забудовник в Іспанії, слайд 8" onclick="openBox(this.src)">
+        <img src="design-carousel2-9.png" alt="Забудовник в Іспанії, слайд 9" onclick="openBox(this.src)">
+      </div>
     </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Назва проєкту 3</span></div>
+      <div class="slide-grid">
+        <img src="design-carousel3-1.png" alt="Назва проєкту 3, слайд 1" onclick="openBox(this.src)">
+        <img src="design-carousel3-2.png" alt="Назва проєкту 3, слайд 2" onclick="openBox(this.src)">
+        <img src="design-carousel3-3.png" alt="Назва проєкту 3, слайд 3" onclick="openBox(this.src)">
+        <img src="design-carousel3-4.png" alt="Назва проєкту 3, слайд 4" onclick="openBox(this.src)">
+        <img src="design-carousel3-5.png" alt="Назва проєкту 3, слайд 5" onclick="openBox(this.src)">
+        <img src="design-carousel3-6.png" alt="Назва проєкту 3, слайд 6" onclick="openBox(this.src)">
+        <img src="design-carousel3-7.png" alt="Назва проєкту 3, слайд 7" onclick="openBox(this.src)">
+        <img src="design-carousel3-8.png" alt="Назва проєкту 3, слайд 8" onclick="openBox(this.src)">
+      </div>
+    </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Назва проєкту 4</span></div>
+      <div class="slide-grid">
+        <img src="design-carousel4-1.png" alt="Назва проєкту 4, слайд 1" onclick="openBox(this.src)">
+        <img src="design-carousel4-2.png" alt="Назва проєкту 4, слайд 2" onclick="openBox(this.src)">
+        <img src="design-carousel4-3.png" alt="Назва проєкту 4, слайд 3" onclick="openBox(this.src)">
+        <img src="design-carousel4-4.png" alt="Назва проєкту 4, слайд 4" onclick="openBox(this.src)">
+        <img src="design-carousel4-5.png" alt="Назва проєкту 4, слайд 5" onclick="openBox(this.src)">
+        <img src="design-carousel4-6.png" alt="Назва проєкту 4, слайд 6" onclick="openBox(this.src)">
+        <img src="design-carousel4-7.png" alt="Назва проєкту 4, слайд 7" onclick="openBox(this.src)">
+        <img src="design-carousel4-8.png" alt="Назва проєкту 4, слайд 8" onclick="openBox(this.src)">
+        <img src="design-carousel4-9.png" alt="Назва проєкту 4, слайд 9" onclick="openBox(this.src)">
+      </div>
+    </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Назва проєкту 5</span></div>
+      <div class="slide-grid">
+        <img src="design-carousel5-1.png" alt="Назва проєкту 5, слайд 1" onclick="openBox(this.src)">
+        <img src="design-carousel5-2.png" alt="Назва проєкту 5, слайд 2" onclick="openBox(this.src)">
+        <img src="design-carousel5-3.png" alt="Назва проєкту 5, слайд 3" onclick="openBox(this.src)">
+        <img src="design-carousel5-4.png" alt="Назва проєкту 5, слайд 4" onclick="openBox(this.src)">
+        <img src="design-carousel5-5.png" alt="Назва проєкту 5, слайд 5" onclick="openBox(this.src)">
+        <img src="design-carousel5-6.png" alt="Назва проєкту 5, слайд 6" onclick="openBox(this.src)">
+      </div>
+    </div>
+
   </div>
 </section>
+
+
 
 <!-- 3. Ситуативні каруселі -->
 <section class="gallery-section bg-cream">
@@ -174,44 +206,114 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
     <div class="gallery-head">
       <div class="block-label">Дизайн</div>
       <h2>Ситуативні каруселі</h2>
-      <div class="gallery-arrows">
-        <button class="gallery-arrow" data-track="g-situational" data-dir="prev" aria-label="Назад">‹</button>
-        <button class="gallery-arrow" data-track="g-situational" data-dir="next" aria-label="Вперед">›</button>
-      </div>
     </div>
     <p class="gallery-desc">Реакція на інфопривід у стилі бренду — дозволяє зібрати більші охоплення і збільшити увагу до бренду.</p>
-    <div class="gallery-track" id="g-situational">
-      <div class="gallery-item"><img src="design-situational1-1.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
-      <div class="gallery-item"><img src="design-situational1-2.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
-      <div class="gallery-item"><img src="design-situational1-3.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
-      <div class="gallery-item"><img src="design-situational1-4.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
-      <div class="gallery-item"><img src="design-situational1-5.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
-      <div class="gallery-item"><img src="design-situational1-6.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
-      <div class="gallery-item"><img src="design-situational1-7.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
-      <div class="gallery-item"><img src="design-situational1-8.png" alt="Ситуативна карусель до бою Усика" onclick="openBox(this.src)"><div class="gallery-caption">Ситуативна карусель</div></div>
 
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">До бою Усика</span></div>
+      <div class="slide-grid">
+        <img src="design-situational1-1.png" alt="До бою Усика, слайд 1" onclick="openBox(this.src)">
+        <img src="design-situational1-2.png" alt="До бою Усика, слайд 2" onclick="openBox(this.src)">
+        <img src="design-situational1-3.png" alt="До бою Усика, слайд 3" onclick="openBox(this.src)">
+        <img src="design-situational1-4.png" alt="До бою Усика, слайд 4" onclick="openBox(this.src)">
+        <img src="design-situational1-5.png" alt="До бою Усика, слайд 5" onclick="openBox(this.src)">
+        <img src="design-situational1-6.png" alt="До бою Усика, слайд 6" onclick="openBox(this.src)">
+        <img src="design-situational1-7.png" alt="До бою Усика, слайд 7" onclick="openBox(this.src)">
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- 4. Віральні каруселі -->
 <section class="gallery-section bg-cream2">
   <div class="gallery-inner">
     <div class="gallery-head">
       <div class="block-label">Дизайн</div>
-      <h2>Віральні каруселі</h2>
-      <div class="gallery-arrows">
-        <button class="gallery-arrow" data-track="g-viral" data-dir="prev" aria-label="Назад">‹</button>
-        <button class="gallery-arrow" data-track="g-viral" data-dir="next" aria-label="Вперед">›</button>
+      <h2>Сторіз</h2>
+    </div>
+    <p class="gallery-desc">Оформлення сториз у стилі бренду.</p>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Сторіз 1</span></div>
+      <div class="slide-grid stories">
+        <img src="design-stories1-1.JPG" alt="Сторіз 1, слайд 1" onclick="openBox(this.src)">
+        <img src="design-stories1-2.JPG" alt="Сторіз 1, слайд 2" onclick="openBox(this.src)">
+        <img src="design-stories1-3.JPG" alt="Сторіз 1, слайд 3" onclick="openBox(this.src)">
       </div>
     </div>
-    <p class="gallery-desc">Формати, зроблені під максимальне охоплення й репости — те, що розлітається за межі акаунту.</p>
-    <div class="gallery-track" id="g-viral">
-      <div class="gallery-item"><img src="design-viral1.png" alt="Віральна карусель 1" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
-      <div class="gallery-item"><img src="design-viral2.png" alt="Віральна карусель 2" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
-      <div class="gallery-item"><img src="design-viral3.png" alt="Віральна карусель 3" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
-      <div class="gallery-item"><img src="design-viral4.png" alt="Віральна карусель 4" onclick="openBox(this.src)"><div class="gallery-caption">Віральна карусель</div></div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Сторіз 2</span></div>
+      <div class="slide-grid stories">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories2-1.mp4" type="video/mp4"></video>
+        <img src="design-stories2-2.JPG" alt="Сторіз 2, слайд 2" onclick="openBox(this.src)">
+        <img src="design-stories2-3.JPG" alt="Сторіз 2, слайд 3" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories2-4.mp4" type="video/mp4"></video>
+        <img src="design-stories2-5.JPG" alt="Сторіз 2, слайд 5" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories2-6.mp4" type="video/mp4"></video>
+        <img src="design-stories2-7.JPG" alt="Сторіз 2, слайд 7" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories2-8.mp4" type="video/mp4"></video>
+        <img src="design-stories2-9.JPG" alt="Сторіз 2, слайд 9" onclick="openBox(this.src)">
+        <img src="design-stories2-10.JPG" alt="Сторіз 2, слайд 10" onclick="openBox(this.src)">
+      </div>
     </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Сторіз 3</span></div>
+      <div class="slide-grid stories">
+        <img src="design-stories3-1.JPG" alt="Сторіз 3, слайд 1" onclick="openBox(this.src)">
+        <img src="design-stories3-2.JPG" alt="Сторіз 3, слайд 2" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories3-3.mp4" type="video/mp4"></video>
+        <img src="design-stories3-4.JPG" alt="Сторіз 3, слайд 4" onclick="openBox(this.src)">
+        <img src="design-stories3-5.JPG" alt="Сторіз 3, слайд 5" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories3-6.mp4" type="video/mp4"></video>
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories3-7.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Сторіз 4</span></div>
+      <div class="slide-grid stories">
+        <img src="design-stories4-1.PNG" alt="Сторіз 4, слайд 1" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories4-2.mp4" type="video/mp4"></video>
+        <img src="design-stories4-3.PNG" alt="Сторіз 4, слайд 3" onclick="openBox(this.src)">
+        <img src="design-stories4-4.PNG" alt="Сторіз 4, слайд 4" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories4-5.mp4" type="video/mp4"></video>
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories4-6.mp4" type="video/mp4"></video>
+      </div>
+    </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Сторіз 5</span></div>
+      <div class="slide-grid stories">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories5-1.mp4" type="video/mp4"></video>
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories5-2.mp4" type="video/mp4"></video>
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories5-3.mp4" type="video/mp4"></video>
+        <img src="design-stories5-4.jpg" alt="Сторіз 5, слайд 4" onclick="openBox(this.src)">
+      </div>
+    </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Сторіз 6</span></div>
+      <div class="slide-grid stories">
+        <img src="design-stories6-1.jpg" alt="Сторіз 6, слайд 1" onclick="openBox(this.src)">
+        <img src="design-stories6-2.jpg" alt="Сторіз 6, слайд 2" onclick="openBox(this.src)">
+        <img src="design-stories6-3.jpg" alt="Сторіз 6, слайд 3" onclick="openBox(this.src)">
+        <img src="design-stories6-4.jpg" alt="Сторіз 6, слайд 4" onclick="openBox(this.src)">
+      </div>
+    </div>
+
+    <div class="post-block">
+      <div class="post-title"><span class="post-name">Сторіз 7</span></div>
+      <div class="slide-grid stories">
+        <img src="design-stories7-1.png" alt="Сторіз 7, слайд 1" onclick="openBox(this.src)">
+        <img src="design-stories7-2.png" alt="Сторіз 7, слайд 2" onclick="openBox(this.src)">
+        <video controls playsinline preload="metadata" poster=""><source src="design-stories7-3.mp4" type="video/mp4"></video>
+        <img src="design-stories7-3.png" alt="Сторіз 7, слайд 4" onclick="openBox(this.src)">
+        <img src="design-stories7-5.png" alt="Сторіз 7, слайд 5" onclick="openBox(this.src)">
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -219,7 +321,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 
 <section class="pf-cta">
   <h2>Хочете такий <em>дизайн</em> для свого бренду?</h2>
-  <p>Напишіть — і почнемо.</p>
+  <p>Напишіть нам, і почнемо.</p>
   <a href="index.html#contact">Обговорити проєкт</a>
 </section>
 
@@ -247,14 +349,18 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   document.querySelectorAll('.menu-links a').forEach(function(a){a.addEventListener('click',closeM);});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeM();closeBox();}});
 })();
-document.querySelectorAll('.gallery-arrow').forEach(function(b){
-  b.addEventListener('click',function(){
-    var t=document.getElementById(b.dataset.track);
-    if(!t)return;
-    var step=t.querySelector('.gallery-item').offsetWidth+16;
-    t.scrollBy({left:b.dataset.dir==='next'?step:-step,behavior:'smooth'});
-  });
+document.querySelectorAll('.slide-grid').forEach(function(grid){
+  var items=grid.children;
+  for(var i=0;i<items.length;i++){items[i].classList.add('reveal');items[i].style.transitionDelay=(i%4*80)+'ms';}
 });
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+}else{
+  document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});
+}
 function openBox(src){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=src;lb.classList.add('open');document.body.style.overflow='hidden';}
 function closeBox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
 </script>
