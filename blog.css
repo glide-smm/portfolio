@@ -78,3 +78,12 @@ em{font-style:italic;color:var(--bordo)}
 .related-case-link{font:700 13px/1.5 'Manrope',sans-serif;color:var(--bordo);margin-top:auto}
 .related-case-link [aria-hidden]{margin-left:8px}
 @media(max-width:620px){.related-case{grid-template-columns:1fr}.related-case-image{height:210px;min-height:0}.related-case-body{padding:23px}.related-case-title{font-size:33px}}
+
+/* Calls to action for strategic and trend articles */
+.article-more{margin:36px 0 16px}
+.article-more a{display:inline-flex;align-items:center;gap:7px;font:700 14px/1.6 'Manrope',sans-serif;color:var(--bordo);text-decoration:underline;text-underline-offset:4px}
+.article-more a:hover{color:#B8396A}
+.cta-actions{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
+.cta-actions .cta-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.75)}
+.cta-actions .cta-secondary:hover{background:rgba(255,255,255,.1)}
+@media(max-width:620px){.cta-actions{flex-direction:column;align-items:stretch}.cta-actions a{text-align:center}}
