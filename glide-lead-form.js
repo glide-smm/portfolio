@@ -10,12 +10,17 @@
   var formWrap = document.getElementById('glFormWrap');
   var thanks = document.getElementById('glThanks');
 
-  function openForm(){
+  function openForm(trigger){
     // Подія зацікавленості: лише фактичне відкриття форми.
     if(overlay.classList.contains('open')) return;
     overlay.classList.add('open');
+    var location = trigger && trigger.closest('.glide-site-header') ? 'header'
+      : trigger && trigger.closest('.glide-site-menu') ? 'mobile_menu' : 'content';
     if(typeof window.gtag === 'function'){
-      window.gtag('event', 'lead_form_open', {form_id: 'glide_lead_form'});
+      window.gtag('event', 'lead_form_open', {
+        form_id: 'glide_lead_form',
+        cta_location: location
+      });
     }
   }
   function closeForm(){
@@ -31,7 +36,7 @@
     var label = (target.textContent || '').replace(/\s+/g, ' ').trim();
     if(target.classList.contains('js-open-form') || /^(Обговорити проєкт|Написати нам)$/i.test(label)){
       e.preventDefault();
-      openForm();
+      openForm(target);
     }
   });
   closeBtn.addEventListener('click', closeForm);
