@@ -84,35 +84,46 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
   gtag('config', 'G-1SNQ45SXBD');
 </script>
 <link rel="stylesheet" href="footer-social-links.css?v=20261015-unified">
+<link rel="stylesheet" href="glide-shared-header.css?v=20261015">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="logo"><img src="Glide SMM logo transparent.png" alt="Glide SMM Studio"></a>
-  <div class="nav-right">
-    <a href="blog.html" class="back-link">Блог</a>
-    <a href="index.html" class="back-link">На головну</a>
-    <a href="index.html#contact" class="nav-cta">Обговорити проєкт</a>
-  </div>
-  <button class="burger" id="burgerBtn" aria-label="Меню"><span></span><span></span><span></span></button>
-</nav>
-
-<div class="menu-overlay" id="menuOverlay"></div>
-<nav class="menu-panel" id="menuPanel" aria-label="Мобільне меню">
-  <button class="menu-panel-close" id="menuClose" aria-label="Закрити">✕</button>
-  <div class="menu-links">
-    <a href="index.html#about">Про нас</a>
-    <a href="index.html#cases">Кейси</a>
-    <a href="index.html#approach">Підхід</a>
-    <a href="services.html">Послуги</a>
-    <a href="portfolio-design.html">Портфоліо дизайну</a>
-    <a href="portfolio-montage.html">Портфоліо монтажу</a>
-    <a href="partnery.html">Партнерам</a>
-    <a href="index.html#contact">Контакти</a>
+<header class="glide-site-header">
+  <div class="glide-site-header__inner">
+    <a class="glide-site-header__logo" href="index.html" aria-label="Glide SMM Studio — головна">
+      <img src="Glide SMM logo transparent.png" alt="Glide SMM Studio">
+    </a>
+    <div class="glide-site-header__links" role="navigation" aria-label="Основна навігація">
+      <a href="index.html#about">Про нас</a>
+      <a href="index.html#cases">Кейси</a>
+      <a href="index.html#approach">Підхід</a>
+      <a href="services.html">Послуги</a>
+      <a href="portfolio-design.html">Дизайн</a>
+      <a href="portfolio-montage.html">Відео</a>
+      <a href="partnery.html">Партнерам</a>
       <a href="blog.html">Блог</a>
+      <a href="index.html#contact">Контакти</a>
+    </div>
+    <a class="glide-site-header__cta js-open-form" href="index.html#contact">Обговорити проєкт</a>
+    <button class="glide-site-header__burger" id="burgerBtn" type="button" aria-label="Відкрити меню" aria-controls="menuPanel" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-  <a href="index.html#contact" class="menu-cta">Обговорити проєкт</a>
-</nav>
+</header>
+<div class="glide-site-menu-overlay" id="menuOverlay"></div>
+<aside class="glide-site-menu" id="menuPanel" aria-label="Мобільне меню">
+  <button class="glide-site-menu__close" id="menuClose" type="button" aria-label="Закрити меню">✕</button>
+  <div class="glide-site-menu__links menu-links">
+      <a href="index.html#about">Про нас</a>
+      <a href="index.html#cases">Кейси</a>
+      <a href="index.html#approach">Підхід</a>
+      <a href="services.html">Послуги</a>
+      <a href="portfolio-design.html">Дизайн</a>
+      <a href="portfolio-montage.html">Відео</a>
+      <a href="partnery.html">Партнерам</a>
+      <a href="blog.html">Блог</a>
+      <a href="index.html#contact">Контакти</a>
+      <a class="glide-site-menu__cta js-open-form" href="index.html#contact">Обговорити проєкт</a>
+  </div>
+</aside>
 
 <div class="pf-hero">
   <div class="pf-hero-inner">
