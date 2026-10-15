@@ -141,9 +141,9 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 </script>
 <link rel="stylesheet" href="footer-social-links.css?v=20261015-unified">
 <link rel="stylesheet" href="glide-shared-header.css?v=20261015">
-<script defer src="glide-analytics-events.js?v=20261015"></script>
+<script defer src="glide-analytics-events.js?v=20261015-2"></script>
 <link rel="stylesheet" href="glide-lead-form.css?v=20261015">
-<script defer src="glide-lead-form.js?v=20261015"></script>
+<script defer src="glide-lead-form.js?v=20261015-2"></script>
 </head>
 <body>
 
@@ -163,7 +163,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <a href="blog.html">Блог</a>
       <a href="index.html#contact">Контакти</a>
     </div>
-    <a class="glide-site-header__cta js-open-form" href="index.html#contact">Обговорити проєкт</a>
+    <a class="glide-site-header__cta js-open-form" href="#glOverlay" aria-haspopup="dialog">Обговорити проєкт</a>
     <button class="glide-site-header__burger" id="burgerBtn" type="button" aria-label="Відкрити меню" aria-controls="menuPanel" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -180,7 +180,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <a href="partnery.html">Партнерам</a>
       <a href="blog.html">Блог</a>
       <a href="index.html#contact">Контакти</a>
-      <a class="glide-site-menu__cta js-open-form" href="index.html#contact">Обговорити проєкт</a>
+      <a class="glide-site-menu__cta js-open-form" href="#glOverlay" aria-haspopup="dialog">Обговорити проєкт</a>
   </div>
 </aside>
 
@@ -192,7 +192,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       <p class="hero-sub">SMM-відділ для вашого бізнесу: ведення Instagram, TikTok, Telegram, Threads і LinkedIn, запуск таргетованої реклами. Акцент на аналітику і бажаний результат.</p>
       <div class="hero-actions">
         <a href="#cases" class="btn-primary">Подивитись кейси</a>
-        <a href="javascript:void(0)" class="btn-ghost js-open-form">Написати нам</a>
+        <a href="#glOverlay" class="btn-ghost js-open-form" aria-haspopup="dialog">Написати нам</a>
       </div>
     </div>
   </div>
@@ -413,7 +413,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 <div class="cta-section" id="contact">
   <h2>Готові до <em>результату</em>?</h2>
   <p>Розкажіть про свій проєкт — обговоримо, як ми можемо посилити ваш бренд</p>
-  <a href="javascript:void(0)" class="btn-white js-open-form">Написати нам</a>
+  <a href="#glOverlay" class="btn-white js-open-form" aria-haspopup="dialog">Написати нам</a>
 </div>
 
 <footer class="glide-unified-footer">
