@@ -9,17 +9,30 @@
   var errBox = document.getElementById('glErr');
   var formWrap = document.getElementById('glFormWrap');
   var thanks = document.getElementById('glThanks');
+  var formStarted = false;
+  // A single event per form opening when a visitor first types in a field.
+  ['glName', 'glNiche', 'glPhone', 'glTg'].forEach(function(id){
+    document.getElementById(id).addEventListener('input', function(){
+      if(formStarted || !overlay.classList.contains('open')) return;
+      formStarted = true;
+      if(typeof window.gtag === 'function'){
+        window.gtag('event', 'lead_form_start', {form_id: 'glide_lead_form'});
+      }
+    });
+  });
 
   function openForm(trigger){
     // Подія зацікавленості: лише фактичне відкриття форми.
     if(overlay.classList.contains('open')) return;
     overlay.classList.add('open');
+    formStarted = false;
     var location = trigger && trigger.closest('.glide-site-header') ? 'header'
       : trigger && trigger.closest('.glide-site-menu') ? 'mobile_menu' : 'content';
     if(typeof window.gtag === 'function'){
       window.gtag('event', 'lead_form_open', {
         form_id: 'glide_lead_form',
-        cta_location: location
+        cta_location: location,
+        cta_label: (trigger && trigger.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 80)
       });
     }
   }
