@@ -1,13 +1,102 @@
-/* Footer: logo and compact social icons together */
-footer .glide-footer-brand{display:flex;align-items:center;justify-content:flex-start;gap:22px;min-width:0}
-footer .glide-footer-socials{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:6px;flex:none;margin:0}
-footer .glide-footer-socials .glide-social-link{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:3px;flex:none;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
-footer .glide-footer-socials .glide-social-link:hover,footer .glide-footer-socials .glide-social-link:focus-visible{color:#fff}
-footer .glide-footer-socials .glide-social-link svg{display:block;width:23px;height:23px;flex:none}
-footer.glide-footer-compact .glide-footer-brand{justify-content:center;margin:0 auto 14px}
-footer.glide-footer-compact .glide-footer-brand>img{height:36px;width:auto;margin:0;display:block}
-footer.foot .glide-footer-brand{justify-content:center;gap:18px}
-footer.foot .glide-footer-socials .glide-social-link{color:var(--ink3,#857a75)}
-footer.foot .glide-footer-socials .glide-social-link:hover,footer.foot .glide-footer-socials .glide-social-link:focus-visible{color:var(--bordo,#8b1a3a)}
-@media(max-width:900px){footer:not(.site-footer):not(.foot):not(.glide-footer-compact){flex-wrap:wrap;justify-content:center;column-gap:24px;row-gap:16px}}
-@media(max-width:620px){footer:not(.site-footer):not(.foot):not(.glide-footer-compact){flex-direction:column;text-align:center;gap:16px}footer .glide-footer-brand{gap:16px}}
+/* Єдиний підвал Glide SMM Studio на всіх сторінках.
+   Розмітка і ці стилі повністю повторюються без сторінкових винятків. */
+footer.glide-unified-footer {
+  box-sizing: border-box;
+  width: 100%;
+  background: #1a1210;
+  color: rgba(255,255,255,.35);
+  padding: 48px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  text-align: left;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+footer.glide-unified-footer .glide-footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  flex: 0 0 auto;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+footer.glide-unified-footer a.glide-unified-footer__logo {
+  display: block;
+  flex: none;
+  line-height: 0;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+footer.glide-unified-footer a.glide-unified-footer__logo img {
+  height: 64px;
+  width: auto;
+  max-width: none;
+  display: block;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+footer.glide-unified-footer .glide-footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: none;
+  flex-wrap: nowrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+footer.glide-unified-footer .glide-social-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
+  transition: color .2s;
+}
+footer.glide-unified-footer .glide-social-link:hover,
+footer.glide-unified-footer .glide-social-link:focus-visible {color: #fff}
+footer.glide-unified-footer .glide-social-link svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+  flex: none;
+}
+footer.glide-unified-footer .glide-unified-footer__copy {
+  flex: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255,255,255,.35);
+  text-align: right;
+  margin: 0;
+  padding: 0;
+}
+@media(max-width:620px) {
+  footer.glide-unified-footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 36px 24px;
+    text-align: center;
+  }
+  footer.glide-unified-footer .glide-footer-brand {gap: 16px}
+  footer.glide-unified-footer .glide-unified-footer__copy {text-align: center}
+}
