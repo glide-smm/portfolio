@@ -1,4 +1,4 @@
-/* Site-wide GA4 engagement clicks. Not key events; successful leads are
+/* Site-wide GA4 content engagement clicks. Not key events; successful leads are
    counted separately only after the server confirms receipt. */
 (function () {
   'use strict';
@@ -21,7 +21,6 @@
     }
 
     var filename = destination.pathname.split('/').pop().toLowerCase();
-    var label = (link.textContent || '').replace(/\s+/g, ' ').trim();
     var source = window.location.pathname.split('/').pop() || 'index.html';
     var params = {
       source_page: source,
@@ -29,13 +28,9 @@
       link_url: destination.href
     };
 
-    // Actual form opens are tracked separately as lead_form_open.
-    // Clicking a CTA on a case/article page usually navigates home first.
-    if (/обговорити проєкт|написати нам/i.test(label)) {
-      params.cta_location = link.closest('.glide-site-header') ? 'header'
-        : link.closest('.glide-site-menu') ? 'mobile_menu' : 'content';
-      trackEvent('contact_cta_click', params);
-    } else if (/^case-[a-z0-9-]+\.html$/.test(filename)) {
+    // Opened forms are already tracked as lead_form_open;
+    // do not duplicate them as CTA clicks.
+    if (/^case-[a-z0-9-]+\.html$/.test(filename)) {
       trackEvent('case_open', params);
     } else if (filename === 'portfolio-design.html' || filename === 'portfolio-montage.html') {
       trackEvent('portfolio_open', params);
