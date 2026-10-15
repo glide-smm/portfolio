@@ -496,6 +496,7 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
 .gl-submit:disabled{opacity:.6;cursor:default}
 .gl-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 .gl-err{color:var(--bordo);font-size:13px;margin-top:10px;display:none}
+.gl-err a{color:inherit;text-decoration:underline;text-underline-offset:2px;font-weight:600}
 .gl-thanks{display:none;text-align:center;padding:14px 0}
 .gl-thanks .gl-check{width:72px;height:72px;border-radius:50%;background:var(--bordo);display:flex;align-items:center;justify-content:center;margin:0 auto 22px}
 .gl-thanks .gl-check svg{width:34px;height:34px}
@@ -633,7 +634,11 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
       headers:{'Content-Type':'application/json'},
       body: JSON.stringify({ name:name, niche:niche, phone:phone, telegram:tg, website:hp })
     })
-    .then(function(r){ return r.json(); })
+    .then(function(r){
+      // Фіксуємо лише HTTP-статус, без персональних даних клієнта.
+      if(!r.ok) console.warn('Glide lead endpoint returned HTTP', r.status);
+      return r.json();
+    })
     .then(function(d){
       if(d && d.ok){
         formWrap.style.display='none';
@@ -645,8 +650,10 @@ footer{background:var(--ink);padding:48px 60px;display:flex;justify-content:spac
         }
       } else { throw new Error('fail'); }
     })
-    .catch(function(){
-      errBox.textContent = 'Не вдалося надіслати. Спробуйте ще раз або напишіть нам у Telegram.';
+    .catch(function(error){
+      // Діагностика без імені, телефону, Telegram-ніка та вмісту форми.
+      console.warn('Glide lead form: no success confirmation', error.message);
+      errBox.innerHTML = 'Не вдалося підтвердити надсилання заявки. <a href="https://www.instagram.com/glide.smm/" target="_blank" rel="noopener noreferrer">Напишіть нам в Instagram</a>, щоб ми могли допомогти.';
       errBox.style.display='block';
     })
     .finally(function(){
