@@ -1,7 +1,7 @@
 /* Footer: logo and compact social icons together */
 footer .glide-footer-brand{display:flex;align-items:center;justify-content:flex-start;gap:22px;min-width:0}
-footer .glide-footer-socials{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:12px;flex:none;margin:0}
-footer .glide-footer-socials .glide-social-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:5px;flex:none;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
+footer .glide-footer-socials{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:6px;flex:none;margin:0}
+footer .glide-footer-socials .glide-social-link{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:3px;flex:none;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
 footer .glide-footer-socials .glide-social-link:hover,footer .glide-footer-socials .glide-social-link:focus-visible{color:#fff}
 footer .glide-footer-socials .glide-social-link svg{display:block;width:23px;height:23px;flex:none}
 footer.glide-footer-compact .glide-footer-brand{justify-content:center;margin:0 auto 14px}
