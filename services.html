@@ -353,7 +353,14 @@ footer img{height:36px;margin-bottom:14px;display:block;margin-left:auto;margin-
   var formWrap = document.getElementById('glFormWrap');
   var thanks = document.getElementById('glThanks');
 
-  function openForm(){ overlay.classList.add('open'); }
+  function openForm(){
+    // Подія зацікавленості: лише фактичне відкриття форми.
+    if(overlay.classList.contains('open')) return;
+    overlay.classList.add('open');
+    if(typeof window.gtag === 'function'){
+      window.gtag('event', 'lead_form_open', {form_id: 'glide_lead_form'});
+    }
+  }
   function closeForm(){
     overlay.classList.remove('open');
     // повертаємо форму у вихідний стан після закриття
@@ -409,6 +416,11 @@ footer img{height:36px;margin-bottom:14px;display:block;margin-left:auto;margin-
       if(d && d.ok){
         formWrap.style.display='none';
         thanks.style.display='block';
+        // GA4: рахуємо лише заявку, яку сервер підтвердив як отриману.
+        // Не передаємо ім'я, телефон чи Telegram-контакт в аналітику.
+        if(typeof window.gtag === 'function'){
+          window.gtag('event', 'generate_lead', {form_id: 'glide_lead_form'});
+        }
       } else { throw new Error('fail'); }
     })
     .catch(function(){
