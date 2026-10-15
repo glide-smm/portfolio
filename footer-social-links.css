@@ -1,12 +1,13 @@
-/* Єдиний блок соцмереж у підвалах усіх сторінок Glide */
-footer .glide-footer-socials{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:24px;min-width:0}
-footer .glide-footer-socials .glide-social-link{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.6);text-decoration:none;font-family:'Manrope',sans-serif;font-size:13px;font-weight:400;line-height:1.4;white-space:nowrap;transition:color .2s}
+/* Footer: logo and compact social icons together */
+footer .glide-footer-brand{display:flex;align-items:center;justify-content:flex-start;gap:22px;min-width:0}
+footer .glide-footer-socials{display:flex;align-items:center;justify-content:flex-start;flex-wrap:nowrap;gap:12px;flex:none;margin:0}
+footer .glide-footer-socials .glide-social-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;padding:5px;flex:none;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
 footer .glide-footer-socials .glide-social-link:hover,footer .glide-footer-socials .glide-social-link:focus-visible{color:#fff}
-footer .glide-footer-socials .glide-social-link svg{display:block;width:22px;height:22px;flex:none}
-footer.site-footer .foot-links .glide-footer-socials{gap:20px}
-footer.glide-footer-compact .glide-footer-socials{margin:16px 0 14px}
-footer.foot .glide-footer-socials{margin-bottom:12px}
+footer .glide-footer-socials .glide-social-link svg{display:block;width:23px;height:23px;flex:none}
+footer.glide-footer-compact .glide-footer-brand{justify-content:center;margin:0 auto 14px}
+footer.glide-footer-compact .glide-footer-brand>img{height:36px;width:auto;margin:0;display:block}
+footer.foot .glide-footer-brand{justify-content:center;gap:18px}
 footer.foot .glide-footer-socials .glide-social-link{color:var(--ink3,#857a75)}
 footer.foot .glide-footer-socials .glide-social-link:hover,footer.foot .glide-footer-socials .glide-social-link:focus-visible{color:var(--bordo,#8b1a3a)}
 @media(max-width:900px){footer:not(.site-footer):not(.foot):not(.glide-footer-compact){flex-wrap:wrap;justify-content:center;column-gap:24px;row-gap:16px}}
-@media(max-width:620px){footer:not(.site-footer):not(.foot):not(.glide-footer-compact){flex-direction:column;text-align:center;gap:16px}footer .glide-footer-socials{gap:20px}}
+@media(max-width:620px){footer:not(.site-footer):not(.foot):not(.glide-footer-compact){flex-direction:column;text-align:center;gap:16px}footer .glide-footer-brand{gap:16px}}
