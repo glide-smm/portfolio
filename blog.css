@@ -105,12 +105,49 @@ em{font-style:italic;color:var(--bordo)}
 @media(max-width:620px){.article-cta-box{padding:28px 22px}.article-cta-actions{flex-direction:column}.article-cta-actions a{width:100%;text-align:center}}
 
 
-/* Small related-reading cards, consistent across Glide SMM blog articles */
-.article-content .related-article{display:flex;gap:20px;align-items:center;justify-content:space-between;margin:30px 0 36px;padding:22px 24px;border:1px solid var(--line);border-left:3px solid var(--bordo);background:var(--cream2);color:var(--ink)!important;text-decoration:none!important;transition:transform .2s,box-shadow .2s}
-.article-content .related-article:hover{transform:translateY(-2px);box-shadow:0 9px 24px rgba(26,18,16,.07)}
-.related-article-info{display:flex;flex-direction:column;gap:8px;min-width:0}
-.related-article-kicker{font:700 10px/1.5 'Manrope',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--bordo)}
-.related-article-title{font:600 clamp(24px,3vw,29px)/1.12 'Cormorant Garamond',serif;color:var(--ink)}
-.related-article-description{font:400 12.5px/1.6 'Manrope',sans-serif;color:var(--ink2)}
-.related-article-arrow{font:400 27px/1 'Manrope',sans-serif;color:var(--bordo);flex:0 0 auto}
-@media(max-width:620px){.article-content .related-article{padding:20px;gap:10px}.related-article-arrow{font-size:23px}}
+/* Related-reading cards — shared visual system for article cross-links */
+.article-content a.related-article{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 46px;
+  align-items:center;
+  column-gap:22px;
+  margin:38px 0 42px;
+  padding:28px 30px;
+  background:#F2E4E9;
+  border:1px solid rgba(139,26,58,.16);
+  border-left:4px solid var(--bordo);
+  color:var(--ink)!important;
+  text-decoration:none!important;
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease
+}
+.article-content a.related-article:hover{
+  transform:translateY(-2px);
+  border-color:rgba(139,26,58,.35);
+  box-shadow:0 12px 26px rgba(26,18,16,.09)
+}
+.article-content a.related-article:focus-visible{outline:3px solid var(--bordo);outline-offset:4px}
+.article-content .related-article-info{display:flex;flex-direction:column;gap:10px;min-width:0}
+.article-content .related-article-kicker{
+  display:block;font:700 11px/1.5 'Manrope',sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--bordo)
+}
+.article-content .related-article-title{
+  display:block;font:600 clamp(26px,3.2vw,34px)/1.12 'Cormorant Garamond',serif;
+  color:var(--ink)
+}
+.article-content .related-article-description{
+  display:block;font:400 13px/1.65 'Manrope',sans-serif;color:var(--ink2)
+}
+.article-content .related-article-arrow{
+  display:flex;align-items:center;justify-content:center;
+  width:46px;height:46px;border-radius:50%;
+  background:var(--bordo);color:#fff;
+  font:500 23px/1 'Manrope',sans-serif;
+  transition:transform .2s ease
+}
+.article-content a.related-article:hover .related-article-arrow{transform:translateX(3px)}
+@media(max-width:620px){
+  .article-content a.related-article{grid-template-columns:minmax(0,1fr) 38px;gap:13px;padding:22px 20px;margin:30px 0 36px}
+  .article-content .related-article-title{font-size:27px}
+  .article-content .related-article-arrow{width:38px;height:38px;font-size:20px}
+}
