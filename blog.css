@@ -32,7 +32,7 @@ em{font-style:italic;color:var(--bordo)}
 .post-card{background:var(--white);border:1px solid var(--line);min-width:0;text-decoration:none;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
 .post-card:hover{transform:translateY(-4px);box-shadow:0 15px 32px rgba(26,18,16,.09)}
 .post-card:hover .read-more{color:#B8396A}
-.card-image{width:100%;aspect-ratio:1.54;object-fit:cover;background:var(--cream2)}
+.card-image{display:block;width:100%;height:auto;aspect-ratio:1.54;object-fit:cover;background:var(--cream2)}
 .card-body{padding:26px 26px 28px;display:flex;flex:1;flex-direction:column}
 .card-category{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--bordo)}
 .card-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,2.7vw,32px);font-weight:600;line-height:1.1;margin:13px 0 13px}
