@@ -187,3 +187,36 @@ em{font-style:italic;color:var(--bordo)}
  .blog-category-link{scroll-snap-align:start;flex:none}
  .blog-category-hero h1{font-size:clamp(38px,9vw,54px)}
 }
+
+/* Compact article cards on blog listing and category pages.
+   All covers preserve their 16:9 original framing; full texts remain in HTML. */
+.blog-grid .card-image{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 9;
+  object-fit:cover;
+  background:var(--cream2);
+}
+.blog-grid .card-body{
+  padding:17px 20px 19px;
+}
+.blog-grid .card-title{
+  font-size:clamp(24px,1.8vw,26px);
+  line-height:1.08;
+  margin:9px 0 9px;
+}
+.blog-grid .card-description{
+  font-size:12.5px;
+  line-height:1.55;
+  margin:0 0 16px;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  overflow:hidden;
+}
+.blog-grid .read-more{font-size:12px}
+@media(max-width:620px){
+  .blog-grid .card-title{font-size:27px}
+  .blog-grid .card-body{padding:18px 20px 21px}
+}
