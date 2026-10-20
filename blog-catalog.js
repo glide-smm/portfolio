@@ -32,7 +32,7 @@
     const shown=new Set(matches.slice(0,limit));
     cards.forEach(card=>{card.hidden=!shown.has(card)});
     const count=matches.length;
-    status.textContent=allPage&&!showFeaturedInCatalog&&!terms.length?'Ще '+count+' публікацій':'Знайдено публікацій: '+count;
+    status.textContent=allPage&&!showFeaturedInCatalog&&!terms.length?'Інші публікації: '+count:'Знайдено публікацій: '+count;
     empty.hidden=count!==0;
     more.hidden=count<=limit;
   }
